@@ -11,7 +11,7 @@
 
     <style>
         /* --- Reset e Estilos Globais --- */
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap' );
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
 
         :root {
             --yellow: #FFC900;
@@ -44,7 +44,7 @@
         
         section {
             text-align: center;
-            padding-top: 60px;
+            padding-top: 60px; /* Espaçamento para o header fixo */
             padding-bottom: 60px;
         }
         
@@ -112,6 +112,12 @@
             align-items: center;
         }
         
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
         .logo-img {
             width: 180px;
         }
@@ -139,7 +145,7 @@
         .hero {
             background-color: var(--dark-gray);
             color: var(--white);
-            padding-top: 180px;
+            padding-top: 180px; /* Aumentado para dar espaço ao header */
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -310,7 +316,7 @@
             justify-content: center;
             align-items: center;
             text-decoration: none;
-            transition: transform 0.3s, opacity 0.3s, visibility 0.3s;
+            transition: transform 0.3s, opacity 0.3s;
         }
         .whatsapp-float {
             bottom: 30px;
@@ -340,9 +346,9 @@
         
         /* --- Media Queries para Responsividade --- */
         @media (max-width: 992px) {
-            .main-nav { display: none; }
+            .main-nav { display: none; } /* Esconde o menu de navegação em telas menores */
             .comparison-grid { grid-template-columns: 1fr; gap: 2rem; }
-            .rocket-col { transform: scale(1); order: -1; }
+            .rocket-col { transform: scale(1); order: -1; } /* Coloca a Rocket for Eat no topo */
         }
 
         @media (max-width: 768px) {
@@ -368,11 +374,11 @@
             </a>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="#problema" data-section="problema">O Problema</a></li>
-                    <li><a href="#solucao" data-section="solucao">A Solução</a></li>
-                    <li><a href="#servicos" data-section="servicos">Serviços</a></li>
-                    <li><a href="#sobre" data-section="sobre">Quem Somos</a></li>
-                    <li><a href="#faq" data-section="faq">FAQ</a></li>
+                    <li><a href="#problema">O Problema</a></li>
+                    <li><a href="#solucao">A Solução</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#sobre">Quem Somos</a></li>
+                    <li><a href="#faq">FAQ</a></li>
                 </ul>
             </nav>
             <a href="#cta-final" class="cta-button">Consultoria Gratuita</a>
@@ -415,8 +421,7 @@
         <section id="calculator">
             <div class="container">
                 <div class="calculator-container">
-                    <h2>Descubra o 'Imposto iFood':  
-Quanto você <span class="highlight">realmente</span> deixa na mesa?</h2>
+                    <h2>Descubra o 'Imposto iFood':<br>Quanto você <span class="highlight">realmente</span> deixa na mesa?</h2>
                     <p>Use a calculadora abaixo e veja na prática a diferença no seu bolso ao final de cada venda.</p>
                     
                     <div class="calculator-step">
@@ -425,7 +430,7 @@ Quanto você <span class="highlight">realmente</span> deixa na mesa?</h2>
                     </div>
 
                     <div class="calculator-step">
-                        <label for="ingredientsCost">2. Qual seu custo com ingredientes? (<span id="range-value" class="range-value">30%</span> )</label>
+                        <label for="ingredientsCost">2. Qual seu custo com ingredientes? (<span id="range-value" class="range-value">30%</span>)</label>
                         <input type="range" id="ingredientsCost" min="20" max="45" value="30">
                     </div>
                     
@@ -433,12 +438,10 @@ Quanto você <span class="highlight">realmente</span> deixa na mesa?</h2>
                         <label>3. Qual plano do iFood você usa?</label>
                         <div class="radio-group">
                             <input type="radio" id="planoBasico" name="ifoodPlan" value="basico">
-                            <label for="planoBasico">Plano Básico  
-<small>(Eu entrego)</small></label>
+                            <label for="planoBasico">Plano Básico<br><small>(Eu entrego)</small></label>
                             
                             <input type="radio" id="planoEntrega" name="ifoodPlan" value="entrega" checked>
-                            <label for="planoEntrega">Plano Entrega  
-<small>(iFood entrega)</small></label>
+                            <label for="planoEntrega">Plano Entrega<br><small>(iFood entrega)</small></label>
                         </div>
                     </div>
 
@@ -474,8 +477,7 @@ Quanto você <span class="highlight">realmente</span> deixa na mesa?</h2>
                             </div>
                         </div>
                         <div class="punchline">
-                            Nesta única venda, você deixou <span class="loss" id="profit-difference">R$ 0,00</span> na mesa.   
-Isso é <span class="loss" id="percentage-loss">0%</span> do seu lucro que ficou com o iFood.
+                            Nesta única venda, você deixou <span class="loss" id="profit-difference">R$ 0,00</span> na mesa. <br>Isso é <span class="loss" id="percentage-loss">0%</span> do seu lucro que ficou com o iFood.
                         </div>
                     </div>
                 </div>
@@ -509,7 +511,7 @@ Isso é <span class="loss" id="percentage-loss">0%</span> do seu lucro que ficou
                         </div>
                         <div class="comparison-column rocket-col">
                             <div class="column-header">
-                                <img src="https://i.postimg.cc/sgvdLPdZ/Design-sem-nome-1.png" alt="Logo da Rocket for Eat em destaque" style="width: 150px;">
+                                <img src="https://i.postimg.cc/sgvdLPdZ/Design-sem-nome-1.png" alt="Logo Rocket for Eat" style="width: 150px;">
                             </div>
                             <span class="subtitle">Solução completa especializada</span>
                             <ul>
@@ -557,7 +559,7 @@ Isso é <span class="loss" id="percentage-loss">0%</span> do seu lucro que ficou
                         <h3>Aquisição de Clientes</h3>
                         <p>Atraímos clientes famintos para o seu canal de vendas direto através de anúncios inteligentes.</p>
                         <ul>
-                            <li>Gestão de Tráfego Pago (Anúncios )</li>
+                            <li>Gestão de Tráfego Pago (Anúncios)</li>
                             <li>Campanhas no Instagram e Facebook</li>
                             <li>Anúncios no Google (Rede de Pesquisa)</li>
                             <li>Criação de Anúncios que Vendem</li>
@@ -565,11 +567,10 @@ Isso é <span class="loss" id="percentage-loss">0%</span> do seu lucro que ficou
                     </div>
                     <div class="service-card">
                         <div class="phase">FASE 3</div>
-                        <h3>Fidelização e Retenção</h3>
-                        <p>Transformamos clientes de uma noite em fãs que voltam a comprar sempre, aumentando seu lucro.</p>
+                        <h3>Fidelização e Escala</h3>
+                        <p>Transformamos clientes em fãs e expandimos seu alcance para garantir um crescimento sustentável.</p>
                         <ul>
-                            <li>CRM e Automação para WhatsApp</li>
-                            <li>Estratégias de Cupons e Promoções</li>
+                            <li>Estratégias de Retenção de Clientes</li>
                             <li>Construção da sua Base de Clientes</li>
                             <li>Análise de Métricas e Resultados</li>
                         </ul>
@@ -597,10 +598,204 @@ Isso é <span class="loss" id="percentage-loss">0%</span> do seu lucro que ficou
         <section class="about-us" id="sobre">
             <div class="container">
                 <div class="about-us-grid">
-                    <figure class="about-us-image">
-                        <img src="https://i.postimg.cc/5NtybNHd/Red-and-Yellow-Illustration-Food-Facebook-Cover-1.png" alt="Ilustração do time da Rocket for Eat trabalhando em foguetes e pizzas.">
-                    </figure>
+                    <div class="about-us-image">
+                        <img src="https://i.postimg.cc/5NtybNHd/Red-and-Yellow-Illustration-Food-Facebook-Cover-1.png" alt="Time da Rocket for Eat reunido">
+                    </div>
                     <div class="about-us-text">
                         <h2>Quem está por trás do foguete que faz as pizzarias <span class="highlight">venderem mais?</span></h2>
                         <p>A Rocket for Eat nasceu da paixão por dois mundos: pizza e resultados. Somos uma equipe pequena e obcecada, não apenas uma agência. Mergulhamos no universo das pizzarias para entender cada detalhe da sua operação.</p>
-                        <p>Acreditamos que cada pizzaria tem uma história única e merece um canal de vendas direto, sem intermediários. Não somos fornecedores, somos parceiros estratégicos sentados ao seu lado da mesa, focados em uma única
+                        <p>Acreditamos que cada pizzaria tem uma história única e merece um canal de vendas direto, sem intermediários. Não somos fornecedores, somos parceiros estratégicos sentados ao seu lado da mesa, focados em uma única coisa: fazer seu delivery decolar.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-final" id="cta-final">
+            <div class="container">
+                <h2>Receba um Diagnóstico <span class="highlight">Gratuito</span> do seu Delivery</h2>
+                <p>Chega de ficar para trás. Agende uma conversa sem compromisso com um de nossos especialistas e descubra o potencial escondido da sua operação digital.</p>
+                <a href="https://wa.me/5511959228663?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Rocket%20for%20Eat%20e%20gostaria%20de%20agendar%20minha%20consultoria%20gratuita." target="_blank" class="cta-button">AGENDAR MINHA CONSULTORIA</a>
+            </div>
+        </section>
+        
+        <section class="faq" id="faq">
+            <div class="container">
+                <h2>Dúvidas <span class="highlight">Frequentes</span></h2>
+                <details class="faq-item">
+                    <summary>Quanto custa o serviço?</summary>
+                    <div><p>Nossos planos são personalizados para a necessidade e o momento de cada pizzaria. Agende uma conversa para receber um orçamento justo e focado no seu crescimento.</p></div>
+                </details>
+                <details class="faq-item">
+                    <summary>Em quanto tempo eu vejo resultado?</summary>
+                    <div><p>A Fase 1 (Fundação) já traz melhorias imediatas na sua imagem. Os resultados em vendas com tráfego pago (Fase 2) geralmente começam a aparecer já no primeiro mês de campanha.</p></div>
+                </details>
+                <details class="faq-item">
+                    <summary>Preciso ter um site?</summary>
+                    <div><p>Não! Nosso sistema usa o Instagram, Google e um cardápio digital que envia pedidos direto para o seu WhatsApp. É uma estrutura de alta conversão e baixo custo inicial.</p></div>
+                </details>
+                <details class="faq-item">
+                    <summary>Vocês garantem resultados?</summary>
+                    <div><p>Garantimos nosso empenho, expertise e um método comprovado. Desconfie de quem garante resultados em marketing, pois eles dependem de muitos fatores. Nosso foco é o seu ROI (Retorno Sobre o Investimento).</p></div>
+                </details>
+            </div>
+        </section>
+
+        <a href="https://wa.me/5511959228663?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Rocket%20for%20Eat%20e%20gostaria%20de%20agendar%20minha%20consultoria%20gratuita." class="whatsapp-float" target="_blank" aria-label="Fale conosco pelo WhatsApp">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="width: 28px; height: 28px; fill: white;"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zM223.9 439.6c-33.8 0-66.3-8.8-94.3-25.1l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+        </a>
+
+        <a href="#hero" class="back-to-top" aria-label="Voltar ao topo">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" style="width: 24px; height: 24px; fill: var(--dark-gray);"><path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"/></svg>
+        </a>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <img src="https://i.postimg.cc/sgvdLPdZ/Design-sem-nome-1.png" alt="Logo Rocket for Eat" class="logo-img" style="width: 200px; margin-bottom: 2rem;">
+
+            <div class="social-links">
+                <a href="https://www.instagram.com/rocketfor_eat?igsh=MTc0MGRzM2Q1NXdlbQ%3D%3D&utm_source=qr" target="_blank" aria-label="Instagram da Rocket for Eat">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9 26.3 26.2 58 34.4 93.9 36.2 37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+                </a>
+                <a href="https://wa.me/5511959228663?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Rocket%20for%20Eat%20e%20gostaria%20de%20agendar%20minha%20consultoria%20gratuita." target="_blank" aria-label="WhatsApp da Rocket for Eat">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zM223.9 439.6c-33.8 0-66.3-8.8-94.3-25.1l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+                </a>
+            </div>
+
+            <p>Rocket for Eat - Marketing Digital para Pizzarias</p>
+            <p>&copy; 2025 - Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script defer>
+        document.addEventListener('DOMContentLoaded', function() {
+            // --- Lógica da Calculadora ---
+            const calculateBtn = document.getElementById('calculateBtn');
+            const ingredientsCostSlider = document.getElementById('ingredientsCost');
+            const rangeValueSpan = document.getElementById('range-value');
+            
+            // Taxas (podem ser ajustadas aqui)
+            const IFOOD_BASIC_COMMISSION = 0.12; // 12%
+            const IFOOD_DELIVERY_COMMISSION = 0.25; // 25%
+            const IFOOD_PAYMENT_FEE = 0.032; // 3.2%
+            const DIRECT_PAYMENT_FEE = 0.02; // 2%
+
+            // Atualiza o valor da porcentagem do slider
+            ingredientsCostSlider.addEventListener('input', function() {
+                rangeValueSpan.textContent = this.value + '%';
+            });
+
+            calculateBtn.addEventListener('click', function() {
+                const pizzaPriceInput = document.getElementById('pizzaPrice');
+                const pizzaPrice = parseFloat(pizzaPriceInput.value);
+                const ingredientsCostPercent = parseInt(ingredientsCostSlider.value, 10);
+                const selectedPlan = document.querySelector('input[name="ifoodPlan"]:checked').value;
+
+                if (isNaN(pizzaPrice) || pizzaPrice <= 0) {
+                    alert('Por favor, insira um preço de venda válido para a pizza.');
+                    pizzaPriceInput.focus();
+                    return;
+                }
+
+                // Cálculos
+                const costOfGoods = pizzaPrice * (ingredientsCostPercent / 100);
+                
+                const ifoodCommissionRate = selectedPlan === 'basico' ? IFOOD_BASIC_COMMISSION : IFOOD_DELIVERY_COMMISSION;
+                const ifoodCommissionValue = pizzaPrice * ifoodCommissionRate;
+                const ifoodPaymentFeeValue = pizzaPrice * IFOOD_PAYMENT_FEE;
+                const ifoodProfit = pizzaPrice - costOfGoods - ifoodCommissionValue - ifoodPaymentFeeValue;
+
+                const directPaymentFeeValue = pizzaPrice * DIRECT_PAYMENT_FEE;
+                const directProfit = pizzaPrice - costOfGoods - directPaymentFeeValue;
+                
+                const profitDifference = directProfit - ifoodProfit;
+                const percentageLoss = directProfit > 0 ? (profitDifference / directProfit) * 100 : 0;
+                
+                // Formatação para moeda
+                const formatCurrency = (value) => `R$ ${value.toFixed(2).replace('.', ',')}`;
+
+                // Exibe os resultados no lado do iFood
+                document.getElementById('ifood-sale-price').textContent = formatCurrency(pizzaPrice);
+                document.getElementById('ifood-ingredients-cost').textContent = `- ${formatCurrency(costOfGoods)}`;
+                document.getElementById('ifood-commission').textContent = `- ${formatCurrency(ifoodCommissionValue)}`;
+                document.getElementById('ifood-payment-fee').textContent = `- ${formatCurrency(ifoodPaymentFeeValue)}`;
+                document.getElementById('ifood-profit').textContent = formatCurrency(ifoodProfit);
+
+                // Exibe os resultados no lado da Venda Direta
+                document.getElementById('direct-sale-price').textContent = formatCurrency(pizzaPrice);
+                document.getElementById('direct-ingredients-cost').textContent = `- ${formatCurrency(costOfGoods)}`;
+                document.getElementById('direct-payment-fee').textContent = `- ${formatCurrency(directPaymentFeeValue)}`;
+                document.getElementById('direct-profit').textContent = formatCurrency(directProfit);
+                
+                // Exibe a frase de impacto
+                document.getElementById('profit-difference').textContent = formatCurrency(profitDifference);
+                document.getElementById('percentage-loss').textContent = `${Math.round(percentageLoss)}%`;
+
+                // Mostra a seção de resultados
+                const resultsSection = document.getElementById('calculator-results');
+                resultsSection.style.display = 'block';
+                resultsSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            });
+
+            // --- Lógica do Menu de Navegação e Botão Voltar ao Topo ---
+            const navLinks = document.querySelectorAll('.main-nav a');
+            const sections = document.querySelectorAll('section[id]');
+            const backToTopButton = document.querySelector('.back-to-top');
+
+            function activateNavLink() {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 100; // Ajuste para o header fixo
+                    if (pageYOffset >= sectionTop) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.href.includes(current)) {
+                        link.classList.add('active');
+                    }
+                });
+
+                // Mostrar/Esconder botão de voltar ao topo
+                if (pageYOffset > 300) {
+                    backToTopButton.classList.add('visible');
+                } else {
+                    backToTopButton.classList.remove('visible');
+                }
+            }
+
+            window.addEventListener('scroll', activateNavLink);
+            activateNavLink(); // Ativa ao carregar a página
+
+            // Smooth scroll para links internos
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    if (targetSection) {
+                        window.scrollTo({
+                            top: targetSection.offsetTop - 80, // Ajuste para o header fixo
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Smooth scroll para o botão de voltar ao topo
+            backToTopButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
+
