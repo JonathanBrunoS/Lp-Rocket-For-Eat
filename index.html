@@ -94,6 +94,7 @@
             backdrop-filter: blur(10px);
             z-index: 1000;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: padding 0.3s;
         }
         
         .main-header .container {
@@ -107,11 +108,10 @@
             width: 180px;
         }
 
-        /* --- CORREÇÃO APLICADA AQUI --- */
         .main-header .header-logo {
-            width: 150px; /* Tamanho reduzido para a logo no header */
+            width: 150px; 
+            transition: width 0.3s;
         }
-        /* --- FIM DA CORREÇÃO --- */
 
         /* --- Seção HERO --- */
         .hero {
@@ -393,6 +393,16 @@
             .about-us-grid {
                 grid-template-columns: 1fr;
             }
+
+            /* --- CORREÇÃO APLICADA AQUI --- */
+            .main-header {
+                padding: 0.5rem 1rem; /* Diminui a altura do header no mobile */
+            }
+
+            .main-header .header-logo {
+                width: 120px; /* Diminui a logo no mobile */
+            }
+            /* --- FIM DA CORREÇÃO --- */
         }
 
     </style>
