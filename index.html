@@ -1,3 +1,16 @@
+Ótima observação, e peço desculpas pelo erro. Você está certo, a seção "É hora de ter um Delivery Próprio" ficou com o texto branco sobre um fundo claro, tornando-a ilegível. Fico feliz que a calculadora tenha ficado boa\!
+
+O problema foi uma falha técnica no meu CSS. Eu criei uma regra para alternar a cor de fundo das seções (cinza claro, branco, cinza claro...), e essa regra genérica acabou sobrescrevendo a cor de fundo escura que era específica para essa seção do "Delivery Próprio".
+
+**A correção é simples:** Reforcei a regra de estilo para a seção "Solução", garantindo que o fundo dela seja **sempre** o cinza escuro, não importa a sua posição na página. Isso fará com que o texto branco tenha o contraste perfeito para a leitura.
+
+Abaixo está o código completo com este ajuste.
+
+-----
+
+### **Código HTML v2.7 - Corrigido**
+
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -297,8 +310,9 @@
         }
         
         /* --- Seção Solução --- */
-        .solution {
-            background-color: var(--dark-gray);
+        /* CORREÇÃO APLICADA AQUI */
+        section.solution {
+            background-color: var(--dark-gray) !important; /* Garante que o fundo seja escuro */
             color: var(--white);
         }
         
@@ -342,10 +356,12 @@
         
         .comparison-column {
             padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
         }
         
         .column-header {
-            min-height: 80px;
+            min-height: 80px; 
             margin-bottom: 2rem;
         }
 
@@ -361,6 +377,7 @@
         
         .comparison-column ul {
             list-style: none;
+            flex-grow: 1; 
         }
         
         .comparison-column li {
@@ -957,3 +974,4 @@
 
 </body>
 </html>
+```
