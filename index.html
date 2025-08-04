@@ -179,6 +179,123 @@
             font-size: 1.5rem;
         }
         
+        /* --- CALCULADORA --- */
+        #calculator {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+        }
+        .calculator-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        .calculator-step {
+            margin-bottom: 2rem;
+        }
+        .calculator-step label {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        .calculator-step input[type="number"], .calculator-step input[type="range"] {
+            width: 100%;
+            padding: 0.8rem;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 1.2rem;
+        }
+        .calculator-step input[type="range"] {
+            padding: 0;
+        }
+        .range-value {
+            font-weight: 700;
+            color: var(--yellow);
+        }
+        .radio-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+        .radio-group label {
+            flex: 1;
+            padding: 1rem;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .radio-group input[type="radio"] {
+            display: none;
+        }
+        .radio-group input[type="radio"]:checked + label {
+            border-color: var(--yellow);
+            background-color: #fffbeb;
+        }
+        #calculateBtn {
+            width: 100%;
+            border: none;
+            cursor: pointer;
+        }
+        #calculator-results {
+            display: none; /* Inicia oculto */
+            margin-top: 3rem;
+        }
+        .results-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            text-align: left;
+        }
+        .results-column {
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+        .results-column h3 {
+            border-bottom: 2px solid;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .results-column ul {
+            list-style: none;
+        }
+        .results-column li {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        .results-column .profit {
+            font-weight: 900;
+            font-size: 1.5rem;
+            margin-top: 1.5rem;
+            border-top: 1px solid #eee;
+            padding-top: 1rem;
+        }
+        #ifood-results { background-color: #fff5f5; border: 1px solid #ffe0e0; }
+        #ifood-results h3 { border-color: var(--red); }
+        #ifood-results .profit { color: var(--red); }
+        #direct-results { background-color: #f2fff5; border: 1px solid #d4f7e0; }
+        #direct-results h3 { border-color: var(--green); }
+        #direct-results .profit { color: var(--green); }
+        .punchline {
+            margin-top: 3rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            background-color: var(--light-gray);
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+        .punchline .loss {
+            color: var(--red);
+        }
+        .punchline .gain {
+            color: var(--green);
+        }
+        
         /* --- Seção Solução --- */
         .solution {
             background-color: var(--dark-gray);
@@ -199,7 +316,7 @@
             margin-top: 2rem;
         }
 
-        /* --- SEÇÃO TABELA COMPARATIVA --- */
+        /* --- Tabela Comparativa --- */
         .comparison-table {
             background: var(--white);
             padding-top: 5rem;
@@ -220,16 +337,15 @@
             grid-template-columns: repeat(3, 1fr);
             gap: 1rem;
             text-align: left;
+            align-items: center; 
         }
         
         .comparison-column {
             padding: 1.5rem;
-            display: flex;
-            flex-direction: column;
         }
         
         .column-header {
-            min-height: 80px; /* Garante altura mínima para o cabeçalho da coluna */
+            min-height: 80px;
             margin-bottom: 2rem;
         }
 
@@ -245,7 +361,6 @@
         
         .comparison-column ul {
             list-style: none;
-            flex-grow: 1; 
         }
         
         .comparison-column li {
@@ -462,8 +577,8 @@
             .hero h1 { font-size: 2.5rem; }
             .hero p { font-size: 1.2rem; }
             .about-us-grid { grid-template-columns: 1fr; }
+            .results-grid { grid-template-columns: 1fr; }
             
-            /* Correção Final do Header Mobile */
             .main-header {
                 padding: 0.5rem 1rem;
             }
@@ -474,12 +589,12 @@
                 width: 120px;
             }
             .header-tagline {
-                display: none; /* Remove a tagline para um layout limpo no mobile */
+                display: none;
             }
             .main-header .cta-button {
                 font-size: 0.7rem;
                 padding: 0.6rem 0.8rem;
-                white-space: nowrap; /* Impede que o texto do botão quebre */
+                white-space: nowrap;
             }
         }
     </style>
@@ -520,6 +635,72 @@
                 <div class="problem-card">
                     <h3>Concorrência Desleal</h3>
                     <p>Seu negócio aparece ao lado de dezenas de outros, em uma guerra constante por preço e visibilidade.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="calculator">
+        <div class="container">
+            <div class="calculator-container">
+                <h2>Descubra o 'Imposto iFood':<br>Quanto você <span class="highlight">realmente</span> deixa na mesa?</h2>
+                <p>Use a calculadora abaixo e veja na prática a diferença no seu bolso ao final de cada venda.</p>
+                
+                <div class="calculator-step">
+                    <label for="pizzaPrice">1. Qual o preço de venda da sua pizza?</label>
+                    <input type="number" id="pizzaPrice" placeholder="Ex: 60.00" step="0.01">
+                </div>
+
+                <div class="calculator-step">
+                    <label for="ingredientsCost">2. Qual seu custo com ingredientes? (<span id="range-value" class="range-value">30%</span>)</label>
+                    <input type="range" id="ingredientsCost" min="20" max="45" value="30">
+                </div>
+                
+                <div class="calculator-step">
+                    <label>3. Qual plano do iFood você usa?</label>
+                    <div class="radio-group">
+                        <input type="radio" id="planoBasico" name="ifoodPlan" value="basico">
+                        <label for="planoBasico">Plano Básico<br><small>(Eu entrego)</small></label>
+                        
+                        <input type="radio" id="planoEntrega" name="ifoodPlan" value="entrega" checked>
+                        <label for="planoEntrega">Plano Entrega<br><small>(iFood entrega)</small></label>
+                    </div>
+                </div>
+
+                <button id="calculateBtn" class="cta-button">Calcular Lucro</button>
+
+                <div id="calculator-results">
+                    <div class="results-grid">
+                        <div id="ifood-results" class="results-column">
+                            <h3>Venda no iFood</h3>
+                            <ul>
+                                <li><span>Preço de Venda</span> <span id="ifood-sale-price">R$ 0,00</span></li>
+                                <li><span>Custo Ingredientes</span> <span id="ifood-ingredients-cost">- R$ 0,00</span></li>
+                                <li><span class="loss">Comissão iFood</span> <span class="loss" id="ifood-commission">- R$ 0,00</span></li>
+                                <li><span class="loss">Taxa de Pagamento</span> <span class="loss" id="ifood-payment-fee">- R$ 0,00</span></li>
+                            </ul>
+                            <div class="profit">
+                                <span>Seu Lucro Final</span>
+                                <span id="ifood-profit">R$ 0,00</span>
+                            </div>
+                        </div>
+                        <div id="direct-results" class="results-column">
+                            <h3>Venda Direta</h3>
+                            <ul>
+                                <li><span>Preço de Venda</span> <span id="direct-sale-price">R$ 0,00</span></li>
+                                <li><span>Custo Ingredientes</span> <span id="direct-ingredients-cost">- R$ 0,00</span></li>
+                                <li><span class="gain">Taxa do Cartão</span> <span class="gain" id="direct-payment-fee">- R$ 0,00</span></li>
+                                <li><span>&nbsp;</span><span>&nbsp;</span></li>
+                            </ul>
+                             <div class="profit">
+                                <span>Seu Lucro Final</span>
+                                <span id="direct-profit">R$ 0,00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="punchline">
+                        Nesta única venda, você deixou <span class="loss" id="profit-difference">R$ 0,00</span> na mesa. <br>Isso é <span class="loss" id="percentage-loss">0%</span> do seu lucro que ficou com o iFood.
+                    </div>
                 </div>
             </div>
         </div>
@@ -703,6 +884,76 @@
             <p>&copy; 2025 - Todos os direitos reservados.</p>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // --- Lógica da Calculadora ---
+            const calculateBtn = document.getElementById('calculateBtn');
+            const ingredientsCostSlider = document.getElementById('ingredientsCost');
+            const rangeValueSpan = document.getElementById('range-value');
+            
+            // Taxas (podem ser ajustadas aqui)
+            const IFOOD_BASIC_COMMISSION = 0.12; // 12%
+            const IFOOD_DELIVERY_COMMISSION = 0.25; // 25%
+            const IFOOD_PAYMENT_FEE = 0.032; // 3.2%
+            const DIRECT_PAYMENT_FEE = 0.02; // 2%
+
+            // Atualiza o valor da porcentagem do slider
+            ingredientsCostSlider.addEventListener('input', function() {
+                rangeValueSpan.textContent = this.value + '%';
+            });
+
+            calculateBtn.addEventListener('click', function() {
+                const pizzaPrice = parseFloat(document.getElementById('pizzaPrice').value);
+                const ingredientsCostPercent = parseInt(ingredientsCostSlider.value, 10);
+                const selectedPlan = document.querySelector('input[name="ifoodPlan"]:checked').value;
+
+                if (isNaN(pizzaPrice) || pizzaPrice <= 0) {
+                    alert('Por favor, insira um preço de venda válido para a pizza.');
+                    return;
+                }
+
+                // Cálculos
+                const costOfGoods = pizzaPrice * (ingredientsCostPercent / 100);
+                
+                const ifoodCommissionRate = selectedPlan === 'basico' ? IFOOD_BASIC_COMMISSION : IFOOD_DELIVERY_COMMISSION;
+                const ifoodCommissionValue = pizzaPrice * ifoodCommissionRate;
+                const ifoodPaymentFeeValue = pizzaPrice * IFOOD_PAYMENT_FEE;
+                const ifoodProfit = pizzaPrice - costOfGoods - ifoodCommissionValue - ifoodPaymentFeeValue;
+
+                const directPaymentFeeValue = pizzaPrice * DIRECT_PAYMENT_FEE;
+                const directProfit = pizzaPrice - costOfGoods - directPaymentFeeValue;
+                
+                const profitDifference = directProfit - ifoodProfit;
+                const percentageLoss = directProfit > 0 ? (profitDifference / directProfit) * 100 : 0;
+                
+                // Formatação para moeda
+                const formatCurrency = (value) => `R$ ${value.toFixed(2).replace('.', ',')}`;
+
+                // Exibe os resultados no lado do iFood
+                document.getElementById('ifood-sale-price').textContent = formatCurrency(pizzaPrice);
+                document.getElementById('ifood-ingredients-cost').textContent = `- ${formatCurrency(costOfGoods)}`;
+                document.getElementById('ifood-commission').textContent = `- ${formatCurrency(ifoodCommissionValue)}`;
+                document.getElementById('ifood-payment-fee').textContent = `- ${formatCurrency(ifoodPaymentFeeValue)}`;
+                document.getElementById('ifood-profit').textContent = formatCurrency(ifoodProfit);
+
+                // Exibe os resultados no lado da Venda Direta
+                document.getElementById('direct-sale-price').textContent = formatCurrency(pizzaPrice);
+                document.getElementById('direct-ingredients-cost').textContent = `- ${formatCurrency(costOfGoods)}`;
+                document.getElementById('direct-payment-fee').textContent = `- ${formatCurrency(directPaymentFeeValue)}`;
+                document.getElementById('direct-profit').textContent = formatCurrency(directProfit);
+                
+                // Exibe a frase de impacto
+                document.getElementById('profit-difference').textContent = formatCurrency(profitDifference);
+                document.getElementById('percentage-loss').textContent = `${Math.round(percentageLoss)}%`;
+
+                // Mostra a seção de resultados
+                const resultsSection = document.getElementById('calculator-results');
+                resultsSection.style.display = 'block';
+                resultsSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            });
+        });
+    </script>
 
 </body>
 </html>
