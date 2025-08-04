@@ -110,7 +110,6 @@
             display: flex;
             align-items: center;
             gap: 1rem;
-            justify-content: flex-start; /* Alinha o conteúdo à esquerda */
         }
         
         .header-tagline {
@@ -136,7 +135,7 @@
         .hero {
             background-color: var(--dark-gray);
             color: var(--white);
-            padding-top: 150px;
+            padding-top: 180px; /* Aumentado para dar espaço ao header mobile */
             min-height: 90vh;
             display: flex;
             align-items: center;
@@ -222,22 +221,16 @@
             grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
             text-align: left;
-            align-items: stretch; /* Faz as colunas terem a mesma altura */
+            align-items: center; /* CORREÇÃO APLICADA AQUI */
         }
         
         .comparison-column {
             padding: 1.5rem;
-            display: flex;
-            flex-direction: column;
         }
         
         .comparison-column h3 {
             font-size: 1.5rem;
             font-weight: 900;
-        }
-
-        .comparison-column .logo-wrapper {
-            margin-bottom: 1.5rem; /* Ajuste o espaçamento conforme necessário */
         }
         
         .comparison-column .subtitle {
@@ -248,7 +241,6 @@
         
         .comparison-column ul {
             list-style: none;
-            flex-grow: 1; /* Faz a lista crescer para preencher o espaço */
         }
         
         .comparison-column li {
@@ -461,32 +453,41 @@
 
         @media (max-width: 768px) {
             .container { padding: 4rem 1.5rem; }
-            h1 { font-size: 2.5rem; }
-            h2 { font-size: 2rem; }
-            .hero h1 { font-size: 2.8rem; }
+            h1, h2 { font-size: 2.2rem; }
+            .hero h1 { font-size: 2.5rem; }
             .hero p { font-size: 1.2rem; }
             .about-us-grid { grid-template-columns: 1fr; }
             
-            /* Correção do Header Mobile */
+            /* CORREÇÃO DO HEADER MOBILE */
             .main-header {
                 padding: 0.75rem 1rem;
             }
             .main-header .container {
+                flex-direction: row; /* Mantém em linha */
                 justify-content: space-between;
                 width: 100%;
             }
             .logo-container {
-                gap: 0.75rem;
+                gap: 0;
+                flex-direction: column; /* Coloca logo e tagline em coluna */
+                align-items: flex-start; /* Alinha à esquerda */
             }
             .main-header .header-logo {
-                width: 100px; /* Logo ainda menor */
+                width: 100px;
+                margin-bottom: 4px;
             }
             .header-tagline {
-                display: none; /* Esconde a tagline para não poluir o header mobile */
+                display: block; /* Garante que apareça */
+                font-size: 0.65rem; /* Fonte menor */
+                border: none;
+                padding: 0;
+                line-height: 1.2;
             }
             .main-header .cta-button {
-                display: none; /* Esconde o botão para dar espaço */
+                font-size: 0.8rem;
+                padding: 0.5rem 0.8rem;
             }
+            /* FIM DA CORREÇÃO DO HEADER */
         }
     </style>
 </head>
@@ -556,7 +557,7 @@
                     </div>
                     <div class="comparison-column rocket-col">
                         <div class="logo-wrapper">
-                            <img src="https://i.postimg.cc/sgvdLPdZ/Design-sem-nome-1.png" alt="Logo Rocket for Eat" style="width: 150px;">
+                            <img src="https://i.postimg.cc/sgvdLPdZ/Design-sem-nome-1.png" alt="Logo Rocket for Eat" style="width: 150px; margin-bottom: 1.1rem;">
                         </div>
                         <span class="subtitle">Solução completa especializada</span>
                         <ul>
