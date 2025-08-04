@@ -14,6 +14,8 @@
             --dark-gray: #212529;
             --white: #FFFFFF;
             --light-gray: #f8f9fa;
+            --green: #28a745;
+            --red: #dc3545;
         }
 
         * {
@@ -103,6 +105,21 @@
             justify-content: space-between;
             align-items: center;
         }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .header-tagline {
+            font-size: 0.8rem;
+            color: var(--dark-gray);
+            border-left: 2px solid var(--yellow);
+            padding-left: 1rem;
+            font-weight: 700;
+            opacity: 0.8;
+        }
 
         .logo-img {
             width: 180px;
@@ -117,7 +134,7 @@
         .hero {
             background-color: var(--dark-gray);
             color: var(--white);
-            padding-top: 150px; /* Espaço para o header fixo */
+            padding-top: 150px;
             min-height: 90vh;
             display: flex;
             align-items: center;
@@ -181,6 +198,72 @@
             display: inline-block;
             margin-top: 2rem;
         }
+
+        /* --- NOVA SEÇÃO TABELA COMPARATIVA --- */
+        .comparison-table {
+            background: var(--white);
+            padding: 3rem 0;
+        }
+        
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 2rem auto;
+            background-color: var(--white);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            text-align: left;
+        }
+        
+        .comparison-column {
+            padding: 1rem;
+        }
+        
+        .comparison-column h3 {
+            font-size: 1.5rem;
+            font-weight: 900;
+        }
+        
+        .comparison-column .subtitle {
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+        
+        .comparison-column ul {
+            list-style: none;
+        }
+        
+        .comparison-column li {
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-left: 30px;
+            font-weight: 700;
+        }
+        
+        .comparison-column li::before {
+            position: absolute;
+            left: 0;
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+        
+        /* Estilos específicos para cada coluna */
+        .apps-col .subtitle { color: var(--red); }
+        .apps-col li::before { content: '×'; color: var(--red); }
+        
+        .rocket-col {
+            background-color: var(--light-gray);
+            border-radius: 8px;
+            transform: scale(1.05);
+        }
+        .rocket-col .subtitle { color: var(--green); }
+        .rocket-col li::before { content: '✔'; color: var(--green); }
+        
+        .agencies-col .subtitle { color: var(--dark-gray); opacity: 0.7; }
+        .agencies-col li::before { content: '–'; color: var(--dark-gray); opacity: 0.7; }
 
         /* --- Seção Serviços --- */
         .services-grid {
@@ -257,7 +340,7 @@
             font-size: 1.2rem;
          }
          
-        /* --- NOVA SEÇÃO "QUEM SOMOS" --- */
+        /* --- Seção "Quem Somos" --- */
         .about-us-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -298,10 +381,7 @@
             position: relative;
         }
 
-        .faq-item summary::-webkit-details-marker {
-            display: none;
-        }
-
+        .faq-item summary::-webkit-details-marker { display: none; }
         .faq-item summary::after {
             content: '+';
             position: absolute;
@@ -309,16 +389,10 @@
             font-size: 2rem;
             transition: transform 0.2s;
         }
+        .faq-item[open] summary::after { transform: rotate(45deg); }
+        .faq-item div { padding: 0 1.5rem 1.5rem 1.5rem; }
 
-        .faq-item[open] summary::after {
-            transform: rotate(45deg);
-        }
-        
-        .faq-item div {
-            padding: 0 1.5rem 1.5rem 1.5rem;
-        }
-
-        /* --- BOTÃO FLUTUANTE WHATSAPP --- */
+        /* --- Botão Flutuante Whatsapp --- */
         .whatsapp-float {
             position: fixed;
             width: 60px;
@@ -338,10 +412,7 @@
             text-decoration: none;
             transition: transform 0.3s;
         }
-        
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-        }
+        .whatsapp-float:hover { transform: scale(1.1); }
 
         /* --- Footer --- */
         footer {
@@ -351,28 +422,22 @@
             text-align: center;
         }
         
-        .social-links {
-            margin-bottom: 2rem;
-        }
-        
+        .social-links { margin-bottom: 2rem; }
         .social-links a {
             margin: 0 1rem;
             text-decoration: none;
             display: inline-block;
         }
-
         .social-links svg {
              width: 35px;
              height: 35px;
              fill: var(--white);
              transition: fill 0.3s, transform 0.3s;
         }
-        
         .social-links a:hover svg {
             fill: var(--yellow);
             transform: translateY(-3px);
         }
-
         footer p {
             font-size: 1rem;
             margin-bottom: 0;
@@ -380,38 +445,36 @@
         }
         
         /* --- Media Queries para Responsividade --- */
+        @media (max-width: 992px) {
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+            .rocket-col {
+                transform: scale(1);
+            }
+        }
+
         @media (max-width: 768px) {
             h1 { font-size: 2.5rem; }
             h2 { font-size: 2rem; }
             .hero h1 { font-size: 2.8rem; }
             .hero p { font-size: 1.2rem; }
-            
-            .main-header .cta-button {
-                display: none;
-            }
-            
-            .about-us-grid {
-                grid-template-columns: 1fr;
-            }
-
-            /* --- CORREÇÃO APLICADA AQUI --- */
-            .main-header {
-                padding: 0.5rem 1rem; /* Diminui a altura do header no mobile */
-            }
-
-            .main-header .header-logo {
-                width: 120px; /* Diminui a logo no mobile */
-            }
-            /* --- FIM DA CORREÇÃO --- */
+            .main-header .cta-button { display: none; }
+            .about-us-grid { grid-template-columns: 1fr; }
+            .main-header { padding: 0.5rem 1rem; }
+            .main-header .header-logo { width: 120px; }
+            .header-tagline { display: none; } /* Esconde a tagline no mobile */
         }
-
     </style>
 </head>
 <body>
 
     <header class="main-header">
         <div class="container">
-            <img src="https://i.postimg.cc/sgvdLPdZ/Design-sem-nome-1.png" alt="Logo Rocket for Eat" class="logo-img header-logo">
+            <div class="logo-container">
+                <img src="https://i.postimg.cc/sgvdLPdZ/Design-sem-nome-1.png" alt="Logo Rocket for Eat" class="logo-img header-logo">
+                <span class="header-tagline">Para donos de pizzaria que querem<br>dominar o seu bairro</span>
+            </div>
             <a href="#cta-final" class="cta-button">Consultoria Gratuita</a>
         </div>
     </header>
@@ -450,6 +513,44 @@
             <h2>É hora de ter um <span class="highlight">Delivery Próprio e Lucrativo.</span></h2>
             <p>Nós criamos e gerenciamos um ecossistema digital para que sua pizzaria receba pedidos diretos, construa uma marca forte e pare de depender de terceiros.</p>
             <div class="motto">Você domina o forno. A gente domina o digital.</div>
+        </div>
+    </section>
+
+    <section class="comparison-table" id="comparativo">
+        <div class="container">
+            <h2>Onde você quer <span class="highlight">posicionar</span> sua pizzaria?</h2>
+            <div class="comparison-grid">
+                <div class="comparison-column apps-col">
+                    <h3>Apps de Delivery</h3>
+                    <span class="subtitle">Plataformas tradicionais</span>
+                    <ul>
+                        <li>Comissão de <strong>até 35%</strong></li>
+                        <li><strong>Sem acesso</strong> aos dados dos clientes</li>
+                        <li><strong>Pouco controle</strong> sobre preços</li>
+                        <li><strong>Dependência total</strong> da plataforma</li>
+                    </ul>
+                </div>
+                <div class="comparison-column rocket-col">
+                    <h3><img src="https://i.postimg.cc/sgvdLPdZ/Design-sem-nome-1.png" alt="Logo Rocket for Eat" style="width: 150px;"></h3>
+                    <span class="subtitle">Solução completa especializada</span>
+                    <ul>
+                        <li><strong>0% de comissão</strong> nas vendas diretas</li>
+                        <li><strong>100% dos dados</strong> são seus</li>
+                        <li><strong>Controle total</strong> sobre preços</li>
+                        <li><strong>Independência</strong> e autonomia</li>
+                    </ul>
+                </div>
+                <div class="comparison-column agencies-col">
+                    <h3>Agências Comuns</h3>
+                    <span class="subtitle">Marketing tradicional</span>
+                    <ul>
+                        <li>Soluções <strong>genéricas</strong></li>
+                        <li>Falta de <strong>especialização</strong> em food</li>
+                        <li>Sem <strong>visão estratégica</strong> completa</li>
+                        <li>Resultados <strong>limitados</strong></li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 
