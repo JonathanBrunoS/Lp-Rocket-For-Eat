@@ -44,7 +44,7 @@
         
         section {
             text-align: center;
-            padding-top: 60px; /* Espaçamento para o header fixo */
+            padding-top: 60px;
             padding-bottom: 60px;
         }
         
@@ -112,12 +112,6 @@
             align-items: center;
         }
         
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        
         .logo-img {
             width: 180px;
         }
@@ -145,7 +139,7 @@
         .hero {
             background-color: var(--dark-gray);
             color: var(--white);
-            padding-top: 180px; /* Aumentado para dar espaço ao header */
+            padding-top: 180px;
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -316,7 +310,7 @@
             justify-content: center;
             align-items: center;
             text-decoration: none;
-            transition: transform 0.3s, opacity 0.3s;
+            transition: transform 0.3s, opacity 0.3s, visibility 0.3s;
         }
         .whatsapp-float {
             bottom: 30px;
@@ -346,9 +340,9 @@
         
         /* --- Media Queries para Responsividade --- */
         @media (max-width: 992px) {
-            .main-nav { display: none; } /* Esconde o menu de navegação em telas menores */
+            .main-nav { display: none; }
             .comparison-grid { grid-template-columns: 1fr; gap: 2rem; }
-            .rocket-col { transform: scale(1); order: -1; } /* Coloca a Rocket for Eat no topo */
+            .rocket-col { transform: scale(1); order: -1; }
         }
 
         @media (max-width: 768px) {
@@ -374,11 +368,11 @@
             </a>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="#problema">O Problema</a></li>
-                    <li><a href="#solucao">A Solução</a></li>
-                    <li><a href="#servicos">Serviços</a></li>
-                    <li><a href="#sobre">Quem Somos</a></li>
-                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#problema" data-section="problema">O Problema</a></li>
+                    <li><a href="#solucao" data-section="solucao">A Solução</a></li>
+                    <li><a href="#servicos" data-section="servicos">Serviços</a></li>
+                    <li><a href="#sobre" data-section="sobre">Quem Somos</a></li>
+                    <li><a href="#faq" data-section="faq">FAQ</a></li>
                 </ul>
             </nav>
             <a href="#cta-final" class="cta-button">Consultoria Gratuita</a>
@@ -515,7 +509,7 @@ Isso é <span class="loss" id="percentage-loss">0%</span> do seu lucro que ficou
                         </div>
                         <div class="comparison-column rocket-col">
                             <div class="column-header">
-                                <img src="https://i.postimg.cc/sgvdLPdZ/Design-sem-nome-1.png" alt="Logo Rocket for Eat" style="width: 150px;">
+                                <img src="https://i.postimg.cc/sgvdLPdZ/Design-sem-nome-1.png" alt="Logo da Rocket for Eat em destaque" style="width: 150px;">
                             </div>
                             <span class="subtitle">Solução completa especializada</span>
                             <ul>
@@ -569,4 +563,44 @@ Isso é <span class="loss" id="percentage-loss">0%</span> do seu lucro que ficou
                             <li>Criação de Anúncios que Vendem</li>
                         </ul>
                     </div>
-                    <
+                    <div class="service-card">
+                        <div class="phase">FASE 3</div>
+                        <h3>Fidelização e Retenção</h3>
+                        <p>Transformamos clientes de uma noite em fãs que voltam a comprar sempre, aumentando seu lucro.</p>
+                        <ul>
+                            <li>CRM e Automação para WhatsApp</li>
+                            <li>Estratégias de Cupons e Promoções</li>
+                            <li>Construção da sua Base de Clientes</li>
+                            <li>Análise de Métricas e Resultados</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="icp" id="icp">
+            <div class="container">
+                <h2>Este plano é perfeito <span class="highlight">para você?</span></h2>
+                <p>Nossa especialidade é ajudar um perfil específico de pizzaria a atingir seu máximo potencial. Veja se você se encaixa:</p>
+                <div class="icp-list">
+                    <h3>Atendemos pizzarias que:</h3>
+                    <ul>
+                        <li>Possuem uma operação de delivery ativa (ou com potencial) e buscam crescimento.</li>
+                        <li>Estão cansadas de pagar taxas abusivas para aplicativos e querem ter seu próprio canal.</li>
+                        <li>Valorizam a qualidade do seu produto e querem construir uma marca forte e reconhecida.</li>
+                        <li>Estão prontas para investir de forma inteligente em marketing que traz retorno de verdade.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section class="about-us" id="sobre">
+            <div class="container">
+                <div class="about-us-grid">
+                    <figure class="about-us-image">
+                        <img src="https://i.postimg.cc/5NtybNHd/Red-and-Yellow-Illustration-Food-Facebook-Cover-1.png" alt="Ilustração do time da Rocket for Eat trabalhando em foguetes e pizzas.">
+                    </figure>
+                    <div class="about-us-text">
+                        <h2>Quem está por trás do foguete que faz as pizzarias <span class="highlight">venderem mais?</span></h2>
+                        <p>A Rocket for Eat nasceu da paixão por dois mundos: pizza e resultados. Somos uma equipe pequena e obcecada, não apenas uma agência. Mergulhamos no universo das pizzarias para entender cada detalhe da sua operação.</p>
+                        <p>Acreditamos que cada pizzaria tem uma história única e merece um canal de vendas direto, sem intermediários. Não somos fornecedores, somos parceiros estratégicos sentados ao seu lado da mesa, focados em uma única
