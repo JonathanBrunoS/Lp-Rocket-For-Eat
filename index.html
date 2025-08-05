@@ -3,10 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Rocket for Eat - Marketing Digital para Pizzarias</title>
     <meta name="description" content="Sua pizzaria refém dos aplicativos? Liberte-se das taxas, construa um delivery próprio lucrativo e decole suas vendas com nossa consultoria gratuita.">
     <meta name="keywords" content="marketing para pizzaria, delivery próprio, aumentar vendas pizzaria, gestão de tráfego para pizzaria, marketing digital, iFood, delivery, Rocket for Eat">
     <meta name="author" content="Rocket for Eat">
+
+    <meta name="google-site-verification" content="t57Bp_3xLHvUniI1TQFw1uDoletxjmBdAPdss3l2v_o" />
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lp-rocket-for-eat.vercel.app/">
+    <meta property="og:title" content="Rocket for Eat - Marketing Digital Especialista em Pizzarias">
+    <meta property="og:description" content="Sua pizzaria refém dos aplicativos? Liberte-se das taxas e decole suas vendas com nossa consultoria gratuita.">
+    <meta property="og:image" content="https://i.postimg.cc/5NtybNHd/Red-and-Yellow-Illustration-Food-Facebook-Cover-1.png">
+    
     <link rel="icon" href="https://i.postimg.cc/sgvdLPdZ/Design-sem-nome-1.png" type="image/png">
 
     <style>
@@ -186,7 +196,7 @@
         
         /* --- Solution Section --- */
         section.solution {
-            background-color: var(--dark-gray);
+            background-color: var(--dark-gray) !important;
             color: var(--white);
         }
         
@@ -519,12 +529,12 @@
                     <p>Defina o preço ideal para suas pizzas e garanta sua margem de lucro.</p>
                     <div class="calculator-form">
                         <div class="input-group">
-                            <label for="custoIngredientes">Custo Total dos Ingredientes por Pizza (R$):</label>
-                            <input type="number" id="custoIngredientes" placeholder="Ex: 15.00" step="0.01">
+                            <label for="custoIngredientesPizza">Custo Total dos Ingredientes por Pizza (R$):</label>
+                            <input type="number" id="custoIngredientesPizza" placeholder="Ex: 15.00" step="0.01">
                         </div>
                         <div class="input-group">
-                            <label for="outrosCustos">Outros Custos (Embalagem, Mão de Obra, etc.) por Pizza (R$):</label>
-                            <input type="number" id="outrosCustos" placeholder="Ex: 5.50" step="0.01">
+                            <label for="outrosCustosPizza">Outros Custos (Embalagem, Mão de Obra, etc.) por Pizza (R$):</label>
+                            <input type="number" id="outrosCustosPizza" placeholder="Ex: 5.50" step="0.01">
                         </div>
                         <div class="input-group">
                             <label for="margemDesejada">Margem de Lucro Desejada (%):</label>
@@ -760,8 +770,8 @@
 
             // --- Lógica do Simulador de Preços ---
             document.getElementById('calcularPreco').addEventListener('click', () => {
-                const custoIngredientes = parseFloat(document.getElementById('custoIngredientes').value);
-                const outrosCustos = parseFloat(document.getElementById('outrosCustos').value);
+                const custoIngredientes = parseFloat(document.getElementById('custoIngredientesPizza').value);
+                const outrosCustos = parseFloat(document.getElementById('outrosCustosPizza').value);
                 const margemDesejada = parseFloat(document.getElementById('margemDesejada').value);
                 const resultsEl = document.getElementById('preco-results');
 
