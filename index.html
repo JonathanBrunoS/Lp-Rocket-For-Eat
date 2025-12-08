@@ -4,29 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Rocket for Eat - Gestão de Alta Performance para Apps de Delivery</title>
-    <meta name="description" content="Aumente o lucro da sua pizzaria no iFood, 99Food e Keeta. Ajustamos seu cardápio, preços e promoções para você vender mais sem perder dinheiro.">
+    <title>Rocket for Eat - Gestão Completa de Delivery e Marketplaces</title>
+    <meta name="description" content="Nós cuidamos de toda a gestão dos aplicativos (iFood, 99, Keeta) para que você se preocupe apenas em cozinhar. Aumente suas vendas com gestão profissional.">
     
     <link rel="icon" href="https://i.postimg.cc/sgvdLPdZ/Design-sem-nome-1.png" type="image/png">
 
     <style>
-        /* --- Mantendo a identidade visual que você aprovou --- */
-        @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap");
+        /* --- ESTILOS GLOBAIS --- */
+        @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap");
 
         :root {
             --yellow: #FFC900;
-            --dark-gray: #212529;
+            --dark-gray: #1a1a1a; /* Cinza um pouco mais fechado para elegância */
             --white: #FFFFFF;
-            --light-gray: #f8f9fa;
+            --light-bg: #f4f4f4;
             --green: #28a745;
-            --red: #dc3545;
+            --red: #e63946;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            scroll-behavior: smooth;
         }
 
         body {
@@ -34,307 +33,350 @@
             color: var(--dark-gray);
             line-height: 1.6;
             background-color: var(--white);
+            overflow-x: hidden;
         }
 
         .container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 5rem 2rem;
+            padding: 0 1.5rem;
         }
         
         section {
-            text-align: center;
-            padding: 60px 0;
-        }
-        
-        section:nth-of-type(even) {
-            background-color: var(--light-gray);
+            padding: 80px 0;
         }
 
-        h1, h2, h3 {
-            font-weight: 700;
-            margin-bottom: 1.5rem;
+        h1, h2, h3, h4 {
+            font-weight: 800;
+            line-height: 1.2;
         }
 
         h2 {
             font-size: 2.5rem;
-            font-weight: 900;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: -1px;
         }
         
         h2 .highlight {
             color: var(--yellow);
-            background-color: var(--dark-gray); /* Destaque sutil */
-            padding: 0 5px;
-        }
-
-        /* Ajuste para destaque em fundo escuro */
-        .solution h2 .highlight {
-             background-color: transparent;
-             color: var(--yellow);
+            display: inline-block;
         }
 
         p {
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+            margin-bottom: 1.5rem;
+            font-size: 1.15rem;
+            color: #444;
+            max-width: 800px;
         }
 
+        /* --- BOTÕES (CTA) --- */
         .cta-button {
             display: inline-block;
             background-color: var(--yellow);
             color: var(--dark-gray);
-            padding: 1rem 2rem;
+            padding: 1.2rem 2.5rem;
             font-size: 1.1rem;
             font-weight: 900;
             text-decoration: none;
-            border-radius: 5px;
-            transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(255, 201, 0, 0.3);
             text-transform: uppercase;
+            border: 2px solid var(--yellow);
         }
 
         .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-            background-color: #e6b800;
+            transform: translateY(-5px);
+            background-color: transparent;
+            color: var(--dark-gray); 
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        }
+
+        .cta-button.inverse {
+            background-color: transparent;
+            color: var(--yellow);
+            border: 2px solid var(--yellow);
+            box-shadow: none;
         }
         
-        /* --- Header --- */
+        .cta-button.inverse:hover {
+            background-color: var(--yellow);
+            color: var(--dark-gray);
+        }
+        
+        /* --- HEADER --- */
         .main-header {
-            padding: 0.5rem 2rem;
-            position: fixed;
-            top: 0;
+            padding: 1rem 0;
+            position: absolute; /* Header transparente sobre o hero */
             width: 100%;
-            background-color: var(--white);
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         
         .main-header .container {
-            padding: 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
         
         .logo-img {
-            width: 150px;
-            vertical-align: middle;
+            width: 140px;
         }
-        
-        .main-nav ul {
-            list-style: none;
-            display: flex;
-            gap: 1.5rem;
-        }
-        
-        .main-nav a {
-            text-decoration: none;
-            color: var(--dark-gray);
-            font-weight: 700;
-            padding-bottom: 5px;
-            font-size: 0.9rem;
-            border-bottom: 2px solid transparent;
-            transition: border-color 0.3s;
-        }
-        
-        .main-nav a:hover {
-            border-color: var(--yellow);
-        }
-        
-        /* --- Hero Section --- */
+
+        /* --- HERO SECTION (Foco na Cozinha) --- */
         .hero {
-            background-color: var(--dark-gray);
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1556910103-1c02745a30bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80'); /* Imagem de cozinha industrial escura */
+            background-size: cover;
+            background-position: center;
             color: var(--white);
-            min-height: 90vh; /* Ajustei levemente a altura */
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding-top: 100px; /* Compensar header fixo */
+            text-align: center;
         }
         
         .hero h1 {
-            font-size: 3rem;
-            font-weight: 900;
-            line-height: 1.2;
-        }
-        
-        .hero h1 .highlight {
-            color: var(--yellow);
-        }
-        
-        .hero p {
-            font-size: 1.4rem;
-            opacity: 0.9;
-            margin-bottom: 2.5rem;
-        }
-        
-        /* --- Problem Section --- */
-        .problem-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .problem-card {
-            background-color: var(--white);
-            padding: 2.5rem 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-            border-bottom: 5px solid var(--yellow); /* Detalhe visual */
-        }
-        
-        .problem-card .icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
         }
 
-        .problem-card h3 {
+        .hero p {
+            color: #ddd;
             font-size: 1.4rem;
+            margin: 0 auto 2.5rem auto;
         }
-        
-        /* --- Solution Section --- */
-        section.solution {
-            background-color: var(--dark-gray) !important;
-            color: var(--white);
+
+        /* --- SECTION: O MUNDO MUDOU (Geração Z) --- */
+        .behavior-shift {
+            background-color: var(--white);
+            text-align: left;
         }
-        
-        /* --- Services Section (Novo Design de Lista) --- */
-        .services-grid {
+
+        .split-content {
             display: grid;
-            grid-template-columns: repeat(2, 1fr); /* 2 colunas no desktop */
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .shift-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--dark-gray);
+        }
+
+        .highlight-box {
+            background: var(--light-bg);
+            padding: 2rem;
+            border-left: 5px solid var(--yellow);
+            margin-top: 2rem;
+            font-weight: 600;
+        }
+
+        /* --- SECTION: A DOR DA BUROCRACIA --- */
+        .pain-bureaucracy {
+            background-color: var(--dark-gray);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .pain-bureaucracy p {
+            color: #bbb;
+            margin: 0 auto;
+        }
+
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
             margin-top: 3rem;
             text-align: left;
         }
 
-        .service-item {
-            background: var(--white);
+        .pain-item {
+            background: rgba(255,255,255,0.05);
             padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            display: flex;
-            align-items: flex-start;
-            gap: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.1);
         }
 
-        .service-icon {
-            background-color: var(--yellow);
-            color: var(--dark-gray);
-            min-width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            font-weight: bold;
+        .pain-item h4 {
+            color: var(--yellow);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
         }
 
-        .service-content h3 {
-            margin-bottom: 0.5rem;
-            color: var(--dark-gray);
-        }
-        
-        .service-content p {
+        .pain-item p {
             font-size: 1rem;
-            margin: 0;
-            max-width: 100%;
+            color: #ccc;
+            margin-bottom: 0;
         }
 
-        /* --- Comparison Table Section (Reformulada) --- */
-        .comparison-container {
-            max-width: 1000px;
-            margin: 3rem auto 0;
-            background: var(--white);
+        /* --- SECTION: CARDÁPIO VISUAL (Comparativo) --- */
+        .menu-visual {
+            background-color: var(--light-bg);
+            text-align: center;
+        }
+
+        .comparison-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .menu-mockup {
+            background: white;
             border-radius: 15px;
-            overflow: hidden;
+            padding: 20px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .comp-header {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            background: var(--dark-gray);
-            color: white;
-            font-weight: 900;
-            font-size: 1.2rem;
-            padding: 1.5rem;
-        }
-
-        .comp-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            border-bottom: 1px solid #eee;
-        }
-
-        .comp-col {
-            padding: 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .amador {
-            background-color: #fff5f5;
-            color: #555;
-            flex-direction: column;
-        }
-
-        .rocket {
-            background-color: #f0fff4;
-            color: var(--dark-gray);
-            font-weight: 700;
-            flex-direction: column;
-            border-left: 2px solid var(--green);
+            text-align: left;
             position: relative;
         }
 
-        .rocket::after {
-            content: "✔";
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            color: var(--green);
-            opacity: 0.3;
-            font-size: 1.5rem;
+        .menu-mockup h4 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
         }
 
-        .x-mark { color: var(--red); font-size: 1.5rem; margin-bottom: 5px; }
-        .check-mark { color: var(--green); font-size: 1.5rem; margin-bottom: 5px; }
+        .bad-menu h4 { color: var(--red); }
+        .good-menu h4 { color: var(--green); }
+
+        /* Simulação do Item Ruim */
+        .item-bad {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 10px;
+            background: #f9f9f9;
+        }
+        .item-bad .title { font-weight: bold; color: #777; }
+        .item-bad .no-desc { font-size: 0.8rem; color: #999; font-style: italic; }
+
+        /* Simulação do Item Bom */
+        .item-good {
+            border: 1px solid #eee;
+            padding: 0;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        .item-good .img-placeholder {
+            width: 100px;
+            background: #eee url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80') center/cover;
+        }
+        .item-good .content { padding: 15px; flex: 1; }
+        .item-good .title { font-weight: 800; color: var(--dark-gray); font-size: 1.1rem; }
+        .item-good .desc { font-size: 0.8rem; color: #666; margin: 5px 0; line-height: 1.4; }
+        .item-good .price { color: var(--green); font-weight: 800; }
+
+        .analysis-text {
+            margin-top: 2rem;
+            font-weight: 600;
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        /* --- SECTION: O QUE FAZEMOS (Lista Profissional) --- */
+        .services-list {
+            background-color: var(--white);
+        }
+
+        .services-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .service-box {
+            padding: 2rem;
+            border-radius: 10px;
+            background: white;
+            border: 1px solid #eee;
+            transition: transform 0.3s;
+            text-align: left;
+        }
+
+        .service-box:hover {
+            transform: translateY(-5px);
+            border-color: var(--yellow);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .service-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #f0f0f0;
+            line-height: 1;
+            margin-bottom: -20px;
+            position: relative;
+            z-index: 0;
+        }
+
+        .service-box h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-box p {
+            font-size: 1rem;
+            margin-bottom: 0;
+            color: #666;
+        }
+
+        /* --- SECTION: FOOTER & CTA --- */
+        .final-cta {
+            background-color: var(--yellow);
+            color: var(--dark-gray);
+            text-align: center;
+        }
         
-        /* --- About & FAQ --- */
-        .about-us-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; text-align: left; margin-top: 3rem; }
-        .about-us-image img { width: 100%; border-radius: 8px; }
-        
-        .faq-item { text-align: left; max-width: 800px; margin: 0 auto 1.5rem auto; border: 1px solid #ddd; border-radius: 5px; background: white; }
-        .faq-item summary { font-weight: 700; font-size: 1.1rem; padding: 1.5rem; cursor: pointer; outline: none; }
-        .faq-item div { padding: 0 1.5rem 1.5rem 1.5rem; }
+        .final-cta h2 { color: var(--dark-gray); }
+        .final-cta p { color: var(--dark-gray); opacity: 0.9; }
 
-        /* --- Floating Buttons --- */
-        .whatsapp-float, .back-to-top { position: fixed; width: 60px; height: 60px; border-radius: 50px; box-shadow: 2px 2px 6px rgba(0,0,0,0.3); z-index: 100; display: flex; justify-content: center; align-items: center; transition: transform 0.3s; }
-        .whatsapp-float { bottom: 30px; right: 30px; background-color: #25D366; }
-        .back-to-top { bottom: 100px; right: 30px; background-color: var(--yellow); opacity: 0; visibility: hidden; }
-        .back-to-top.visible { opacity: 1; visibility: visible; }
-        .whatsapp-float:hover, .back-to-top:hover { transform: scale(1.1); }
+        .final-cta .cta-button {
+            background-color: var(--dark-gray);
+            color: var(--white);
+            border-color: var(--dark-gray);
+        }
 
-        /* --- Footer --- */
-        footer { background-color: var(--dark-gray); color: var(--white); padding: 4rem 2rem 2rem 2rem; text-align: center; }
-        .social-links svg { width: 30px; height: 30px; fill: var(--white); margin: 0 10px; }
+        .final-cta .cta-button:hover {
+            background-color: transparent;
+            color: var(--dark-gray);
+        }
 
-        /* --- Media Queries --- */
+        footer {
+            background-color: #111;
+            color: #777;
+            padding: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* --- FLUTUANTES --- */
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background-color: #25D366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 2px 2px 10px rgba(0,0,0,0.3); z-index: 1000; transition: transform 0.3s; }
+        .whatsapp-float:hover { transform: scale(1.1); }
+
+        /* --- RESPONSIVIDADE --- */
         @media (max-width: 768px) {
-            .main-nav { display: none; }
-            .hero h1 { font-size: 2.2rem; }
-            .hero p { font-size: 1.1rem; }
-            .services-grid { grid-template-columns: 1fr; }
-            .comparison-container { font-size: 0.9rem; }
-            .about-us-grid { grid-template-columns: 1fr; }
-            .comp-header { font-size: 1rem; }
+            h1 { font-size: 2.2rem; }
+            h2 { font-size: 1.8rem; }
+            .split-content, .pain-grid, .comparison-wrapper { grid-template-columns: 1fr; }
+            .hero { padding-top: 80px; }
+            .main-header { position: relative; background: var(--dark-gray); }
+            .service-box { text-align: center; }
         }
     </style>
 </head>
@@ -342,226 +384,176 @@
 
     <header class="main-header">
         <div class="container">
-            <a href="#hero" aria-label="Rocket for Eat">
-                <img src="https://i.postimg.cc/sgvdLPdZ/Design-sem-nome-1.png" alt="Logo Rocket for Eat" class="logo-img">
-            </a>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="#problema">O Problema</a></li>
-                    <li><a href="#servicos">O que Fazemos</a></li>
-                    <li><a href="#comparativo">Diferenciais</a></li>
-                    <li><a href="#sobre">Quem Somos</a></li>
-                </ul>
-            </nav>
-            <a href="#cta-final" class="cta-button">Melhorar Meu Delivery</a>
-        </div>
+            <img src="https://i.postimg.cc/sgvdLPdZ/Design-sem-nome-1.png" alt="Logo Rocket for Eat" class="logo-img">
+            </div>
     </header>
 
     <main>
-        <section class="hero" id="hero">
+        <section class="hero">
             <div class="container">
-                <h1>Transforme o iFood, 99 e Keeta na <span class="highlight">Máquina de Lucro</span> da sua Pizzaria.</h1>
-                <p>Especialistas em configurar, organizar e otimizar sua loja nos aplicativos para você parar de perder dinheiro com taxas e erros de cadastro.</p>
-                <a href="#cta-final" class="cta-button">Quero Vender com Lucro</a>
+                <h1>Sua única preocupação deve ser a <span style="color: var(--yellow);">Cozinha</span>.<br>O resto? Deixa com a Rocket.</h1>
+                <p>Nós assumimos a gestão completa dos seus aplicativos de delivery. Configuramos, otimizamos e vendemos, enquanto você faz o que ama: Cozinhar.</p>
+                <a href="https://wa.me/5511959228663?text=Ol%C3%A1,%20gostaria%20de%20entender%20como%20a%20Rocket%20pode%20gerenciar%20meu%20delivery." class="cta-button">QUERO DELEGAR A GESTÃO</a>
             </div>
         </section>
 
-        <section id="problema">
+        <section class="behavior-shift">
             <div class="container">
-                <h2>Estar nos aplicativos não é só <span class="highlight">"abrir a loja"</span></h2>
-                <p>Muitos donos de pizzaria sofrem todos os dias com a "Venda Burra": vendem muito, trabalham dobrado, mas não veem a cor do dinheiro.</p>
-                <div class="problem-grid">
-                    <div class="problem-card">
-                        <div class="icon">📉</div>
-                        <h3>Conta que não fecha</h3>
-                        <p>Você vende bem, mas quando desconta as taxas do app, os insumos e a entrega, percebe que lucrou quase nada.</p>
+                <div class="split-content">
+                    <div class="shift-text">
+                        <h2>O cliente mudou. <span class="highlight">Você acompanhou?</span></h2>
+                        <p>Antigamente, bastava um panfleto e um telefone fixo. Hoje, quem manda é a <strong>Geração Z</strong>.</p>
+                        <p>Esse novo cliente é visual, imediato e exigente. Se ele entra no seu aplicativo e vê um cardápio sem fotos, sem descrição e confuso, ele não liga para perguntar. <strong>Ele fecha e pede no concorrente.</strong></p>
+                        <div class="highlight-box">
+                            "Comer primeiro com os olhos" nunca foi tão real. Se sua loja digital não for impecável, seu prato pode ser o melhor do mundo, mas ninguém vai provar.
+                        </div>
                     </div>
-                    <div class="problem-card">
-                        <div class="icon">🏷️</div>
-                        <h3>Medo de Promoções</h3>
-                        <p>Você entra nos cupons do iFood sem fazer conta e acaba pagando para trabalhar, ou fica de fora e não vende nada.</p>
-                    </div>
-                    <div class="problem-card">
-                        <div class="icon">🍽️</div>
-                        <h3>Cardápio Bagunçado</h3>
-                        <p>Fotos ruins, categorias confusas e sem estratégia. O cliente entra, olha e vai pedir no concorrente.</p>
+                    <div class="shift-image">
+                        <div style="background: #eee; height: 400px; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #aaa; text-align: center; padding: 20px;">
+                            (Imagine aqui a imagem de uma pessoa jovem escolhendo comida no celular com expressão de dúvida ou desejo)
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="solution" id="servicos">
+        <section class="pain-bureaucracy">
             <div class="container">
-                <h2>Nós <span class="highlight">arrumamos a casa</span> para você</h2>
-                <p>Nós não somos "gurús". Nós entramos na sua conta, apertamos os botões certos e deixamos sua pizzaria profissional.</p>
+                <h2>Você é cozinheiro/empreendedor ou <span class="highlight">Profissional de TI?</span></h2>
+                <p>Sabemos que ativar e manter uma loja nos marketplaces é um inferno burocrático.</p>
                 
-                <div class="services-grid">
-                    <div class="service-item">
-                        <div class="service-icon">🍕</div>
-                        <div class="service-content">
-                            <h3>Cardápio que Vende Sozinho</h3>
-                            <p>Organizamos seus produtos, fotos e descrições para dar fome no cliente. Usamos técnicas para ele pedir a borda recheada e a bebida (aumentando seu ticket).</p>
-                        </div>
+                <div class="pain-grid">
+                    <div class="pain-item">
+                        <h4>01. O Cadastro Infinito</h4>
+                        <p>CNPJ, conta bancária, contrato social, configuração de repasse... Um erro aqui trava sua loja por semanas.</p>
                     </div>
-                    <div class="service-item">
-                        <div class="service-icon">💰</div>
-                        <div class="service-content">
-                            <h3>Preço que dá Lucro</h3>
-                            <p>Calculamos exatamente quanto você deve cobrar em cada pizza dentro do app para cobrir as taxas e garantir que sobre dinheiro no seu bolso.</p>
-                        </div>
+                    <div class="pain-item">
+                        <h4>02. A Engenharia do Cardápio</h4>
+                        <p>Criar categorias, complementos obrigatórios, adicionais pagos. Montar isso errado faz você perder ticket médio em todo pedido.</p>
                     </div>
-                    <div class="service-item">
-                        <div class="service-icon">⚙️</div>
-                        <div class="service-content">
-                            <h3>Ativação e Configuração</h3>
-                            <p>Travado na burocracia? Nós configuramos sua loja do zero, ajustamos áreas de entrega e horários para você não ter dor de cabeça.</p>
-                        </div>
-                    </div>
-                    <div class="service-item">
-                        <div class="service-icon">🚀</div>
-                        <div class="service-content">
-                            <h3>Gestão de Promoções</h3>
-                            <p>Analisamos quais campanhas do iFood/99 valem a pena. Entramos apenas nas que trazem lucro e novos clientes para sua base.</p>
-                        </div>
+                    <div class="pain-item">
+                        <h4>03. A Guerra das Promoções</h4>
+                        <p>O app te empurra promoções o tempo todo. Se você não sabe calcular a margem, você paga para trabalhar sem perceber.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="comparativo">
+        <section class="menu-visual">
             <div class="container">
-                <h2>Veja a diferença na <span class="highlight">Prática</span></h2>
-                <p>O que acontece quando você deixa de ser amador e vira profissional nos apps.</p>
+                <h2>A diferença entre <span class="highlight">Ser Ignorado</span> e <span class="highlight">Vender Muito</span></h2>
+                <p>Veja como a estrutura do seu cardápio define o seu jogo.</p>
 
-                <div class="comparison-container">
-                    <div class="comp-header">
-                        <div>Pizzaria Amadora</div>
-                        <div style="color: var(--yellow);">Cliente Rocket</div>
-                    </div>
-                    
-                    <div class="comp-row">
-                        <div class="comp-col amador">
-                            <span class="x-mark">×</span>
-                            <small>Preço feito "de cabeça"</small>
+                <div class="comparison-wrapper">
+                    <div class="menu-mockup bad-menu">
+                        <h4>Cardápio Amador</h4>
+                        
+                        <div class="item-bad">
+                            <div class="title">X-Burger</div>
+                            <div class="no-desc">Sem descrição...</div>
+                            <div style="margin-top: 5px;">R$ 25,00</div>
                         </div>
-                        <div class="comp-col rocket">
-                            <span class="check-mark">✔</span>
-                            <small>Preço calculado para <strong>LUCRO REAL</strong></small>
+                        <div class="item-bad">
+                            <div class="title">Pizza Calabresa</div>
+                            <div class="no-desc">Mussarela e calabresa</div>
+                            <div style="margin-top: 5px;">R$ 50,00</div>
                         </div>
-                    </div>
-
-                    <div class="comp-row">
-                        <div class="comp-col amador">
-                            <span class="x-mark">×</span>
-                            <small>Fotos feias ou sem foto</small>
-                        </div>
-                        <div class="comp-col rocket">
-                            <span class="check-mark">✔</span>
-                            <small>Cardápio visual e <strong>IRRESISTÍVEL</strong></small>
-                        </div>
+                        
+                        <p style="font-size: 0.9rem; color: var(--red); margin-top: 20px;">
+                            <strong>Resultado:</strong> O cliente não sente desejo. Acha caro pelo que vê. Não adiciona bebida nem sobremesa. Ticket baixo.
+                        </p>
                     </div>
 
-                    <div class="comp-row">
-                        <div class="comp-col amador">
-                            <span class="x-mark">×</span>
-                            <small>Entra em qualquer cupom e perde dinheiro</small>
+                    <div class="menu-mockup good-menu">
+                        <h4>Cardápio Rocket</h4>
+                        
+                        <div class="item-good">
+                            <div class="img-placeholder"></div>
+                            <div class="content">
+                                <div class="title">X-Burger Smash Duplo 🍔</div>
+                                <div class="desc">Dois suculentos hambúrgueres de 120g, queijo cheddar derretido, maionese da casa no pão brioche selado na manteiga.</div>
+                                <div class="price">R$ 32,90</div>
+                            </div>
                         </div>
-                        <div class="comp-col rocket">
-                            <span class="check-mark">✔</span>
-                            <small>Só entra em campanha <strong>ESTRATÉGICA</strong></small>
-                        </div>
-                    </div>
 
-                    <div class="comp-row">
-                        <div class="comp-col amador">
-                            <span class="x-mark">×</span>
-                            <small>Sem visibilidade no App</small>
+                        <div class="item-good">
+                            <div class="img-placeholder" style="background-image: url('https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80')"></div>
+                            <div class="content">
+                                <div class="title">Pizza Calabresa Premium</div>
+                                <div class="desc">Massa de longa fermentação, molho rústico, calabresa artesanal defumada e cebola roxa caramelizada.</div>
+                                <div class="price">R$ 62,90</div>
+                            </div>
                         </div>
-                        <div class="comp-col rocket">
-                            <span class="check-mark">✔</span>
-                            <small>Loja otimizada para o <strong>TOPO</strong></small>
-                        </div>
+
+                        <p style="font-size: 0.9rem; color: var(--green); margin-top: 20px;">
+                            <strong>Resultado:</strong> Descrição sensorial que dá fome. Fotos reais. O cliente percebe valor e paga mais caro feliz.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="analysis-text">
+                    "Na Rocket, nós não apenas digitamos o cardápio. Nós aplicamos Neuromarketing para fazer o cliente salivar e comprar."
+                </div>
+            </div>
+        </section>
+
+        <section class="services-list">
+            <div class="container">
+                <h2>Gestão Completa de <span class="highlight">Performance</span></h2>
+                <p>Não atendemos apenas pizzarias. Se você tem um delivery, nós somos o seu braço direito digital.</p>
+                
+                <div class="services-wrapper">
+                    <div class="service-box">
+                        <div class="service-number">01</div>
+                        <h3>Gestão Multi-Plataforma</h3>
+                        <p>iFood, 99Food, Keeta, Rappi. Nós gerenciamos sua presença em todos os marketplaces. Centralizamos a estratégia para você dominar a região.</p>
+                    </div>
+                    <div class="service-box">
+                        <div class="service-number">02</div>
+                        <h3>Ativação "Chave na Mão"</h3>
+                        <p>Travado na documentação? Nós resolvemos a burocracia de abertura, cadastros bancários e configurações de área de entrega.</p>
+                    </div>
+                    <div class="service-box">
+                        <div class="service-number">03</div>
+                        <h3>Engenharia de Cardápio</h3>
+                        <p>Estruturação estratégica de itens, grupos de complementos e descrições persuasivas para aumentar o ticket médio.</p>
+                    </div>
+                    <div class="service-box">
+                        <div class="service-number">04</div>
+                        <h3>Precificação Inteligente</h3>
+                        <p>Calculamos seus custos e taxas das plataformas para definir o preço que garante lucro real, não apenas volume de vendas.</p>
+                    </div>
+                    <div class="service-box">
+                        <div class="service-number">05</div>
+                        <h3>Análise de Dados</h3>
+                        <p>Monitoramos sua performance semanalmente. Onde estamos errando? Qual produto vende mais? Ajustamos a rota para crescer sempre.</p>
+                    </div>
+                    <div class="service-box">
+                        <div class="service-number">06</div>
+                        <h3>Gestão de Loja Fechada</h3>
+                        <p>Configuramos feriados, horários de pico e pausas programadas para sua loja nunca ser penalizada pelos algoritmos.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="about-us" id="sobre">
+        <section class="final-cta" id="contato">
             <div class="container">
-                <div class="about-us-grid">
-                    <div class="about-us-image">
-                        <img src="https://i.postimg.cc/5NtybNHd/Red-and-Yellow-Illustration-Food-Facebook-Cover-1.png" alt="Time da Rocket for Eat">
-                    </div>
-                    <div class="about-us-text">
-                        <h2>Especialistas em <span class="highlight">Marketplace de Comida</span></h2>
-                        <p>A Rocket for Eat nasceu vendo a dor do dono de delivery. Percebemos que 90% das pizzarias estão nos aplicativos, mas estão "jogando dinheiro fora" por falta de conhecimento técnico.</p>
-                        <p>Nós não somos uma agência que faz post bonitinho para Instagram. Nós somos gestores de performance. Nosso trabalho é mexer nas engrenagens da sua conta no iFood, 99Food e Keeta para fazer sua operação dar lucro.</p>
-                        <a href="#cta-final" class="cta-button">Falar com um Especialista</a>
-                    </div>
-                </div>
+                <h2>Pronto para focar apenas na sua comida?</h2>
+                <p>Deixe a dor de cabeça da tecnologia e gestão com quem vive isso 24 horas por dia.</p>
+                <br>
+                <a href="https://wa.me/5511959228663?text=Ol%C3%A1!%20Tenho%20um%20delivery%20e%20quero%20conhecer%20a%20gest%C3%A3o%20da%20Rocket." class="cta-button">FALAR COM ESPECIALISTA AGORA</a>
             </div>
         </section>
-
-        <section class="faq" id="faq">
-            <div class="container">
-                <h2>Dúvidas <span class="highlight">Comuns</span></h2>
-                <details class="faq-item">
-                    <summary>Vocês trabalham com quais aplicativos?</summary>
-                    <div><p>Somos especialistas nos principais do mercado: iFood, 99Food e Keeta. Conhecemos as regras e o funcionamento de cada um.</p></div>
-                </details>
-                <details class="faq-item">
-                    <summary>Eu preciso dar a senha do meu iFood?</summary>
-                    <div><p>Sim. Para fazer a mágica acontecer (configurar cardápio, promoções, área de entrega), precisamos de acesso administrativo como parceiros na sua conta.</p></div>
-                </details>
-                <details class="faq-item">
-                    <summary>Vocês tiram fotos das pizzas?</summary>
-                    <div><p>Nós orientamos como as fotos devem ser e, dependendo do pacote contratado, podemos fazer a edição para deixá-las profissionais.</p></div>
-                </details>
-                <details class="faq-item">
-                    <summary>Quanto tempo demora para arrumar minha loja?</summary>
-                    <div><p>A configuração inicial e reestruturação do cardápio geralmente leva de 5 a 10 dias úteis, dependendo do tamanho do seu mix de produtos.</p></div>
-                </details>
-            </div>
-        </section>
-
-        <section class="cta-final" id="cta-final">
-            <div class="container">
-                <h2>Pare de perder dinheiro nos Apps <span class="highlight">Hoje Mesmo</span></h2>
-                <p>Faça uma análise gratuita do seu cardápio atual e descubra onde você está deixando dinheiro na mesa.</p>
-                <a href="https://wa.me/5511959228663?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Rocket%20e%20quero%20vender%20com%20lucro%20nos%20apps." target="_blank" class="cta-button">QUERO ANÁLISE DO MEU CARDÁPIO</a>
-            </div>
-        </section>
-
-        <a href="https://wa.me/5511959228663?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Rocket%20e%20preciso%20de%20ajuda%20com%20meu%20delivery." class="whatsapp-float" target="_blank" aria-label="Fale conosco pelo WhatsApp">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="width: 28px; height: 28px; fill: white;"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zM223.9 439.6c-33.8 0-66.3-8.8-94.3-25.1l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
-        </a>
-
-        <a href="#hero" class="back-to-top" aria-label="Voltar ao topo">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" style="width: 24px; height: 24px; fill: var(--dark-gray);"><path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"/></svg>
-        </a>
-
     </main>
 
     <footer>
-        <div class="container">
-            <img src="https://i.postimg.cc/sgvdLPdZ/Design-sem-nome-1.png" alt="Logo Rocket for Eat" class="logo-img" style="width: 200px; margin-bottom: 2rem;">
-            <p>Rocket for Eat - Especialistas em iFood, 99Food e Keeta</p>
-            <p>&copy; 2025 - Todos os direitos reservados.</p>
-        </div>
+        <p>Rocket for Eat &copy; 2025 - Gestão Especializada em Delivery.</p>
     </footer>
 
-    <script>
-        // Script simples para menu e botão voltar ao topo
-        document.addEventListener('DOMContentLoaded', function() {
-            const backToTopButton = document.querySelector('.back-to-top');
-            
-            function onScroll() {
-                if (backToTopButton) {
-                    backToTopButton.classList.toggle('visible', window.pageYOffset > 300);
-                }
-            }
-            window.addEventListener('scroll', onScroll);
-        });
-    </script>
+    <a href="https://wa.me/5511959228663?text=Ol%C3%A1!%20Quero%20falar%20com%20a%20equipe%20da%20Rocket." class="whatsapp-float" aria-label="Fale conosco no WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zM223.9 439.6c-33.8 0-66.3-8.8-94.3-25.1l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+    </a>
+
 </body>
 </html>
