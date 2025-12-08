@@ -4,23 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Rocket for Eat - Marketing Digital para Pizzarias</title>
-    <meta name="description" content="Sua pizzaria refém dos aplicativos? Liberte-se das taxas, construa um delivery próprio lucrativo e decole suas vendas com nossa consultoria gratuita.">
-    <meta name="keywords" content="marketing para pizzaria, delivery próprio, aumentar vendas pizzaria, gestão de tráfego para pizzaria, marketing digital, iFood, delivery, Rocket for Eat">
-    <meta name="author" content="Rocket for Eat">
-
-    <meta name="google-site-verification" content="t57Bp_3xLHvUniI1TQFw1uDoletxjmBdAPdss3l2v_o" />
-
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://lp-rocket-for-eat.vercel.app/">
-    <meta property="og:title" content="Rocket for Eat - Marketing Digital Especialista em Pizzarias">
-    <meta property="og:description" content="Sua pizzaria refém dos aplicativos? Liberte-se das taxas e decole suas vendas com nossa consultoria gratuita.">
-    <meta property="og:image" content="https://i.postimg.cc/5NtybNHd/Red-and-Yellow-Illustration-Food-Facebook-Cover-1.png">
+    <title>Rocket for Eat - Gestão de Alta Performance para Apps de Delivery</title>
+    <meta name="description" content="Aumente o lucro da sua pizzaria no iFood, 99Food e Keeta. Ajustamos seu cardápio, preços e promoções para você vender mais sem perder dinheiro.">
     
     <link rel="icon" href="https://i.postimg.cc/sgvdLPdZ/Design-sem-nome-1.png" type="image/png">
 
     <style>
-        /* --- Reset e Estilos Globais --- */
+        /* --- Mantendo a identidade visual que você aprovou --- */
         @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap");
 
         :root {
@@ -73,6 +63,14 @@
         
         h2 .highlight {
             color: var(--yellow);
+            background-color: var(--dark-gray); /* Destaque sutil */
+            padding: 0 5px;
+        }
+
+        /* Ajuste para destaque em fundo escuro */
+        .solution h2 .highlight {
+             background-color: transparent;
+             color: var(--yellow);
         }
 
         p {
@@ -87,9 +85,9 @@
             display: inline-block;
             background-color: var(--yellow);
             color: var(--dark-gray);
-            padding: 0.8rem 1.5rem;
-            font-size: 1rem;
-            font-weight: 700;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 900;
             text-decoration: none;
             border-radius: 5px;
             transition: transform 0.3s, box-shadow 0.3s;
@@ -100,6 +98,7 @@
         .cta-button:hover {
             transform: translateY(-3px);
             box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+            background-color: #e6b800;
         }
         
         /* --- Header --- */
@@ -141,7 +140,7 @@
             transition: border-color 0.3s;
         }
         
-        .main-nav a:hover, .main-nav a.active {
+        .main-nav a:hover {
             border-color: var(--yellow);
         }
         
@@ -149,15 +148,17 @@
         .hero {
             background-color: var(--dark-gray);
             color: var(--white);
-            min-height: 100vh;
+            min-height: 90vh; /* Ajustei levemente a altura */
             display: flex;
             align-items: center;
             justify-content: center;
+            padding-top: 100px; /* Compensar header fixo */
         }
         
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 3rem;
             font-weight: 900;
+            line-height: 1.2;
         }
         
         .hero h1 .highlight {
@@ -165,7 +166,7 @@
         }
         
         .hero p {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             opacity: 0.9;
             margin-bottom: 2.5rem;
         }
@@ -173,25 +174,26 @@
         /* --- Problem Section --- */
         .problem-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
         
         .problem-card {
             background-color: var(--white);
-            padding: 2rem;
+            padding: 2.5rem 2rem;
             border-radius: 8px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            border-bottom: 5px solid var(--yellow); /* Detalhe visual */
         }
         
         .problem-card .icon {
-            font-size: 2.5rem;
+            font-size: 3rem;
             margin-bottom: 1rem;
         }
 
         .problem-card h3 {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
         }
         
         /* --- Solution Section --- */
@@ -200,112 +202,121 @@
             color: var(--white);
         }
         
-        .solution h2 { font-size: 3rem; }
-        
-        .motto {
-            font-size: 1.8rem;
-            font-weight: 700;
-            border: 2px solid var(--yellow);
-            padding: 1.5rem;
-            border-radius: 8px;
-            display: inline-block;
-            margin-top: 2rem;
+        /* --- Services Section (Novo Design de Lista) --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 2 colunas no desktop */
+            gap: 2rem;
+            margin-top: 3rem;
+            text-align: left;
         }
 
-        /* --- Comparison Table Section --- */
-        .comparison-grid-container {
-            max-width: 1200px;
-            margin: 2rem auto 0;
-            background-color: var(--white);
-            border-radius: 12px;
+        .service-item {
+            background: var(--white);
             padding: 2rem;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
         }
-        .comparison-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; text-align: left; align-items: stretch; }
-        .comparison-column { padding: 1.5rem; display: flex; flex-direction: column; }
-        .column-header { min-height: 80px; margin-bottom: 2rem; }
-        .comparison-column h3 { font-size: 1.5rem; font-weight: 900; }
-        .comparison-column .subtitle { font-size: 0.9rem; font-weight: 700; }
-        .comparison-column ul { list-style: none; flex-grow: 1; }
-        .comparison-column li { margin-bottom: 1.5rem; position: relative; padding-left: 30px; font-weight: 700; }
-        .comparison-column li::before { position: absolute; left: 0; font-size: 1.5rem; line-height: 1; }
-        .apps-col .subtitle { color: var(--red); }
-        .apps-col li::before { content: '×'; color: var(--red); }
-        .rocket-col { background-color: var(--light-gray); border-radius: 8px; transform: scale(1.05); }
-        .rocket-col .subtitle { color: var(--green); }
-        .rocket-col li::before { content: '✔'; color: var(--green); }
-        .agencies-col .subtitle { color: var(--dark-gray); opacity: 0.7; }
-        .agencies-col li::before { content: '–'; color: var(--dark-gray); opacity: 0.7; }
 
-        /* --- Services Section --- */
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem; text-align: left; }
-        .service-card { background: var(--white); padding: 2.5rem; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
-        .service-card .phase { font-weight: 900; color: var(--yellow); font-size: 1.2rem; }
-        .service-card h3 { margin-top: 0.5rem; margin-bottom: 1rem; font-size: 1.8rem; }
-        .service-card ul { list-style: none; }
-        .service-card ul li { margin-bottom: 0.75rem; position: relative; padding-left: 25px; }
-        .service-card ul li::before { content: '✔'; position: absolute; left: 0; color: var(--yellow); }
+        .service-icon {
+            background-color: var(--yellow);
+            color: var(--dark-gray);
+            min-width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .service-content h3 {
+            margin-bottom: 0.5rem;
+            color: var(--dark-gray);
+        }
         
-        /* --- Calculator Section --- */
-        .calculator-section { padding: 60px 0; }
-        .calculator-section .container { background-color: var(--white); padding: 3rem; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
-        .calculator-section h2 { margin-bottom: 2rem; }
-        .calculator-form .input-group { margin-bottom: 1.5rem; text-align: left; }
-        .calculator-form label { display: block; font-weight: 700; margin-bottom: 0.5rem; color: var(--dark-gray); }
-        .calculator-form input[type="number"], .calculator-form input[type="range"] { width: 100%; padding: 0.8rem; border: 1px solid #ccc; border-radius: 5px; font-size: 1rem; }
-        .calculator-form input[type="range"] { padding: 0; }
-        .calculator-form button { width: 100%; padding: 1rem; margin-top: 1rem; background-color: var(--yellow); color: var(--dark-gray); border: none; border-radius: 5px; font-size: 1.2rem; font-weight: 700; cursor: pointer; transition: background-color 0.3s; }
-        .calculator-form button:hover { background-color: #e6b800; }
-        .calculator-results-display { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #eee; text-align: left; }
-        .calculator-results-display p { font-size: 1.1rem; margin-bottom: 0.8rem; max-width: 100%; }
-        .calculator-results-display .result-value { font-weight: 700; color: var(--green); }
-        .calculator-results-display .result-value.negative { color: var(--red); }
-        .tab-buttons { display: flex; flex-wrap: wrap; justify-content: center; margin-bottom: 2rem; gap: 1rem; }
-        .tab-button { background-color: #eee; border: none; padding: 0.8rem 1.5rem; font-size: 1rem; font-weight: 700; border-radius: 5px; cursor: pointer; transition: background-color 0.3s, color 0.3s; }
-        .tab-button.active { background-color: var(--yellow); color: var(--dark-gray); }
-        .tab-content { display: none; }
-        .tab-content.active { display: block; }
-        .radio-group { display: flex; gap: 1rem; justify-content: center; }
-        .radio-group label { flex: 1; padding: 1rem; border: 2px solid #ccc; border-radius: 5px; cursor: pointer; text-align: center; transition: all 0.3s; }
-        .radio-group input[type="radio"] { display: none; }
-        .radio-group input[type="radio"]:checked + label { border-color: var(--yellow); background-color: #fffbeb; }
-        .results-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; text-align: left; }
-        .results-column { padding: 1.5rem; border-radius: 8px; }
-        .results-column h3 { border-bottom: 2px solid; padding-bottom: 0.5rem; margin-bottom: 1.5rem; }
-        .results-column ul { list-style: none; }
-        .results-column li { display: flex; justify-content: space-between; margin-bottom: 1rem; font-size: 1.1rem; }
-        .results-column .profit { font-weight: 900; font-size: 1.5rem; margin-top: 1.5rem; border-top: 1px solid #eee; padding-top: 1rem; }
-        #ifood-results-display #ifood-results { background-color: #fff5f5; border: 1px solid #ffe0e0; }
-        #ifood-results-display #ifood-results h3 { border-color: var(--red); }
-        #ifood-results-display #ifood-results .profit { color: var(--red); }
-        #ifood-results-display #direct-results { background-color: #f2fff5; border: 1px solid #d4f7e0; }
-        #ifood-results-display #direct-results h3 { border-color: var(--green); }
-        #ifood-results-display #direct-results .profit { color: var(--green); }
-        .punchline { margin-top: 2rem; font-size: 1.2rem; font-weight: 700; background-color: var(--light-gray); padding: 1.5rem; border-radius: 8px; }
-        .punchline .loss { color: var(--red); }
+        .service-content p {
+            font-size: 1rem;
+            margin: 0;
+            max-width: 100%;
+        }
+
+        /* --- Comparison Table Section (Reformulada) --- */
+        .comparison-container {
+            max-width: 1000px;
+            margin: 3rem auto 0;
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .comp-header {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background: var(--dark-gray);
+            color: white;
+            font-weight: 900;
+            font-size: 1.2rem;
+            padding: 1.5rem;
+        }
+
+        .comp-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            border-bottom: 1px solid #eee;
+        }
+
+        .comp-col {
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .amador {
+            background-color: #fff5f5;
+            color: #555;
+            flex-direction: column;
+        }
+
+        .rocket {
+            background-color: #f0fff4;
+            color: var(--dark-gray);
+            font-weight: 700;
+            flex-direction: column;
+            border-left: 2px solid var(--green);
+            position: relative;
+        }
+
+        .rocket::after {
+            content: "✔";
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            color: var(--green);
+            opacity: 0.3;
+            font-size: 1.5rem;
+        }
+
+        .x-mark { color: var(--red); font-size: 1.5rem; margin-bottom: 5px; }
+        .check-mark { color: var(--green); font-size: 1.5rem; margin-bottom: 5px; }
         
-        /* --- ICP Section --- */
-        .icp-list { max-width: 800px; margin: 3rem auto 0; text-align: left; background: var(--white); padding: 2rem; border-radius: 8px; }
-        .icp-list h3 { text-align: center; font-size: 1.5rem; }
-        .icp-list ul li { list-style: none; padding-left: 30px; position: relative; font-size: 1.1rem; margin-bottom: 1rem; }
-        .icp-list ul li::before { content: '🍕'; position: absolute; left: 0; font-size: 1.2rem; }
-        
-        /* --- About Us Section --- */
+        /* --- About & FAQ --- */
         .about-us-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; text-align: left; margin-top: 3rem; }
         .about-us-image img { width: 100%; border-radius: 8px; }
-        .about-us-text h2 { font-size: 2.2rem; }
-        .about-us-text p { max-width: 100%; }
-
-        /* --- FAQ Section --- */
-        .faq-item { text-align: left; max-width: 800px; margin: 0 auto 1.5rem auto; border: 1px solid #ddd; border-radius: 5px; }
-        .faq-item summary { font-weight: 700; font-size: 1.2rem; padding: 1.5rem; cursor: pointer; outline: none; position: relative; }
-        .faq-item summary::-webkit-details-marker { display: none; }
-        .faq-item summary::after { content: '+'; position: absolute; right: 1.5rem; font-size: 2rem; transition: transform 0.2s; }
-        .faq-item[open] summary::after { transform: rotate(45deg); }
+        
+        .faq-item { text-align: left; max-width: 800px; margin: 0 auto 1.5rem auto; border: 1px solid #ddd; border-radius: 5px; background: white; }
+        .faq-item summary { font-weight: 700; font-size: 1.1rem; padding: 1.5rem; cursor: pointer; outline: none; }
         .faq-item div { padding: 0 1.5rem 1.5rem 1.5rem; }
 
         /* --- Floating Buttons --- */
-        .whatsapp-float, .back-to-top { position: fixed; width: 60px; height: 60px; border-radius: 50px; box-shadow: 2px 2px 6px rgba(0,0,0,0.3); z-index: 100; display: flex; justify-content: center; align-items: center; text-decoration: none; transition: transform 0.3s, opacity 0.3s, visibility 0.3s; }
+        .whatsapp-float, .back-to-top { position: fixed; width: 60px; height: 60px; border-radius: 50px; box-shadow: 2px 2px 6px rgba(0,0,0,0.3); z-index: 100; display: flex; justify-content: center; align-items: center; transition: transform 0.3s; }
         .whatsapp-float { bottom: 30px; right: 30px; background-color: #25D366; }
         .back-to-top { bottom: 100px; right: 30px; background-color: var(--yellow); opacity: 0; visibility: hidden; }
         .back-to-top.visible { opacity: 1; visibility: visible; }
@@ -313,520 +324,243 @@
 
         /* --- Footer --- */
         footer { background-color: var(--dark-gray); color: var(--white); padding: 4rem 2rem 2rem 2rem; text-align: center; }
-        .social-links { margin-bottom: 2rem; }
-        .social-links a { margin: 0 1rem; text-decoration: none; display: inline-block; }
-        .social-links svg { width: 35px; height: 35px; fill: var(--white); transition: fill 0.3s, transform 0.3s; }
-        .social-links a:hover svg { fill: var(--yellow); transform: translateY(-3px); }
-        footer p { font-size: 1rem; margin-bottom: 0; opacity: 0.8; }
-        
+        .social-links svg { width: 30px; height: 30px; fill: var(--white); margin: 0 10px; }
+
         /* --- Media Queries --- */
-        @media (max-width: 1024px) {
-            .main-nav { display: none; } /* Oculta o menu de navegação em tablets */
-        }
-
         @media (max-width: 768px) {
-            .container { padding: 4rem 1.5rem; }
-            h1, h2 { font-size: 2.2rem; }
-            .hero h1 { font-size: 2.5rem; }
-            .hero p { font-size: 1.2rem; }
-            .about-us-grid, .comparison-grid, .results-grid { grid-template-columns: 1fr; }
-            .rocket-col { transform: scale(1); order: -1; }
-            .main-header { padding: 0.5rem 1rem; }
-            .logo-img { width: 120px; }
-            .cta-button { font-size: 0.8rem; padding: 0.6rem 1rem; }
+            .main-nav { display: none; }
+            .hero h1 { font-size: 2.2rem; }
+            .hero p { font-size: 1.1rem; }
+            .services-grid { grid-template-columns: 1fr; }
+            .comparison-container { font-size: 0.9rem; }
+            .about-us-grid { grid-template-columns: 1fr; }
+            .comp-header { font-size: 1rem; }
         }
-
     </style>
 </head>
 <body>
 
     <header class="main-header">
         <div class="container">
-            <a href="#hero" aria-label="Página inicial Rocket for Eat">
+            <a href="#hero" aria-label="Rocket for Eat">
                 <img src="https://i.postimg.cc/sgvdLPdZ/Design-sem-nome-1.png" alt="Logo Rocket for Eat" class="logo-img">
             </a>
             <nav class="main-nav">
                 <ul>
                     <li><a href="#problema">O Problema</a></li>
-                    <li><a href="#solucao">A Solução</a></li>
-                    <li><a href="#servicos">Serviços</a></li>
-                    <li><a href="#calculadoras">Calculadoras</a></li>
+                    <li><a href="#servicos">O que Fazemos</a></li>
+                    <li><a href="#comparativo">Diferenciais</a></li>
                     <li><a href="#sobre">Quem Somos</a></li>
-                    <li><a href="#faq">FAQ</a></li>
                 </ul>
             </nav>
-            <a href="#cta-final" class="cta-button">Consultoria Gratuita</a>
+            <a href="#cta-final" class="cta-button">Melhorar Meu Delivery</a>
         </div>
     </header>
 
     <main>
         <section class="hero" id="hero">
             <div class="container">
-                <h1>Sua pizzaria <span class="highlight">refém</span> dos aplicativos de delivery?</h1>
-                <p>Assuma o controle, construa sua própria base de clientes e veja seu lucro decolar com marketing digital especialista em pizzarias.</p>
-                <a href="#cta-final" class="cta-button">AGENDAR CONSULTORIA GRATUITA</a>
+                <h1>Transforme o iFood, 99 e Keeta na <span class="highlight">Máquina de Lucro</span> da sua Pizzaria.</h1>
+                <p>Especialistas em configurar, organizar e otimizar sua loja nos aplicativos para você parar de perder dinheiro com taxas e erros de cadastro.</p>
+                <a href="#cta-final" class="cta-button">Quero Vender com Lucro</a>
             </div>
         </section>
 
-        <section class="problem" id="problema">
+        <section id="problema">
             <div class="container">
-                <h2>Você se sente <span class="highlight">frustrado</span> com seu delivery?</h2>
-                <p>Muitos donos de pizzaria talentosos enfrentam os mesmos desafios todos os dias. Você se reconhece nesse cenário?</p>
+                <h2>Estar nos aplicativos não é só <span class="highlight">"abrir a loja"</span></h2>
+                <p>Muitos donos de pizzaria sofrem todos os dias com a "Venda Burra": vendem muito, trabalham dobrado, mas não veem a cor do dinheiro.</p>
                 <div class="problem-grid">
                     <div class="problem-card">
-                        <div class="icon">💸</div>
-                        <h3>Taxas Abusivas</h3>
-                        <p>Até 30% do seu faturamento fica com os aplicativos, esmagando sua margem de lucro.</p>
+                        <div class="icon">📉</div>
+                        <h3>Conta que não fecha</h3>
+                        <p>Você vende bem, mas quando desconta as taxas do app, os insumos e a entrega, percebe que lucrou quase nada.</p>
                     </div>
                     <div class="problem-card">
-                        <div class="icon">👥</div>
-                        <h3>Clientes "Alugados"</h3>
-                        <p>Os dados dos seus clientes pertencem aos apps. Você não sabe quem são e não pode contatá-los diretamente.</p>
+                        <div class="icon">🏷️</div>
+                        <h3>Medo de Promoções</h3>
+                        <p>Você entra nos cupons do iFood sem fazer conta e acaba pagando para trabalhar, ou fica de fora e não vende nada.</p>
                     </div>
                     <div class="problem-card">
-                        <div class="icon">⚔️</div>
-                        <h3>Concorrência Desleal</h3>
-                        <p>Seu negócio aparece ao lado de dezenas de outros, em uma guerra constante por preço e visibilidade.</p>
+                        <div class="icon">🍽️</div>
+                        <h3>Cardápio Bagunçado</h3>
+                        <p>Fotos ruins, categorias confusas e sem estratégia. O cliente entra, olha e vai pedir no concorrente.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="solution" id="solucao">
+        <section class="solution" id="servicos">
             <div class="container">
-                <h2>É hora de ter um <span class="highlight">Delivery Próprio e Lucrativo.</span></h2>
-                <p>Nós criamos e gerenciamos um ecossistema digital para que sua pizzaria receba pedidos diretos, construa uma marca forte e pare de depender de terceiros.</p>
-                <div class="motto">Você domina o forno. A gente domina o digital.</div>
-            </div>
-        </section>
-
-        <section class="comparison-table" id="comparativo">
-            <div class="container">
-                <h2>Onde você quer <span class="highlight">posicionar</span> sua pizzaria?</h2>
-                <div class="comparison-grid-container">
-                    <div class="comparison-grid">
-                        <div class="comparison-column apps-col">
-                            <div class="column-header">
-                                <h3>Apps de Delivery</h3>
-                                <span class="subtitle">Plataformas tradicionais</span>
-                            </div>
-                            <ul>
-                                <li>Comissão de <strong>até 35%</strong></li>
-                                <li><strong>Sem acesso</strong> aos dados dos clientes</li>
-                                <li><strong>Pouco controle</strong> sobre preços</li>
-                                <li><strong>Dependência total</strong> da plataforma</li>
-                            </ul>
-                        </div>
-                        <div class="comparison-column rocket-col">
-                            <div class="column-header">
-                                <img src="https://i.postimg.cc/sgvdLPdZ/Design-sem-nome-1.png" alt="Logo Rocket for Eat" style="width: 150px;">
-                            </div>
-                            <span class="subtitle">Solução completa especializada</span>
-                            <ul>
-                                <li><strong>0% de comissão</strong> nas vendas diretas</li>
-                                <li><strong>100% dos dados</strong> são seus</li>
-                                <li><strong>Controle total</strong> sobre preços</li>
-                                <li><strong>Independência</strong> e autonomia</li>
-                            </ul>
-                        </div>
-                        <div class="comparison-column agencies-col">
-                            <div class="column-header">
-                                <h3>Agências Comuns</h3>
-                                <span class="subtitle">Marketing tradicional</span>
-                            </div>
-                            <ul>
-                                <li>Soluções <strong>genéricas</strong></li>
-                                <li>Falta de <strong>especialização</strong> em food</li>
-                                <li>Sem <strong>visão estratégica</strong> completa</li>
-                                <li>Resultados <strong>limitados</strong></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="services" id="servicos">
-            <div class="container">
-                <h2>Nosso Plano de Voo para o <span class="highlight">Sucesso</span></h2>
-                <p>Temos um método claro, dividido em 3 fases, para transformar sua presença digital em uma máquina de vendas.</p>
+                <h2>Nós <span class="highlight">arrumamos a casa</span> para você</h2>
+                <p>Nós não somos "gurús". Nós entramos na sua conta, apertamos os botões certos e deixamos sua pizzaria profissional.</p>
+                
                 <div class="services-grid">
-                    <div class="service-card">
-                        <div class="phase">FASE 1</div>
-                        <h3>Fundação Digital</h3>
-                        <p>Preparamos o terreno para o crescimento, garantindo que sua pizzaria seja encontrada e desejada.</p>
-                        <ul>
-                            <li>Otimização de Perfil no Google</li>
-                            <li>Gestão de Instagram para Pizzarias</li>
-                            <li>Criação de Cardápio Digital Interativo</li>
-                            <li>Configuração de Pedidos no WhatsApp</li>
-                        </ul>
+                    <div class="service-item">
+                        <div class="service-icon">🍕</div>
+                        <div class="service-content">
+                            <h3>Cardápio que Vende Sozinho</h3>
+                            <p>Organizamos seus produtos, fotos e descrições para dar fome no cliente. Usamos técnicas para ele pedir a borda recheada e a bebida (aumentando seu ticket).</p>
+                        </div>
                     </div>
-                    <div class="service-card">
-                        <div class="phase">FASE 2</div>
-                        <h3>Aquisição de Clientes</h3>
-                        <p>Atraímos clientes famintos para o seu canal de vendas direto através de anúncios inteligentes.</p>
-                        <ul>
-                            <li>Gestão de Tráfego Pago (Anúncios)</li>
-                            <li>Campanhas no Instagram e Facebook</li>
-                            <li>Anúncios no Google (Rede de Pesquisa)</li>
-                            <li>Criação de Anúncios que Vendem</li>
-                        </ul>
+                    <div class="service-item">
+                        <div class="service-icon">💰</div>
+                        <div class="service-content">
+                            <h3>Preço que dá Lucro</h3>
+                            <p>Calculamos exatamente quanto você deve cobrar em cada pizza dentro do app para cobrir as taxas e garantir que sobre dinheiro no seu bolso.</p>
+                        </div>
                     </div>
-                    <div class="service-card">
-                        <div class="phase">FASE 3</div>
-                        <h3>Fidelização e Escala</h3>
-                        <p>Transformamos clientes em fãs e expandimos seu alcance para garantir um crescimento sustentável.</p>
-                        <ul>
-                            <li>Estratégias de Retenção de Clientes</li>
-                            <li>Construção da sua Base de Clientes</li>
-                            <li>Análise de Métricas e Resultados</li>
-                        </ul>
+                    <div class="service-item">
+                        <div class="service-icon">⚙️</div>
+                        <div class="service-content">
+                            <h3>Ativação e Configuração</h3>
+                            <p>Travado na burocracia? Nós configuramos sua loja do zero, ajustamos áreas de entrega e horários para você não ter dor de cabeça.</p>
+                        </div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-icon">🚀</div>
+                        <div class="service-content">
+                            <h3>Gestão de Promoções</h3>
+                            <p>Analisamos quais campanhas do iFood/99 valem a pena. Entramos apenas nas que trazem lucro e novos clientes para sua base.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="calculator-section" id="calculadoras">
+        <section id="comparativo">
             <div class="container">
-                <h2>Nossas <span class="highlight">Ferramentas</span> de Decisão</h2>
-                <div class="tab-buttons">
-                    <button class="tab-button active" data-tab="imposto">Calculadora "Imposto iFood"</button>
-                    <button class="tab-button" data-tab="preco">Simulador de Preço de Pizza</button>
-                    <button class="tab-button" data-tab="dre">DRE Simplificado</button>
-                </div>
+                <h2>Veja a diferença na <span class="highlight">Prática</span></h2>
+                <p>O que acontece quando você deixa de ser amador e vira profissional nos apps.</p>
 
-                <div id="imposto" class="tab-content active">
-                     <h3>Descubra o 'Imposto iFood'</h3>
-                    <p>Veja na prática a diferença no seu bolso ao final de cada venda.</p>
-                     <div class="calculator-form">
-                        <div class="input-group">
-                           <label for="pizzaPrice">1. Qual o preço de venda da sua pizza?</label>
-                           <input type="number" id="pizzaPrice" placeholder="Ex: 60.00" step="0.01">
-                       </div>
-                       <div class="input-group">
-                            <label for="ingredientsCost">2. Qual seu custo com ingredientes? (<span id="range-value">30%</span>)</label>
-                            <input type="range" id="ingredientsCost" min="20" max="45" value="30">
-                       </div>
-                        <div class="input-group">
-                           <label>3. Qual plano do iFood você usa?</label>
-                           <div class="radio-group">
-                               <input type="radio" id="planoBasico" name="ifoodPlan" value="basico">
-                               <label for="planoBasico">Plano Básico<br><small>(Eu entrego)</small></label>
-                               
-                               <input type="radio" id="planoEntrega" name="ifoodPlan" value="entrega" checked>
-                               <label for="planoEntrega">Plano Entrega<br><small>(iFood entrega)</small></label>
-                           </div>
-                       </div>
-                       <button id="calculateBtn">Calcular Lucro</button>
-                       <div id="ifood-results-display" style="display: none;">
-                           </div>
-                   </div>
-               </div>
-
-                <div id="preco" class="tab-content">
-                    <h3>Simulador de Preço de Pizza</h3>
-                    <p>Defina o preço ideal para suas pizzas e garanta sua margem de lucro.</p>
-                    <div class="calculator-form">
-                        <div class="input-group">
-                            <label for="custoIngredientesPizza">Custo Total dos Ingredientes por Pizza (R$):</label>
-                            <input type="number" id="custoIngredientesPizza" placeholder="Ex: 15.00" step="0.01">
-                        </div>
-                        <div class="input-group">
-                            <label for="outrosCustosPizza">Outros Custos (Embalagem, Mão de Obra, etc.) por Pizza (R$):</label>
-                            <input type="number" id="outrosCustosPizza" placeholder="Ex: 5.50" step="0.01">
-                        </div>
-                        <div class="input-group">
-                            <label for="margemDesejada">Margem de Lucro Desejada (%):</label>
-                            <input type="number" id="margemDesejada" placeholder="Ex: 25" step="0.1">
-                        </div>
-                        <button id="calcularPreco">Calcular Preço Sugerido</button>
-                        <div class="calculator-results-display" id="preco-results" style="display: none;">
-                            </div>
+                <div class="comparison-container">
+                    <div class="comp-header">
+                        <div>Pizzaria Amadora</div>
+                        <div style="color: var(--yellow);">Cliente Rocket</div>
                     </div>
-                </div>
+                    
+                    <div class="comp-row">
+                        <div class="comp-col amador">
+                            <span class="x-mark">×</span>
+                            <small>Preço feito "de cabeça"</small>
+                        </div>
+                        <div class="comp-col rocket">
+                            <span class="check-mark">✔</span>
+                            <small>Preço calculado para <strong>LUCRO REAL</strong></small>
+                        </div>
+                    </div>
 
-                <div id="dre" class="tab-content">
-                    <h3>Calculadora de DRE Simplificado</h3>
-                    <p>Entenda a saúde financeira da sua pizzaria de forma rápida e descomplicada.</p>
-                    <div class="calculator-form">
-                        <div class="input-group">
-                            <label for="receitaBruta">Receita Bruta Mensal (R$):</label>
-                            <input type="number" id="receitaBruta" placeholder="Ex: 15000.00" step="0.01">
+                    <div class="comp-row">
+                        <div class="comp-col amador">
+                            <span class="x-mark">×</span>
+                            <small>Fotos feias ou sem foto</small>
                         </div>
-                        <div class="input-group">
-                            <label for="cmv">Custo da Mercadoria Vendida (CMV - % da Receita):</label>
-                            <input type="number" id="cmv" placeholder="Ex: 30" step="0.1">
+                        <div class="comp-col rocket">
+                            <span class="check-mark">✔</span>
+                            <small>Cardápio visual e <strong>IRRESISTÍVEL</strong></small>
                         </div>
-                        <div class="input-group">
-                            <label for="despesasFixas">Despesas Operacionais Fixas (R$):</label>
-                            <input type="number" id="despesasFixas" placeholder="Ex: 3000.00" step="0.01">
+                    </div>
+
+                    <div class="comp-row">
+                        <div class="comp-col amador">
+                            <span class="x-mark">×</span>
+                            <small>Entra em qualquer cupom e perde dinheiro</small>
                         </div>
-                        <div class="input-group">
-                            <label for="despesasVariaveis">Despesas Operacionais Variáveis (R$):</label>
-                            <input type="number" id="despesasVariaveis" placeholder="Ex: 1500.00" step="0.01">
+                        <div class="comp-col rocket">
+                            <span class="check-mark">✔</span>
+                            <small>Só entra em campanha <strong>ESTRATÉGICA</strong></small>
                         </div>
-                        <button id="calcularDRE">Calcular DRE</button>
-                        <div class="calculator-results-display" id="dre-results" style="display: none;">
-                            </div>
+                    </div>
+
+                    <div class="comp-row">
+                        <div class="comp-col amador">
+                            <span class="x-mark">×</span>
+                            <small>Sem visibilidade no App</small>
+                        </div>
+                        <div class="comp-col rocket">
+                            <span class="check-mark">✔</span>
+                            <small>Loja otimizada para o <strong>TOPO</strong></small>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="icp" id="icp">
-            <div class="container">
-                <h2>Este plano é perfeito <span class="highlight">para você?</span></h2>
-                <p>Nossa especialidade é ajudar um perfil específico de pizzaria a atingir seu máximo potencial. Veja se você se encaixa:</p>
-                <div class="icp-list">
-                    <h3>Atendemos pizzarias que:</h3>
-                    <ul>
-                        <li>Possuem uma operação de delivery ativa (ou com potencial) e buscam crescimento.</li>
-                        <li>Estão cansadas de pagar taxas abusivas para aplicativos e querem ter seu próprio canal.</li>
-                        <li>Valorizam a qualidade do seu produto e querem construir uma marca forte e reconhecida.</li>
-                        <li>Estão prontas para investir de forma inteligente em marketing que traz retorno de verdade.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-        
         <section class="about-us" id="sobre">
             <div class="container">
                 <div class="about-us-grid">
                     <div class="about-us-image">
-                        <img src="https://i.postimg.cc/5NtybNHd/Red-and-Yellow-Illustration-Food-Facebook-Cover-1.png" alt="Time da Rocket for Eat reunido">
+                        <img src="https://i.postimg.cc/5NtybNHd/Red-and-Yellow-Illustration-Food-Facebook-Cover-1.png" alt="Time da Rocket for Eat">
                     </div>
                     <div class="about-us-text">
-                        <h2>Quem está por trás do foguete que faz as pizzarias <span class="highlight">venderem mais?</span></h2>
-                        <p>A Rocket for Eat nasceu da paixão por dois mundos: pizza e resultados. Somos uma equipe pequena e obcecada, não apenas uma agência. Mergulhamos no universo das pizzarias para entender cada detalhe da sua operação.</p>
-                        <p>Acreditamos que cada pizzaria tem uma história única e merece um canal de vendas direto, sem intermediários. Não somos fornecedores, somos parceiros estratégicos sentados ao seu lado da mesa, focados em uma única coisa: fazer seu delivery decolar.</p>
+                        <h2>Especialistas em <span class="highlight">Marketplace de Comida</span></h2>
+                        <p>A Rocket for Eat nasceu vendo a dor do dono de delivery. Percebemos que 90% das pizzarias estão nos aplicativos, mas estão "jogando dinheiro fora" por falta de conhecimento técnico.</p>
+                        <p>Nós não somos uma agência que faz post bonitinho para Instagram. Nós somos gestores de performance. Nosso trabalho é mexer nas engrenagens da sua conta no iFood, 99Food e Keeta para fazer sua operação dar lucro.</p>
+                        <a href="#cta-final" class="cta-button">Falar com um Especialista</a>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <section class="faq" id="faq">
+            <div class="container">
+                <h2>Dúvidas <span class="highlight">Comuns</span></h2>
+                <details class="faq-item">
+                    <summary>Vocês trabalham com quais aplicativos?</summary>
+                    <div><p>Somos especialistas nos principais do mercado: iFood, 99Food e Keeta. Conhecemos as regras e o funcionamento de cada um.</p></div>
+                </details>
+                <details class="faq-item">
+                    <summary>Eu preciso dar a senha do meu iFood?</summary>
+                    <div><p>Sim. Para fazer a mágica acontecer (configurar cardápio, promoções, área de entrega), precisamos de acesso administrativo como parceiros na sua conta.</p></div>
+                </details>
+                <details class="faq-item">
+                    <summary>Vocês tiram fotos das pizzas?</summary>
+                    <div><p>Nós orientamos como as fotos devem ser e, dependendo do pacote contratado, podemos fazer a edição para deixá-las profissionais.</p></div>
+                </details>
+                <details class="faq-item">
+                    <summary>Quanto tempo demora para arrumar minha loja?</summary>
+                    <div><p>A configuração inicial e reestruturação do cardápio geralmente leva de 5 a 10 dias úteis, dependendo do tamanho do seu mix de produtos.</p></div>
+                </details>
             </div>
         </section>
 
         <section class="cta-final" id="cta-final">
             <div class="container">
-                <h2>Receba um Diagnóstico <span class="highlight">Gratuito</span> do seu Delivery</h2>
-                <p>Chega de ficar para trás. Agende uma conversa sem compromisso com um de nossos especialistas e descubra o potencial escondido da sua operação digital.</p>
-                <a href="https://wa.me/5511959228663?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Rocket%20for%20Eat%20e%20gostaria%20de%20agendar%20minha%20consultoria%20gratuita." target="_blank" class="cta-button">AGENDAR MINHA CONSULTORIA</a>
-            </div>
-        </section>
-        
-        <section class="faq" id="faq">
-            <div class="container">
-                <h2>Dúvidas <span class="highlight">Frequentes</span></h2>
-                <details class="faq-item">
-                    <summary>Quanto custa o serviço?</summary>
-                    <div><p>Nossos planos são personalizados para a necessidade e o momento de cada pizzaria. Agende uma conversa para receber um orçamento justo e focado no seu crescimento.</p></div>
-                </details>
-                <details class="faq-item">
-                    <summary>Em quanto tempo eu vejo resultado?</summary>
-                    <div><p>A Fase 1 (Fundação) já traz melhorias imediatas na sua imagem. Os resultados em vendas com tráfego pago (Fase 2) geralmente começam a aparecer já no primeiro mês de campanha.</p></div>
-                </details>
-                <details class="faq-item">
-                    <summary>Preciso ter um site?</summary>
-                    <div><p>Não! Nosso sistema usa o Instagram, Google e um cardápio digital que envia pedidos direto para o seu WhatsApp. É uma estrutura de alta conversão e baixo custo inicial.</p></div>
-                </details>
-                <details class="faq-item">
-                    <summary>Vocês garantem resultados?</summary>
-                    <div><p>Garantimos nosso empenho, expertise e um método comprovado. Desconfie de quem garante resultados em marketing, pois eles dependem de muitos fatores. Nosso foco é o seu ROI (Retorno Sobre o Investimento).</p></div>
-                </details>
+                <h2>Pare de perder dinheiro nos Apps <span class="highlight">Hoje Mesmo</span></h2>
+                <p>Faça uma análise gratuita do seu cardápio atual e descubra onde você está deixando dinheiro na mesa.</p>
+                <a href="https://wa.me/5511959228663?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Rocket%20e%20quero%20vender%20com%20lucro%20nos%20apps." target="_blank" class="cta-button">QUERO ANÁLISE DO MEU CARDÁPIO</a>
             </div>
         </section>
 
-        <a href="https://wa.me/5511959228663?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Rocket%20for%20Eat%20e%20gostaria%20de%20agendar%20minha%20consultoria%20gratuita." class="whatsapp-float" target="_blank" aria-label="Fale conosco pelo WhatsApp">
+        <a href="https://wa.me/5511959228663?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Rocket%20e%20preciso%20de%20ajuda%20com%20meu%20delivery." class="whatsapp-float" target="_blank" aria-label="Fale conosco pelo WhatsApp">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="width: 28px; height: 28px; fill: white;"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zM223.9 439.6c-33.8 0-66.3-8.8-94.3-25.1l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
         </a>
 
         <a href="#hero" class="back-to-top" aria-label="Voltar ao topo">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" style="width: 24px; height: 24px; fill: var(--dark-gray);"><path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"/></svg>
         </a>
+
     </main>
 
     <footer>
         <div class="container">
             <img src="https://i.postimg.cc/sgvdLPdZ/Design-sem-nome-1.png" alt="Logo Rocket for Eat" class="logo-img" style="width: 200px; margin-bottom: 2rem;">
-
-            <div class="social-links">
-                <a href="https://www.instagram.com/rocketfor_eat?igsh=MTc0MGRzM2Q1NXdlbQ%3D%3D&utm_source=qr" target="_blank" aria-label="Instagram da Rocket for Eat">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9 26.3 26.2 58 34.4 93.9 36.2 37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
-                </a>
-                <a href="https://wa.me/5511959228663?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Rocket%20for%20Eat%20e%20gostaria%20de%20agendar%20minha%20consultoria%20gratuita." target="_blank" aria-label="WhatsApp da Rocket for Eat">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="width: 28px; height: 28px; fill: white;"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zM223.9 439.6c-33.8 0-66.3-8.8-94.3-25.1l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
-                </a>
-            </div>
-
-            <p>Rocket for Eat - Marketing Digital para Pizzarias</p>
+            <p>Rocket for Eat - Especialistas em iFood, 99Food e Keeta</p>
             <p>&copy; 2025 - Todos os direitos reservados.</p>
         </div>
     </footer>
 
-    <script defer>
+    <script>
+        // Script simples para menu e botão voltar ao topo
         document.addEventListener('DOMContentLoaded', function() {
-            const formatCurrency = (value) => `R$ ${value.toFixed(2).replace('.', ',')}`;
-            const toggleNegativeClass = (element, value) => {
-                if(element) element.classList.toggle('negative', value < 0);
-            };
-
-            // --- Lógica do "Imposto iFood" ---
-            const calculateBtn = document.getElementById('calculateBtn');
-            const ingredientsCostSlider = document.getElementById('ingredientsCost');
-            const rangeValueSpan = document.getElementById('range-value');
-            
-            const IFOOD_BASIC_COMMISSION = 0.12, IFOOD_DELIVERY_COMMISSION = 0.25, IFOOD_PAYMENT_FEE = 0.032, DIRECT_PAYMENT_FEE = 0.02;
-
-            if(ingredientsCostSlider && rangeValueSpan) {
-                ingredientsCostSlider.addEventListener('input', () => { rangeValueSpan.textContent = `${ingredientsCostSlider.value}%`; });
-            }
-
-            if(calculateBtn) {
-                calculateBtn.addEventListener('click', () => {
-                    const pizzaPrice = parseFloat(document.getElementById('pizzaPrice').value);
-                    if (isNaN(pizzaPrice) || pizzaPrice <= 0) {
-                        alert('Por favor, insira um preço de venda válido.');
-                        return;
-                    }
-
-                    const ingredientsCostPercent = parseInt(ingredientsCostSlider.value, 10);
-                    const selectedPlan = document.querySelector('input[name="ifoodPlan"]:checked').value;
-                    const costOfGoods = pizzaPrice * (ingredientsCostPercent / 100);
-                    const ifoodCommissionRate = selectedPlan === 'basico' ? IFOOD_BASIC_COMMISSION : IFOOD_DELIVERY_COMMISSION;
-                    const ifoodCommissionValue = pizzaPrice * ifoodCommissionRate;
-                    const ifoodPaymentFeeValue = pizzaPrice * IFOOD_PAYMENT_FEE;
-                    const ifoodProfit = pizzaPrice - costOfGoods - ifoodCommissionValue - ifoodPaymentFeeValue;
-                    const directPaymentFeeValue = pizzaPrice * DIRECT_PAYMENT_FEE;
-                    const directProfit = pizzaPrice - costOfGoods - directPaymentFeeValue;
-                    const profitDifference = directProfit - ifoodProfit;
-                    const percentageLoss = directProfit > 0 ? (profitDifference / directProfit) * 100 : 0;
-                    
-                    const resultsContainer = document.getElementById('ifood-results-display');
-                    resultsContainer.innerHTML = `
-                        <div class="results-grid">
-                            <div id="ifood-results" class="results-column">
-                                <h3>Venda no iFood</h3>
-                                <ul>
-                                    <li><span>Preço de Venda</span> <span>${formatCurrency(pizzaPrice)}</span></li>
-                                    <li><span>Custo Ingredientes</span> <span>- ${formatCurrency(costOfGoods)}</span></li>
-                                    <li><span class="loss">Comissão iFood</span> <span class="loss">- ${formatCurrency(ifoodCommissionValue)}</span></li>
-                                    <li><span class="loss">Taxa de Pagamento</span> <span class="loss">- ${formatCurrency(ifoodPaymentFeeValue)}</span></li>
-                                </ul>
-                                <div class="profit">
-                                    <span>Seu Lucro Final</span>
-                                    <span>${formatCurrency(ifoodProfit)}</span>
-                                </div>
-                            </div>
-                            <div id="direct-results" class="results-column">
-                                <h3>Venda Direta</h3>
-                                <ul>
-                                    <li><span>Preço de Venda</span> <span>${formatCurrency(pizzaPrice)}</span></li>
-                                    <li><span>Custo Ingredientes</span> <span>- ${formatCurrency(costOfGoods)}</span></li>
-                                    <li><span class="gain">Taxa do Cartão</span> <span class="gain">- ${formatCurrency(directPaymentFeeValue)}</span></li>
-                                    <li><span>&nbsp;</span><span>&nbsp;</span></li>
-                                </ul>
-                                 <div class="profit">
-                                    <span>Seu Lucro Final</span>
-                                    <span>${formatCurrency(directProfit)}</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="punchline">
-                            Nesta única venda, você deixou <span class="loss">${formatCurrency(profitDifference)}</span> na mesa. <br>Isso é <span class="loss">${Math.round(percentageLoss)}%</span> do seu lucro que ficou com o iFood.
-                        </div>
-                    `;
-                    resultsContainer.style.display = 'block';
-                    resultsContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                });
-            }
-
-            // --- Lógica da Calculadora de DRE ---
-            document.getElementById('calcularDRE').addEventListener('click', () => {
-                const receitaBruta = parseFloat(document.getElementById('receitaBruta').value);
-                const cmvPercent = parseFloat(document.getElementById('cmv').value);
-                const despesasFixas = parseFloat(document.getElementById('despesasFixas').value);
-                const despesasVariaveis = parseFloat(document.getElementById('despesasVariaveis').value);
-                const resultsEl = document.getElementById('dre-results');
-
-                if ([receitaBruta, cmvPercent, despesasFixas, despesasVariaveis].some(isNaN) || receitaBruta < 0 || cmvPercent < 0 || despesasFixas < 0 || despesasVariaveis < 0) {
-                    alert('Por favor, preencha todos os campos do DRE com valores válidos.');
-                    return;
-                }
-
-                const cmvValue = receitaBruta * (cmvPercent / 100);
-                const lucroBruto = receitaBruta - cmvValue;
-                const lucroOperacional = lucroBruto - despesasFixas - despesasVariaveis;
-                const margemLiquida = receitaBruta > 0 ? (lucroOperacional / receitaBruta) * 100 : 0;
-                
-                resultsEl.innerHTML = `
-                    <p>Lucro Bruto: <span class="result-value">${formatCurrency(lucroBruto)}</span></p>
-                    <p>Lucro Operacional: <span class="result-value">${formatCurrency(lucroOperacional)}</span></p>
-                    <p>Margem Líquida: <span class="result-value">${margemLiquida.toFixed(2).replace('.', ',')}%</span></p>
-                `;
-                toggleNegativeClass(resultsEl.children[0].querySelector('.result-value'), lucroBruto);
-                toggleNegativeClass(resultsEl.children[1].querySelector('.result-value'), lucroOperacional);
-                toggleNegativeClass(resultsEl.children[2].querySelector('.result-value'), margemLiquida);
-                resultsEl.style.display = 'block';
-            });
-
-            // --- Lógica do Simulador de Preços ---
-            document.getElementById('calcularPreco').addEventListener('click', () => {
-                const custoIngredientes = parseFloat(document.getElementById('custoIngredientesPizza').value);
-                const outrosCustos = parseFloat(document.getElementById('outrosCustosPizza').value);
-                const margemDesejada = parseFloat(document.getElementById('margemDesejada').value);
-                const resultsEl = document.getElementById('preco-results');
-
-                if ([custoIngredientes, outrosCustos, margemDesejada].some(isNaN) || custoIngredientes < 0 || outrosCustos < 0 || margemDesejada < 0 || margemDesejada >= 100) {
-                    alert('Preencha os custos com valores válidos e a margem desejada menor que 100%.');
-                    return;
-                }
-
-                const custoTotal = custoIngredientes + outrosCustos;
-                const precoVendaSugerido = custoTotal / (1 - (margemDesejada / 100));
-                const lucroAbsoluto = precoVendaSugerido - custoTotal;
-                
-                resultsEl.innerHTML = `
-                    <p>Custo Total por Pizza: <span class="result-value">${formatCurrency(custoTotal)}</span></p>
-                    <p>Preço de Venda Sugerido: <span class="result-value">${formatCurrency(precoVendaSugerido)}</span></p>
-                    <p>Lucro Absoluto por Pizza: <span class="result-value">${formatCurrency(lucroAbsoluto)}</span></p>
-                `;
-                resultsEl.style.display = 'block';
-            });
-
-            // --- Lógica das Abas ---
-            const tabButtons = document.querySelectorAll('.tab-button');
-            const tabContents = document.querySelectorAll('.tab-content');
-            tabButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    tabButtons.forEach(btn => btn.classList.remove('active'));
-                    button.classList.add('active');
-                    tabContents.forEach(content => content.classList.toggle('active', content.id === button.dataset.tab));
-                });
-            });
-
-            // --- Lógica do Menu de Navegação e Botão Voltar ao Topo ---
-            const navLinks = document.querySelectorAll('.main-nav a');
-            const sections = document.querySelectorAll('main section[id]');
             const backToTopButton = document.querySelector('.back-to-top');
-
+            
             function onScroll() {
-                let current = '';
-                sections.forEach(section => {
-                    if (pageYOffset >= section.offsetTop - 90) {
-                        current = section.getAttribute('id');
-                    }
-                });
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href').includes(current)) {
-                        link.classList.add('active');
-                    }
-                });
                 if (backToTopButton) {
-                    backToTopButton.classList.toggle('visible', pageYOffset > 300);
+                    backToTopButton.classList.toggle('visible', window.pageYOffset > 300);
                 }
             }
             window.addEventListener('scroll', onScroll);
-            onScroll();
         });
     </script>
 </body>
