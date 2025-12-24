@@ -147,7 +147,7 @@
             gap: 8px;
         }
 
-        /* --- CARROSSEL DE CLIENTES --- */
+        /* --- CARROSSEL DE CLIENTES (COLORIDO) --- */
         .logos-slider {
             background: #000;
             padding: 40px 0;
@@ -167,15 +167,14 @@
             height: 80px;
             width: auto;
             object-fit: contain;
-            /* Filtro para padronizar visualmente */
-            filter: grayscale(100%) brightness(0.8);
+            /* REMOVIDO O FILTRO CINZA - AGORA É COLORIDO */
+            /* filter: grayscale(100%) brightness(0.8); */
             transition: 0.3s;
-            opacity: 0.7;
+            opacity: 1; /* Opacidade total */
         }
 
         .client-logo:hover {
-            filter: grayscale(0%) brightness(1);
-            opacity: 1;
+            /* filter: grayscale(0%) brightness(1); */
             transform: scale(1.1);
         }
 
@@ -299,6 +298,39 @@
         .scope-item li { color: #bbb; font-size: 0.9rem; margin-bottom: 8px; position: relative; padding-left: 20px; }
         .scope-item li::before { content: "•"; color: var(--primary); position: absolute; left: 0; }
 
+        /* --- NOVA SEÇÃO: CASES DE SUCESSO --- */
+        .cases-section { background: #000; }
+        .case-study {
+            background: var(--gray);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border: 1px solid #333;
+        }
+        .case-title { text-align: center; font-size: 1.5rem; margin-bottom: 20px; color: var(--white); }
+        .before-after-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .ba-card {
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .ba-card.before { background: rgba(239, 68, 68, 0.1); border: 1px solid var(--red); }
+        .ba-card.after { background: rgba(34, 197, 94, 0.1); border: 1px solid var(--green); }
+        .ba-label { font-weight: 800; font-size: 0.9rem; margin-bottom: 10px; display: block; }
+        .ba-card.before .ba-label { color: var(--red); }
+        .ba-card.after .ba-label { color: var(--green); }
+        .ba-print {
+            width: 100%;
+            border-radius: 5px;
+            border: 2px solid #444;
+            transition: transform 0.3s;
+        }
+        .ba-print:hover { transform: scale(1.05); z-index: 10; position: relative; }
+
         /* --- FAQ --- */
         .faq-section { background: var(--gray); }
         .faq-section h2 { text-align: center; margin-bottom: 40px; font-size: 2rem; }
@@ -349,7 +381,7 @@
             .hero h1 { font-size: 1.8rem; } 
             .hero p { font-size: 1rem; }
             h2 { font-size: 1.5rem !important; }
-            .grid-2, .menu-grid { grid-template-columns: 1fr; }
+            .grid-2, .menu-grid, .before-after-grid { grid-template-columns: 1fr; } /* Grid de cases vira coluna no mobile */
             .hero { padding: 50px 0; }
             .section-padding { padding: 40px 0; }
             .logo { width: 140px; }
@@ -357,6 +389,7 @@
             .menu-box { margin-bottom: 20px; }
             .logos-track { gap: 30px; }
             .client-logo { height: 60px; }
+            .ba-card { margin-bottom: 15px; } /* Espaço entre prints no mobile */
         }
     </style>
 </head>
@@ -413,7 +446,7 @@
         <div class="container">
             <div class="grid-2">
                 <div>
-                    <img src="https://images.unsplash.com/photo-1512428559087-560fa0db7901?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" style="border-radius: 10px; opacity: 0.8;" alt="Pessoa no celular">
+                    <img src="https://i.ibb.co/tPnnfZ6k/cardapio-digital-personalizado-psquisa-brindes.png" style="border-radius: 10px; opacity: 0.9;" alt="Cliente Geração Z no celular">
                 </div>
                 <div class="behavior-text">
                     <h2>O CLIENTE MUDOU.<br><span style="color: var(--primary)">QUEM NÃO ACOMPANHOU JÁ ESTÁ FICANDO INVISÍVEL.</span></h2>
@@ -431,6 +464,45 @@
                     <br>
                     <p>👉 No delivery, quem não vende bem na vitrine digital não vende. <strong>Delivery não é abrir loja e esperar pedido.</strong> É gestão diária de vitrine, preço e decisão do cliente.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding cases-section">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 40px;">CASES REAIS DE SUCESSO <br><span style="color: var(--primary)">NO 99FOOD</span></h2>
+            <p style="text-align: center; margin-bottom: 40px;">Contra fatos não há argumentos. Veja o que acontece quando a Rocket assume a gestão.</p>
+
+            <div class="case-study">
+                <h3 class="case-title">🍕 Pizzaria Garagem da Esfiha (Em 1 Mês)</h3>
+                <div class="before-after-grid">
+                    <div class="ba-card before">
+                        <span class="ba-label">ANTES (Novembro)</span>
+                        <img src="https://i.ibb.co/Ng2W87qM/image.png" alt="Faturamento Antes Garagem" class="ba-print">
+                    </div>
+                    <div class="ba-card after">
+                        <span class="ba-label">DEPOIS DA ROCKET (Dezembro)</span>
+                        <img src="https://i.ibb.co/TqFQLyYz/image.png" alt="Faturamento Depois Garagem" class="ba-print">
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-study">
+                <h3 class="case-title">🍕 Pizzaria Arruda (Crescimento Rápido)</h3>
+                <div class="before-after-grid">
+                    <div class="ba-card before">
+                        <span class="ba-label">ANTES (Outubro)</span>
+                        <img src="https://i.ibb.co/5WXC2CHp/image.png" alt="Faturamento Antes Arruda" class="ba-print">
+                    </div>
+                    <div class="ba-card after">
+                        <span class="ba-label">DEPOIS DA ROCKET</span>
+                        <img src="https://i.ibb.co/mr98GMDv/image.png" alt="Faturamento Depois Arruda" class="ba-print">
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="https://wa.me/5511959228663?text=Ol%C3%A1,%20vi%20os%20resultados%20e%20quero%20uma%20an%C3%A1lise%20para%20meu%20delivery." class="btn">QUERO ESSES RESULTADOS</a>
             </div>
         </div>
     </section>
