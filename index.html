@@ -121,7 +121,7 @@
         }
         .btn:hover { transform: scale(1.05); background: #fff; }
 
-        /* --- SEÇÃO PARA QUEM É (OBJEÇÃO 3) --- */
+        /* --- SEÇÃO PARA QUEM É --- */
         .niches-bar {
             background: #222;
             padding: 30px 0;
@@ -167,14 +167,14 @@
             height: 80px;
             width: auto;
             object-fit: contain;
-            /* Filtro para deixar tudo preto e branco e elegante */
+            /* Filtro para padronizar visualmente */
             filter: grayscale(100%) brightness(0.8);
             transition: 0.3s;
             opacity: 0.7;
         }
 
         .client-logo:hover {
-            filter: grayscale(0%) brightness(1); /* Fica colorido no hover */
+            filter: grayscale(0%) brightness(1);
             opacity: 1;
             transform: scale(1.1);
         }
@@ -198,7 +198,15 @@
         .behavior-text h2 { font-size: 2rem; margin-bottom: 15px; color: var(--white); }
         .behavior-text p { color: #bbb; margin-bottom: 20px; font-size: 1.05rem; }
         .behavior-text strong { color: var(--primary); font-weight: 600; }
-        .impact-box { border-left: 4px solid var(--primary); padding-left: 20px; margin-top: 20px; }
+        
+        .impact-box { 
+            border-left: 4px solid var(--primary); 
+            padding-left: 20px; 
+            margin-top: 20px; 
+            background: rgba(255, 201, 0, 0.05);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+        }
 
         /* --- SEÇÃO BUROCRACIA --- */
         .pain-grid {
@@ -266,7 +274,7 @@
         .rocket-content p { font-size: 0.75rem; color: #666; line-height: 1.3; margin-bottom: 5px; }
         .price { color: var(--green); font-weight: 700; font-size: 0.9rem; }
 
-        /* --- O QUE A ROCKET FAZ (ESCOPO DETALHADO) --- */
+        /* --- O QUE A ROCKET FAZ --- */
         .deliverables h2 { 
             text-align: center; 
             margin-bottom: 50px; 
@@ -383,21 +391,21 @@
 
     <div class="logos-slider">
         <div class="logos-track">
-            <img src="cliente1.jpg" alt="Bar Viola" class="client-logo">
-            <img src="cliente2.jpg" alt="O Bella Pizza" class="client-logo">
-            <img src="cliente3.png" alt="Pizzaria Sabor" class="client-logo">
-            <img src="cliente4.png" alt="Garagem da Pizza" class="client-logo">
-            <img src="cliente5.png" alt="Pizzaria Arruda" class="client-logo">
-            <img src="cliente6.jpg" alt="Zat Pizza" class="client-logo">
-            <img src="cliente7.png" alt="Tropical Bar" class="client-logo">
+            <img src="https://i.ibb.co/GQ3HnB3q/download.jpg" alt="Pizzaria Sabor" class="client-logo">
+            <img src="https://i.ibb.co/PsxPy6dv/Zat-Pizza-Logo.jpg" alt="Zat Pizza" class="client-logo">
+            <img src="https://i.ibb.co/SDhhRgFz/Pizzaria-destaque-do-instagram-moderno-vermelho-story-5.png" alt="Garagem da Pizza" class="client-logo">
+            <img src="https://i.ibb.co/W4y8QhS5/Whats-App-Image-2025-12-01-at-09-49-40.jpg" alt="Bar Viola" class="client-logo">
+            <img src="https://i.ibb.co/4w4JfSGL/Logo.jpg" alt="QBella Pizza" class="client-logo">
+            <img src="https://i.ibb.co/gM6X6vwt/download.jpg" alt="Pizzaria Arruda" class="client-logo">
+            <img src="https://i.ibb.co/DDPRVJSH/image.png" alt="Tropical Bar" class="client-logo">
             
-            <img src="cliente1.jpg" alt="Bar Viola" class="client-logo">
-            <img src="cliente2.jpg" alt="O Bella Pizza" class="client-logo">
-            <img src="cliente3.png" alt="Pizzaria Sabor" class="client-logo">
-            <img src="cliente4.png" alt="Garagem da Pizza" class="client-logo">
-            <img src="cliente5.png" alt="Pizzaria Arruda" class="client-logo">
-            <img src="cliente6.jpg" alt="Zat Pizza" class="client-logo">
-            <img src="cliente7.png" alt="Tropical Bar" class="client-logo">
+            <img src="https://i.ibb.co/GQ3HnB3q/download.jpg" alt="Pizzaria Sabor" class="client-logo">
+            <img src="https://i.ibb.co/PsxPy6dv/Zat-Pizza-Logo.jpg" alt="Zat Pizza" class="client-logo">
+            <img src="https://i.ibb.co/SDhhRgFz/Pizzaria-destaque-do-instagram-moderno-vermelho-story-5.png" alt="Garagem da Pizza" class="client-logo">
+            <img src="https://i.ibb.co/W4y8QhS5/Whats-App-Image-2025-12-01-at-09-49-40.jpg" alt="Bar Viola" class="client-logo">
+            <img src="https://i.ibb.co/4w4JfSGL/Logo.jpg" alt="QBella Pizza" class="client-logo">
+            <img src="https://i.ibb.co/gM6X6vwt/download.jpg" alt="Pizzaria Arruda" class="client-logo">
+            <img src="https://i.ibb.co/DDPRVJSH/image.png" alt="Tropical Bar" class="client-logo">
         </div>
     </div>
 
@@ -416,12 +424,12 @@
                     <p>A nova geração não liga, não pergunta e não insiste. Ela abre o app, compara e escolhe quem parece mais profissional.</p>
                     
                     <div class="impact-box">
-                        <p style="margin-bottom: 0; color: #fff;">
-                            Se o seu iFood/99Food não passa confiança visual, <strong>você é ignorado — mesmo tendo comida boa.</strong>
+                        <p style="margin-bottom: 0; color: #fff; font-weight: 600;">
+                            Se o seu iFood/99Food não passa confiança visual e clareza, <strong>você é ignorado — mesmo tendo comida boa.</strong>
                         </p>
                     </div>
                     <br>
-                    <p><strong>Delivery não é abrir loja e esperar pedido.</strong> É gestão diária de vitrine, preço e decisão do cliente.</p>
+                    <p>👉 No delivery, quem não vende bem na vitrine digital não vende. <strong>Delivery não é abrir loja e esperar pedido.</strong> É gestão diária de vitrine, preço e decisão do cliente.</p>
                 </div>
             </div>
         </div>
