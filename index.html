@@ -7,29 +7,11 @@
     <title>Rocket for Eat - Especialistas em Gestão de Marketplaces</title>
     <meta name="description" content="Gestão profissional de iFood, 99Food e Keeta. A Rocket cuida da configuração, engenharia de cardápio e vendas do seu delivery.">
     
-    <link rel="canonical" href="https://www.rocketforeat.com.br" />
-    
     <link rel="icon" href="https://i.postimg.cc/sgvdLPdZ/Design-sem-nome-1.png" type="image/png">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
-
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1610879476936716');
-    fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1610879476936716&ev=PageView&noscript=1"
-    /></noscript>
 
     <style>
         /* --- RESET E VARIÁVEIS --- */
@@ -44,467 +26,88 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
-
-        html, body {
-            overflow-x: hidden;
-            width: 100%;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--dark);
-            color: var(--text-light);
-            line-height: 1.5;
-        }
-
-        h1, h2, h3 { 
-            font-family: 'Montserrat', sans-serif; 
-            font-weight: 800; 
-            text-transform: uppercase; 
-        }
-
-        .container { 
-            max-width: 1100px; 
-            margin: 0 auto; 
-            padding: 0 20px; 
-            width: 100%;
-        }
-        
+        html, body { overflow-x: hidden; width: 100%; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--dark); color: var(--text-light); line-height: 1.5; }
+        h1, h2, h3 { font-family: 'Montserrat', sans-serif; font-weight: 800; text-transform: uppercase; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; width: 100%; }
         img { max-width: 100%; height: auto; }
 
         /* --- HEADER --- */
-        header {
-            background-color: var(--white);
-            padding: 15px 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: relative;
-            z-index: 100;
-        }
-        
-        .header-content {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .logo { 
-            width: 160px; 
-            display: block;
-        }
+        header { background-color: var(--white); padding: 15px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: relative; z-index: 100; }
+        .header-content { display: flex; justify-content: center; align-items: center; }
+        .logo { width: 160px; display: block; }
 
         /* --- HERO SECTION --- */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), 
-                        url('https://images.unsplash.com/photo-1556910103-1c02745a30bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80');
-            background-size: cover;
-            background-position: center;
-            padding: 80px 0;
-            text-align: center;
-            border-bottom: 4px solid var(--primary);
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1556910103-1c02745a30bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover; background-position: center; padding: 80px 0; text-align: center; border-bottom: 4px solid var(--primary);
         }
-
-        .hero h1 {
-            font-size: 2.5rem;
-            color: var(--white);
-            line-height: 1.2;
-            margin-bottom: 20px;
-        }
-        
-        .hero h1 span { 
-            color: var(--primary); 
-            display: block;
-            margin-top: 10px;
-        }
-
-        .hero p {
-            font-size: 1.1rem;
-            color: #ccc;
-            max-width: 700px;
-            margin: 0 auto 30px auto;
-        }
-
-        .btn {
-            display: inline-block;
-            background: var(--primary);
-            color: #000;
-            font-weight: 800;
-            padding: 15px 35px;
-            text-decoration: none;
-            border-radius: 5px;
-            text-transform: uppercase;
-            font-size: 1rem;
-            transition: 0.3s;
-            cursor: pointer;
-            border: none;
-        }
+        .hero h1 { font-size: 2.5rem; color: var(--white); line-height: 1.2; margin-bottom: 20px; }
+        .hero h1 span { color: var(--primary); display: block; margin-top: 10px; }
+        .hero p { font-size: 1.1rem; color: #ccc; max-width: 700px; margin: 0 auto 30px auto; }
+        .btn { display: inline-block; background: var(--primary); color: #000; font-weight: 800; padding: 15px 35px; text-decoration: none; border-radius: 5px; text-transform: uppercase; font-size: 1rem; transition: 0.3s; cursor: pointer; border: none; }
         .btn:hover { transform: scale(1.05); background: #fff; }
 
-        /* --- FAIXA ROTATIVA (NOVO) --- */
-        .scrolling-banner {
-            background-color: var(--primary);
-            color: #000;
-            padding: 15px 0;
-            overflow: hidden;
-            white-space: nowrap;
-            position: relative;
-            border-bottom: 2px solid #000;
-        }
-        .scrolling-text {
-            display: inline-block;
-            font-weight: 800;
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            animation: marquee 30s linear infinite;
-        }
-        @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
+        /* --- FAIXA ROTATIVA NOVA --- */
+        .scrolling-banner { background-color: var(--primary); color: #000; padding: 15px 0; overflow: hidden; white-space: nowrap; border-bottom: 2px solid #000; }
+        .scrolling-text { display: inline-block; font-weight: 800; font-size: 1.1rem; text-transform: uppercase; animation: marquee 20s linear infinite; }
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-        /* --- SEÇÃO PLATAFORMAS (NOVO) --- */
-        .platforms-section {
-            background-color: var(--gray);
-            padding: 40px 0;
-            text-align: center;
-            border-bottom: 1px solid #333;
-        }
-        .platforms-title {
-            font-size: 1.2rem;
-            color: #ccc;
-            margin-bottom: 20px;
-        }
-        .platforms-flex {
-            display: flex;
-            justify-content: center;
-            gap: 50px;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        .platform-tag {
-            font-size: 1.5rem;
-            font-weight: 900;
-            color: #555;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            transition: 0.3s;
-        }
-        .platform-tag:hover {
-            color: var(--primary);
-            transform: scale(1.1);
-        }
+        /* --- SEÇÃO PLATAFORMAS NOVA --- */
+        .platforms-section { background-color: var(--gray); padding: 40px 0; text-align: center; border-bottom: 1px solid #333; }
+        .platforms-title { font-size: 1.2rem; color: #ccc; margin-bottom: 30px; }
+        .platforms-flex { display: flex; justify-content: center; gap: 50px; align-items: center; flex-wrap: wrap; }
+        .platform-img { height: 60px; object-fit: contain; filter: grayscale(100%); transition: 0.3s; }
+        .platform-img:hover { filter: grayscale(0%); transform: scale(1.1); }
 
         /* --- NICHOS --- */
-        .niches-bar {
-            background: #222;
-            padding: 30px 0;
-            text-align: center;
-            border-bottom: 1px solid #333;
-        }
+        .niches-bar { background: #222; padding: 30px 0; text-align: center; border-bottom: 1px solid #333; }
         .niches-title { font-size: 0.9rem; color: #888; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; }
-        .niches-list {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        .niche-tag {
-            background: #333;
-            color: #fff;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
+        .niches-list { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+        .niche-tag { background: #333; color: #fff; padding: 8px 15px; border-radius: 20px; font-size: 0.9rem; font-weight: 600; display: flex; align-items: center; gap: 8px; }
 
-        /* --- CARROSSEL DE CLIENTES (LOGOS) --- */
-        .logos-slider {
-            background: #000;
-            padding: 40px 0;
-            border-bottom: 1px solid #222;
-            overflow: hidden;
-            white-space: nowrap;
-        }
-        .logos-track {
-            display: inline-flex;
-            gap: 60px;
-            animation: scroll 40s linear infinite;
-            align-items: center;
-        }
-        .client-logo {
-            height: 80px;
-            width: auto;
-            object-fit: contain;
-            transition: 0.3s;
-            opacity: 1;
-        }
-        .client-logo:hover { transform: scale(1.1); }
-        @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-
-        /* --- SEÇÃO COMPORTAMENTO E RECHEIO --- */
+        /* --- CARROSSEL DE PRINTS (ANTES/DEPOIS) --- */
         .section-padding { padding: 60px 0; }
         .bg-gray { background-color: var(--gray); }
-
-        .grid-2 { 
-            display: grid; 
-            grid-template-columns: 1fr 1fr; 
-            gap: 40px; 
-            align-items: center; 
-        }
-
-        .behavior-text h2 { font-size: 2rem; margin-bottom: 15px; color: var(--white); }
-        .behavior-text p { color: #bbb; margin-bottom: 20px; font-size: 1.05rem; }
-        .behavior-text strong { color: var(--primary); font-weight: 600; }
-        
-        .impact-box { 
-            border-left: 4px solid var(--primary); 
-            padding-left: 20px; 
-            margin-top: 20px; 
-            background: rgba(255, 201, 0, 0.05);
-            padding: 20px;
-            border-radius: 0 8px 8px 0;
-        }
-
-        .recheio-box {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        /* --- CASES DE SUCESSO --- */
         .cases-section { background: #000; }
-        .case-study {
-            background: var(--gray);
-            border-radius: 12px;
-            padding: 25px;
-            margin-bottom: 30px;
-            border: 1px solid #333;
-        }
+        .case-study { background: var(--gray); border-radius: 12px; padding: 25px; margin-bottom: 30px; border: 1px solid #333; }
         .case-title { text-align: center; font-size: 1.5rem; margin-bottom: 20px; color: var(--white); }
-        .before-after-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-        .ba-card {
-            padding: 15px;
-            border-radius: 8px;
-            text-align: center;
-        }
+        .before-after-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .ba-card { padding: 15px; border-radius: 8px; text-align: center; }
         .ba-card.before { background: rgba(239, 68, 68, 0.1); border: 1px solid var(--red); }
         .ba-card.after { background: rgba(34, 197, 94, 0.1); border: 1px solid var(--green); }
         .ba-label { font-weight: 800; font-size: 0.9rem; margin-bottom: 10px; display: block; }
         .ba-card.before .ba-label { color: var(--red); }
         .ba-card.after .ba-label { color: var(--green); }
-        .ba-print {
-            width: 100%;
-            border-radius: 5px;
-            border: 2px solid #444;
-            transition: transform 0.3s;
-        }
-        .ba-print:hover { transform: scale(1.05); z-index: 10; position: relative; }
+        .ba-print { width: 100%; border-radius: 5px; border: 2px solid #444; transition: transform 0.3s; }
 
-        /* --- DEPOIMENTOS (NOVO) --- */
-        .testimonials-track {
-            display: inline-flex;
-            gap: 30px;
-            animation: scroll 60s linear infinite; /* Mais lento para leitura */
-            align-items: center;
-        }
-        .print-depoimento {
-            height: 350px;
-            border-radius: 10px;
-            border: 2px solid var(--primary);
-            object-fit: cover;
-        }
-
-        /* --- SEÇÃO BUROCRACIA --- */
-        .pain-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-top: 40px;
-        }
-        .pain-card {
-            background: rgba(255,255,255,0.05);
-            padding: 30px;
-            border-radius: 10px;
-            border: 1px solid #333;
-        }
-        .pain-card h3 { font-size: 1.2rem; color: var(--primary); margin-bottom: 10px; }
-        .pain-card p { font-size: 0.95rem; color: #aaa; }
-
-        /* --- SEÇÃO COMPARATIVO --- */
-        .visual-comparison { background: var(--white); color: #111; }
-        .visual-comparison h2 { text-align: center; font-size: 2rem; margin-bottom: 40px; }
+        /* --- CARROSSEL DE DEPOIMENTOS COM SETAS --- */
+        .testimonials-wrapper { position: relative; max-width: 900px; margin: 0 auto; overflow: hidden; padding: 0 40px; }
+        .testimonials-track { display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none; }
+        .testimonials-track::-webkit-scrollbar { display: none; }
+        .print-depoimento { scroll-snap-align: center; flex: 0 0 auto; height: 350px; border-radius: 10px; border: 2px solid var(--primary); object-fit: cover; }
         
-        .menu-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
+        .arrow-btn {
+            position: absolute; top: 50%; transform: translateY(-50%); background: var(--primary); color: #000; border: none; width: 40px; height: 40px; border-radius: 50%; font-size: 1.5rem; font-weight: bold; cursor: pointer; z-index: 10; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.5); transition: 0.3s;
         }
-        .menu-box {
-            background: #f8f8f8;
-            padding: 20px;
-            border-radius: 12px;
-            border: 1px solid #ddd;
-        }
-        .status-label {
-            display: inline-block;
-            padding: 5px 12px;
-            border-radius: 4px;
-            font-weight: 700;
-            font-size: 0.8rem;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
-        .label-bad { background: #ffebeb; color: var(--red); border: 1px solid var(--red); }
-        .label-good { background: #eaffea; color: var(--green); border: 1px solid var(--green); }
+        .arrow-btn:hover { background: #fff; transform: translateY(-50%) scale(1.1); }
+        .arrow-left { left: 0; }
+        .arrow-right { right: 0; }
 
-        .rocket-item {
-            display: flex;
-            gap: 15px;
-            background: #fff;
-            padding: 10px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            margin-bottom: 10px;
-        }
-        .rocket-img {
-            width: 70px; height: 70px;
-            background: #eee;
-            border-radius: 6px;
-            object-fit: cover;
-            flex-shrink: 0;
-        }
-        .rocket-content h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 4px; color: #000; }
-        .rocket-content p { font-size: 0.75rem; color: #666; line-height: 1.3; margin-bottom: 5px; }
-        .price { color: var(--green); font-weight: 700; font-size: 0.9rem; }
+        /* --- FORMULÁRIO INVISÍVEL --- */
+        .form-wrapper { background: var(--gray); padding: 40px; border-radius: 12px; border: 1px solid #333; max-width: 600px; margin: 0 auto; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .form-group { margin-bottom: 20px; text-align: left; }
+        .form-group label { display: block; color: var(--white); font-weight: 600; margin-bottom: 8px; }
+        .form-group input, .form-group select { width: 100%; padding: 15px; border-radius: 8px; border: 1px solid #444; background: #111; color: #fff; font-size: 1rem; font-family: 'Inter', sans-serif; }
+        .form-group input:focus, .form-group select:focus { outline: none; border-color: var(--primary); }
 
-        /* --- O QUE A ROCKET FAZ --- */
-        .deliverables h2 { 
-            text-align: center; 
-            margin-bottom: 50px; 
-            font-size: 2.2rem;
-            color: var(--primary);
-        }
-        .scope-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-        .scope-item {
-            background: #252525;
-            padding: 25px;
-            border-radius: 8px;
-            border-left: 4px solid var(--primary);
-        }
-        .scope-item h3 { color: #fff; font-size: 1.2rem; margin-bottom: 10px; }
-        .scope-item ul { list-style: none; }
-        .scope-item li { color: #bbb; font-size: 0.9rem; margin-bottom: 8px; position: relative; padding-left: 20px; }
-        .scope-item li::before { content: "•"; color: var(--primary); position: absolute; left: 0; }
-
-        /* --- FORMULÁRIO DE CAPTAÇÃO (NOVO) --- */
-        .form-wrapper {
-            background: var(--gray);
-            padding: 40px;
-            border-radius: 12px;
-            border: 1px solid #333;
-            max-width: 600px;
-            margin: 0 auto;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-        .form-group {
-            margin-bottom: 20px;
-            text-align: left;
-        }
-        .form-group label {
-            display: block;
-            color: var(--white);
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-        .form-group input, .form-group select {
-            width: 100%;
-            padding: 15px;
-            border-radius: 8px;
-            border: 1px solid #444;
-            background: #111;
-            color: #fff;
-            font-size: 1rem;
-            font-family: 'Inter', sans-serif;
-        }
-        .form-group input:focus, .form-group select:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
-
-        /* --- FAQ --- */
-        .faq-section { background: var(--gray); }
-        .faq-section h2 { text-align: center; margin-bottom: 40px; font-size: 2rem; }
-        
-        .faq-item {
-            background: #333;
-            margin-bottom: 15px;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        .faq-item summary {
-            padding: 20px;
-            cursor: pointer;
-            font-weight: 600;
-            color: #fff;
-            list-style: none;
-            position: relative;
-        }
-        .faq-item summary::after {
-            content: "+";
-            position: absolute;
-            right: 20px;
-            font-weight: bold;
-            color: var(--primary);
-        }
-        .faq-item[open] summary::after { content: "-"; }
-        .faq-item p {
-            padding: 0 20px 20px 20px;
-            color: #ccc;
-            font-size: 0.95rem;
-        }
-
-        /* --- FOOTER --- */
-        footer { padding: 40px 0; text-align: center; border-top: 1px solid #333; background: #000; }
-        footer p { font-size: 0.9rem; color: #666; }
-
-        /* --- BOTÃO WHATSAPP --- */
-        .wpp-float {
-            position: fixed; bottom: 20px; right: 20px;
-            background: #25D366; width: 55px; height: 55px;
-            border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 999;
-        }
-        .wpp-float svg { width: 30px; fill: white; }
-
-        /* --- MEDIA QUERIES --- */
+        /* --- RESPONSIVIDADE --- */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 1.8rem; } 
-            .hero p { font-size: 1rem; }
-            h2 { font-size: 1.5rem !important; }
-            .grid-2, .menu-grid, .before-after-grid { grid-template-columns: 1fr; } 
-            .hero { padding: 50px 0; }
-            .section-padding { padding: 40px 0; }
-            .logo { width: 140px; }
-            .container { padding: 0 15px; }
-            .menu-box { margin-bottom: 20px; }
-            .logos-track { gap: 30px; }
-            .client-logo { height: 60px; }
-            .ba-card { margin-bottom: 15px; }
-            .platforms-flex { gap: 20px; }
-            .platform-tag { font-size: 1.1rem; }
+            .hero h1 { font-size: 1.8rem; } .hero p { font-size: 1rem; }
+            .grid-2, .before-after-grid { grid-template-columns: 1fr; } 
+            .platforms-flex { gap: 20px; } .platform-img { height: 45px; }
+            .print-depoimento { height: 280px; }
+            .arrow-btn { width: 35px; height: 35px; font-size: 1.2rem; }
         }
     </style>
 </head>
@@ -519,28 +122,26 @@
     <section class="hero">
         <div class="container">
             <h1>ROCKET FOR EAT<br><span>ESPECIALISTAS EM GESTÃO DE MARKETPLACES</span></h1>
-            <p>Domine o iFood, 99Food, Rappi e Keeta com gestão profissional. Você cozinha, a gente cuida das vendas e da burocracia.</p>
-            <!-- O botão agora joga o lead direto para o formulário de qualificação -->
+            <p>Domine o iFood, 99Food e Keeta com gestão profissional. Você cozinha, a gente cuida das vendas e da burocracia.</p>
             <a href="#captacao" class="btn">Quero vender mais</a>
         </div>
     </section>
 
-    <!-- FAIXA ROTATIVA -->
+    <!-- FAIXA ROTATIVA CORRIGIDA -->
     <div class="scrolling-banner">
         <div class="scrolling-text">
-            DOMINE O ALGORITMO DO DELIVERY • ENGENHARIA DE CARDÁPIO E CONVERSÃO • GESTÃO PROFISSIONAL IFOOD, KEETA E 99FOOD • AUMENTE SEU TICKET MÉDIO E MARGEM DE LUCRO • DOMINE O ALGORITMO DO DELIVERY • ENGENHARIA DE CARDÁPIO E CONVERSÃO • GESTÃO PROFISSIONAL IFOOD, KEETA E 99FOOD • AUMENTE SEU TICKET MÉDIO E MARGEM DE LUCRO •
+            VOCÊ FOCA NA COZINHA, A ROCKET FOCA NAS VENDAS • GESTÃO DE IFOOD, 99FOOD E KEETA • ZERO DOR DE CABEÇA COM BUROCRACIA • CARDÁPIO DIGITAL DE ALTA CONVERSÃO • VOCÊ FOCA NA COZINHA, A ROCKET FOCA NAS VENDAS • GESTÃO DE IFOOD, 99FOOD E KEETA • ZERO DOR DE CABEÇA COM BUROCRACIA • CARDÁPIO DIGITAL DE ALTA CONVERSÃO •
         </div>
     </div>
 
-    <!-- ESPECIALIDADE NAS PLATAFORMAS -->
+    <!-- ESPECIALIDADE NAS PLATAFORMAS (LOGOS NOVAS) -->
     <section class="platforms-section">
         <div class="container">
             <h2 class="platforms-title">SOMOS ESPECIALISTAS NA GESTÃO DOS MAIORES MARKETPLACES</h2>
             <div class="platforms-flex">
-                <div class="platform-tag">🍔 iFood</div>
-                <div class="platform-tag">🛵 99Food</div>
-                <div class="platform-tag">🐼 Keeta</div>
-                <div class="platform-tag">🚀 Rappi</div>
+                <img src="https://logodownload.org/wp-content/uploads/2017/05/ifood-logo-0.png" alt="iFood" class="platform-img">
+                <img src="https://i.ibb.co/wXfGLBj/99food.png" alt="99Food" class="platform-img">
+                <img src="https://i.ibb.co/p6KQSq18/download.png" alt="Keeta" class="platform-img">
             </div>
         </div>
     </section>
@@ -558,45 +159,10 @@
         </div>
     </div>
 
-    <!-- O RECHEIO: DOR FINANCEIRA -->
-    <section class="section-padding" style="background-color: var(--dark); border-bottom: 1px solid #222;">
-        <div class="container recheio-box">
-            <h2>VENDER MUITO <span style="color: var(--primary)">NÃO SIGNIFICA LUCRAR MUITO</span></h2>
-            <p style="color: #bbb; font-size: 1.1rem; margin-top: 20px;">
-                O dono do delivery geralmente sangra dinheiro porque não sabe analisar o extrato, usa cupom de desconto do jeito errado e não calcula o impacto dos subsídios de entrega. A Rocket cruza os dados financeiros de vendas versus as taxas dos aplicativos para garantir que a sua operação não trabalhe de graça.
-            </p>
-        </div>
-    </section>
-
-    <section class="section-padding bg-gray">
-        <div class="container">
-            <div class="grid-2">
-                <div>
-                    <img src="https://i.ibb.co/tPnnfZ6k/cardapio-digital-personalizado-psquisa-brindes.png" style="border-radius: 10px; opacity: 0.9;" alt="Cliente Geração Z no celular" loading="lazy">
-                </div>
-                <div class="behavior-text">
-                    <h2>O CLIENTE MUDOU.<br><span style="color: var(--primary)">QUEM NÃO ACOMPANHOU JÁ ESTÁ FICANDO INVISÍVEL.</span></h2>
-                    <p>Hoje, o cliente decide em <strong>5 segundos</strong> qual delivery vai comprar.</p>
-                    <p>E a decisão não é pela comida. É pela vitrine digital e engenharia de cardápio.</p>
-                    <p>A nova geração não liga, não pergunta e não insiste. Ela abre o app, compara e escolhe quem parece mais profissional.</p>
-                    
-                    <div class="impact-box">
-                        <p style="margin-bottom: 0; color: #fff; font-weight: 600;">
-                            Se a sua loja não passa confiança visual e clareza, <strong>você é ignorado — mesmo tendo comida boa.</strong>
-                        </p>
-                    </div>
-                    <br>
-                    <p>👉 No delivery, quem não vende bem na vitrine digital não vende. <strong>Delivery não é abrir loja e esperar pedido.</strong> É gestão diária de plataforma, preço e decisão do cliente.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    <!-- CASES DE SUCESSO -->
     <section class="section-padding cases-section">
         <div class="container">
             <h2 style="text-align: center; margin-bottom: 40px;">CASES REAIS DE SUCESSO <br><span style="color: var(--primary)">NOS APLICATIVOS</span></h2>
-            <p style="text-align: center; margin-bottom: 40px;">Contra fatos não há argumentos. Veja o que acontece quando a Rocket assume a gestão.</p>
-
             <div class="case-study">
                 <h3 class="case-title">🍕 Pizzaria Garagem da Esfiha (Em 1 Mês)</h3>
                 <div class="before-after-grid">
@@ -610,54 +176,36 @@
                     </div>
                 </div>
             </div>
-
-            <div class="case-study">
-                <h3 class="case-title">🍕 Pizzaria Arruda (Crescimento Rápido)</h3>
-                <div class="before-after-grid">
-                    <div class="ba-card before">
-                        <span class="ba-label">ANTES (Outubro)</span>
-                        <img src="https://i.ibb.co/5WXC2CHp/image.png" alt="Faturamento Antes Arruda" class="ba-print" loading="lazy">
-                    </div>
-                    <div class="ba-card after">
-                        <span class="ba-label">DEPOIS DA ROCKET</span>
-                        <img src="https://i.ibb.co/mr98GMDv/image.png" alt="Faturamento Depois Arruda" class="ba-print" loading="lazy">
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
-    <!-- DEPOIMENTOS EM CARROSSEL -->
-    <section class="section-padding bg-gray" style="overflow: hidden;">
+    <!-- DEPOIMENTOS COM SETAS DE NAVEGAÇÃO -->
+    <section class="section-padding bg-gray">
         <div class="container">
             <h2 style="text-align: center; margin-bottom: 40px;">O QUE NOSSOS PARCEIROS DIZEM</h2>
         </div>
-        <div class="logos-slider" style="background: transparent; padding: 0; border: none;">
-            <div class="testimonials-track">
-                <!-- AQUI VOCÊ SOBE OS LINKS DOS SEUS PRINTS DO WHATSAPP -->
-                <img src="https://via.placeholder.com/250x350/111/FFC900?text=Print+Cliente+1" alt="Depoimento" class="print-depoimento">
-                <img src="https://via.placeholder.com/250x350/111/FFC900?text=Print+Cliente+2" alt="Depoimento" class="print-depoimento">
-                <img src="https://via.placeholder.com/250x350/111/FFC900?text=Print+Cliente+3" alt="Depoimento" class="print-depoimento">
-                <img src="https://via.placeholder.com/250x350/111/FFC900?text=Print+Cliente+4" alt="Depoimento" class="print-depoimento">
-                <img src="https://via.placeholder.com/250x350/111/FFC900?text=Print+Cliente+5" alt="Depoimento" class="print-depoimento">
-                
-                <!-- REPETIÇÃO PARA O EFEITO INFINITO -->
-                <img src="https://via.placeholder.com/250x350/111/FFC900?text=Print+Cliente+1" alt="Depoimento" class="print-depoimento">
-                <img src="https://via.placeholder.com/250x350/111/FFC900?text=Print+Cliente+2" alt="Depoimento" class="print-depoimento">
-                <img src="https://via.placeholder.com/250x350/111/FFC900?text=Print+Cliente+3" alt="Depoimento" class="print-depoimento">
-                <img src="https://via.placeholder.com/250x350/111/FFC900?text=Print+Cliente+4" alt="Depoimento" class="print-depoimento">
-                <img src="https://via.placeholder.com/250x350/111/FFC900?text=Print+Cliente+5" alt="Depoimento" class="print-depoimento">
+        <div class="testimonials-wrapper">
+            <button class="arrow-btn arrow-left" id="btnPrev">❮</button>
+            <div class="testimonials-track" id="sliderTrack">
+                <!-- Substitua pelo link dos prints reais -->
+                <img src="https://via.placeholder.com/250x350/111/FFC900?text=Print+Cliente+1" class="print-depoimento">
+                <img src="https://via.placeholder.com/250x350/111/FFC900?text=Print+Cliente+2" class="print-depoimento">
+                <img src="https://via.placeholder.com/250x350/111/FFC900?text=Print+Cliente+3" class="print-depoimento">
+                <img src="https://via.placeholder.com/250x350/111/FFC900?text=Print+Cliente+4" class="print-depoimento">
+                <img src="https://via.placeholder.com/250x350/111/FFC900?text=Print+Cliente+5" class="print-depoimento">
             </div>
+            <button class="arrow-btn arrow-right" id="btnNext">❯</button>
         </div>
     </section>
 
-    <!-- FORMULÁRIO DE CAPTAÇÃO / QUALIFICAÇÃO -->
+    <!-- FORMULÁRIO SILENCIOSO (VAI PRO SEU E-MAIL) -->
     <section class="section-padding" id="captacao" style="background-color: #000; border-top: 4px solid var(--primary);">
         <div class="container text-center">
             <h2 style="text-align: center; font-size: 2.2rem; margin-bottom: 10px;">VAMOS ESCALAR <span style="color: var(--primary);">SEU DELIVERY?</span></h2>
             <p style="text-align: center; color: #ccc; margin-bottom: 40px;">Preencha os dados abaixo. Nossa equipe vai analisar o seu cenário e entrar em contato.</p>
             
             <div class="form-wrapper">
+                <!-- AQUI VOCÊ SÓ PRECISA TROCAR O EMAIL DEPOIS DO /ajax/ -->
                 <form id="leadForm">
                     <div class="form-group">
                         <label>Qual o seu Nicho?</label>
@@ -687,164 +235,49 @@
                         <input type="tel" name="whatsapp" placeholder="(11) 99999-9999" required>
                     </div>
 
-                    <button type="submit" class="btn" style="width: 100%; margin-top: 10px; font-size: 1.1rem; padding: 20px;">QUERO UMA ANÁLISE DA MINHA LOJA</button>
+                    <button type="submit" id="submitBtn" class="btn" style="width: 100%; margin-top: 10px; font-size: 1.1rem; padding: 20px;">QUERO UMA ANÁLISE DA MINHA LOJA</button>
                 </form>
             </div>
         </div>
     </section>
 
-    <section class="section-padding">
-        <div class="container">
-            <h2 style="text-align: center;">O PESADELO DA <span style="color: var(--primary)">BUROCRACIA</span></h2>
-            <p style="text-align: center;">Ativar uma loja nos apps não é só "abrir conta". É técnico.</p>
-
-            <div class="pain-grid">
-                <div class="pain-card">
-                    <h3>01. Abertura de Contas</h3>
-                    <p>Travado no CNPJ ou dados bancários? Nós configuramos todas as plataformas do zero (iFood, 99Food, Keeta).</p>
-                </div>
-                <div class="pain-card">
-                    <h3>02. Taxas e Margem</h3>
-                    <p>Você sabe quanto paga de verdade? Calculamos a precificação exata para o app não comer seu lucro.</p>
-                </div>
-                <div class="pain-card">
-                    <h3>03. Configuração Técnica</h3>
-                    <p>Área de entrega, horários, feriados e travas de segurança. Ajustamos tudo para evitar prejuízos.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section-padding visual-comparison">
-        <div class="container">
-            <h2>POR QUE SEU CONCORRENTE <span style="background: var(--primary); padding: 0 10px;">VENDE MAIS?</span></h2>
-            
-            <div class="menu-grid">
-                <div class="menu-box" style="border-color: #ffcccc;">
-                    <div class="status-label label-bad">Cardápio Amador</div>
-                    <div style="border-bottom:1px solid #eee; padding: 10px 0; display:flex; justify-content:space-between;">
-                        <span>X-Salada</span><span>R$ 22,00</span>
-                    </div>
-                    <div style="border-bottom:1px solid #eee; padding: 10px 0; display:flex; justify-content:space-between;">
-                        <span>Pizza M</span><span>R$ 40,00</span>
-                    </div>
-                    <p style="margin-top: 15px; font-size: 0.85rem; color: #a00;">🔴 <strong>Resultado:</strong> Sem foto, sem descrição. O cliente acha caro.</p>
-                </div>
-
-                <div class="menu-box" style="border-color: #bbfabb;">
-                    <div class="status-label label-good">Padrão Rocket</div>
-                    
-                    <div class="rocket-item">
-                        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" class="rocket-img" alt="Burger" loading="lazy">
-                        <div class="rocket-content">
-                            <h4>Smash Salad Premium 🍔</h4>
-                            <p>Blend de 100g, queijo prato derretido, alface americana crocante e maionese verde.</p>
-                            <span class="price">R$ 28,90</span>
-                        </div>
-                    </div>
-                    <p style="margin-top: 5px; font-size: 0.85rem; color: #006400;">🟢 <strong>Resultado:</strong> Dá vontade de comer. Vende muito mais.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section-padding deliverables">
-        <div class="container">
-            <h2>O QUE VAMOS <br>FAZER POR VOCÊ</h2>
-            <p style="text-align: center; margin-bottom: 40px; color: #ccc;">"Você cuida da cozinha, a gente cuida do resto."</p>
-            
-            <div class="scope-grid">
-                <div class="scope-item">
-                    <h3>✅ Gestão Multi-Plataforma</h3>
-                    <ul>
-                        <li>Centralização iFood, 99Food, Rappi e Keeta.</li>
-                        <li>Gestão de abertura e fechamento de loja.</li>
-                        <li>Configuração de feriados e pausas.</li>
-                    </ul>
-                </div>
-                <div class="scope-item">
-                    <h3>✅ Cardápio de Alta Conversão</h3>
-                    <ul>
-                        <li>Engenharia de Cardápio (grupos e complementos).</li>
-                        <li>Criação de nomes e descrições persuasivas.</li>
-                        <li>Estratégia para aumentar ticket médio (bebidas e extras).</li>
-                    </ul>
-                </div>
-                <div class="scope-item">
-                    <h3>✅ Financeiro e Precificação</h3>
-                    <ul>
-                        <li>Cálculo de custo x taxa do aplicativo.</li>
-                        <li>Definição de preço para garantir margem de lucro.</li>
-                        <li>Análise de promoções (entrar ou não entrar?).</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div style="text-align: center; margin-top: 50px;">
-                <a href="#captacao" class="btn">QUERO CONTRATAR A GESTÃO</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="section-padding faq-section">
-        <div class="container">
-            <h2>DÚVIDAS FREQUENTES</h2>
-            
-            <div class="faq-item">
-                <details>
-                    <summary>Eu preciso dar acesso à minha conta?</summary>
-                    <p>Sim. Para configurarmos as lojas, áreas de entrega e cardápios, precisamos de acesso administrativo como parceiro. Tudo feito com total segurança e confidencialidade.</p>
-                </details>
-            </div>
-            <div class="faq-item">
-                <details>
-                    <summary>Quanto custa o serviço?</summary>
-                    <p>Temos planos adaptados ao tamanho do seu delivery. Nosso objetivo é que o aumento do seu lucro pague o investimento. Preencha o formulário para uma cotação rápida.</p>
-                </details>
-            </div>
-            <div class="faq-item">
-                <details>
-                    <summary>Já tenho iFood, vale a pena contratar?</summary>
-                    <p>Com certeza. "Estar" no iFood é diferente de "Vender" no iFood. A maioria das lojas perde dinheiro com precificação errada e cardápio ruim. Nós otimizamos sua loja para você lucrar de verdade.</p>
-                </details>
-            </div>
-            <div class="faq-item">
-                <details>
-                    <summary>Vocês atendem quais nichos?</summary>
-                    <p>Pizzarias, Hamburguerias, Marmitas, Açaí, Docerias e Restaurantes em geral. Se tem delivery, nós resolvemos.</p>
-                </details>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>Rocket for Eat © 2026. Todos os direitos reservados.</p>
-        </div>
-    </footer>
-
-    <!-- Apenas o botão flutuante básico para quem ainda quiser o atalho -->
-    <a href="https://wa.me/5511959228663?text=Ol%C3%A1,%20vim%20pelo%20site%20e%20tenho%20uma%20d%C3%BAvida." class="wpp-float">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zM223.9 439.6c-33.8 0-66.3-8.8-94.3-25.1l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
-    </a>
-
-    <!-- SCRIPT PARA ENVIAR O FORMULÁRIO DIRETO PRO SEU WHATSAPP -->
+    <!-- SCRIPTS -->
     <script>
+        // Lógica do Slider de Depoimentos
+        const track = document.getElementById('sliderTrack');
+        const btnPrev = document.getElementById('btnPrev');
+        const btnNext = document.getElementById('btnNext');
+
+        btnNext.addEventListener('click', () => {
+            track.scrollBy({ left: 300, behavior: 'smooth' });
+        });
+        
+        btnPrev.addEventListener('click', () => {
+            track.scrollBy({ left: -300, behavior: 'smooth' });
+        });
+
+        // Lógica do Formulário (Envio silencioso para o e-mail)
         document.getElementById('leadForm').addEventListener('submit', function(e) {
-            e.preventDefault(); // Impede a página de recarregar
+            e.preventDefault(); 
+            const btn = document.getElementById('submitBtn');
+            btn.innerText = "Enviando dados...";
             
-            // Pega os valores preenchidos
-            var nicho = this.nicho.value;
-            var nome = this.nome.value;
-            var loja = this.loja.value;
-            var whatsapp = this.whatsapp.value;
-            
-            // Monta a mensagem estruturada
-            var texto = `🚀 *NOVO LEAD QUALIFICADO DO SITE!* 🚀%0A%0A*Nome:* ${nome}%0A*Loja:* ${loja}%0A*Nicho:* ${nicho}%0A*WhatsApp:* ${whatsapp}%0A%0AGostaria de uma análise da minha loja!`;
-            
-            // Redireciona para a API do WhatsApp
-            var urlWhatsapp = `https://wa.me/5511959228663?text=${texto}`;
-            window.open(urlWhatsapp, '_blank');
+            // TROQUE "seuemail@gmail.com" PELO SEU E-MAIL REAL DA ROCKET
+            fetch("https://formsubmit.co/ajax/seuemail@gmail.com", {
+                method: "POST",
+                body: new FormData(this)
+            })
+            .then(response => response.json())
+            .then(data => {
+                btn.innerText = "DADOS ENVIADOS! LOGO CHAMAMOS VOCÊ.";
+                btn.style.backgroundColor = "#22C55E"; // Fica Verde
+                btn.style.color = "#fff";
+                this.reset(); // Limpa o formulário pro lead
+            })
+            .catch(error => {
+                btn.innerText = "Erro ao enviar. Tente novamente.";
+                btn.style.backgroundColor = "#EF4444"; // Fica Vermelho
+            });
         });
     </script>
 
