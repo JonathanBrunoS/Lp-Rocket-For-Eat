@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Rocket for Eat - Especialistas em Gestão de Marketplaces</title>
-    <meta name="description" content="Gestão profissional de iFood, 99Food e Rappi. A Rocket cuida da configuração, cardápio e vendas do seu delivery.">
+    <meta name="description" content="Gestão profissional de iFood, 99Food e Keeta. A Rocket cuida da configuração, engenharia de cardápio e vendas do seu delivery.">
     
     <link rel="canonical" href="https://www.rocketforeat.com.br" />
     
@@ -30,19 +30,20 @@
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=1610879476936716&ev=PageView&noscript=1"
     /></noscript>
+
     <style>
         /* --- RESET E VARIÁVEIS --- */
         :root {
-            --primary: #FFC900; /* Amarelo Rocket */
-            --dark: #121212;    /* Preto Fundo */
-            --gray: #1E1E1E;    /* Cinza Cards */
+            --primary: #FFC900; 
+            --dark: #121212;    
+            --gray: #1E1E1E;    
             --white: #FFFFFF;
             --text-light: #F5F5F5;
             --green: #22C55E;
             --red: #EF4444;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
 
         html, body {
             overflow-x: hidden;
@@ -138,6 +139,60 @@
         }
         .btn:hover { transform: scale(1.05); background: #fff; }
 
+        /* --- FAIXA ROTATIVA (NOVO) --- */
+        .scrolling-banner {
+            background-color: var(--primary);
+            color: #000;
+            padding: 15px 0;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            border-bottom: 2px solid #000;
+        }
+        .scrolling-text {
+            display: inline-block;
+            font-weight: 800;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            animation: marquee 30s linear infinite;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* --- SEÇÃO PLATAFORMAS (NOVO) --- */
+        .platforms-section {
+            background-color: var(--gray);
+            padding: 40px 0;
+            text-align: center;
+            border-bottom: 1px solid #333;
+        }
+        .platforms-title {
+            font-size: 1.2rem;
+            color: #ccc;
+            margin-bottom: 20px;
+        }
+        .platforms-flex {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .platform-tag {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #555;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+        .platform-tag:hover {
+            color: var(--primary);
+            transform: scale(1.1);
+        }
+
         /* --- NICHOS --- */
         .niches-bar {
             background: #222;
@@ -164,7 +219,7 @@
             gap: 8px;
         }
 
-        /* --- CARROSSEL DE CLIENTES --- */
+        /* --- CARROSSEL DE CLIENTES (LOGOS) --- */
         .logos-slider {
             background: #000;
             padding: 40px 0;
@@ -172,14 +227,12 @@
             overflow: hidden;
             white-space: nowrap;
         }
-        
         .logos-track {
             display: inline-flex;
             gap: 60px;
             animation: scroll 40s linear infinite;
             align-items: center;
         }
-
         .client-logo {
             height: 80px;
             width: auto;
@@ -187,15 +240,13 @@
             transition: 0.3s;
             opacity: 1;
         }
-
         .client-logo:hover { transform: scale(1.1); }
-
         @keyframes scroll {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
         }
 
-        /* --- SEÇÃO COMPORTAMENTO --- */
+        /* --- SEÇÃO COMPORTAMENTO E RECHEIO --- */
         .section-padding { padding: 60px 0; }
         .bg-gray { background-color: var(--gray); }
 
@@ -219,6 +270,59 @@
             border-radius: 0 8px 8px 0;
         }
 
+        .recheio-box {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* --- CASES DE SUCESSO --- */
+        .cases-section { background: #000; }
+        .case-study {
+            background: var(--gray);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border: 1px solid #333;
+        }
+        .case-title { text-align: center; font-size: 1.5rem; margin-bottom: 20px; color: var(--white); }
+        .before-after-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .ba-card {
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .ba-card.before { background: rgba(239, 68, 68, 0.1); border: 1px solid var(--red); }
+        .ba-card.after { background: rgba(34, 197, 94, 0.1); border: 1px solid var(--green); }
+        .ba-label { font-weight: 800; font-size: 0.9rem; margin-bottom: 10px; display: block; }
+        .ba-card.before .ba-label { color: var(--red); }
+        .ba-card.after .ba-label { color: var(--green); }
+        .ba-print {
+            width: 100%;
+            border-radius: 5px;
+            border: 2px solid #444;
+            transition: transform 0.3s;
+        }
+        .ba-print:hover { transform: scale(1.05); z-index: 10; position: relative; }
+
+        /* --- DEPOIMENTOS (NOVO) --- */
+        .testimonials-track {
+            display: inline-flex;
+            gap: 30px;
+            animation: scroll 60s linear infinite; /* Mais lento para leitura */
+            align-items: center;
+        }
+        .print-depoimento {
+            height: 350px;
+            border-radius: 10px;
+            border: 2px solid var(--primary);
+            object-fit: cover;
+        }
+
         /* --- SEÇÃO BUROCRACIA --- */
         .pain-grid {
             display: grid;
@@ -226,7 +330,6 @@
             gap: 20px;
             margin-top: 40px;
         }
-
         .pain-card {
             background: rgba(255,255,255,0.05);
             padding: 30px;
@@ -245,14 +348,12 @@
             grid-template-columns: 1fr 1fr;
             gap: 30px;
         }
-
         .menu-box {
             background: #f8f8f8;
             padding: 20px;
             border-radius: 12px;
             border: 1px solid #ddd;
         }
-
         .status-label {
             display: inline-block;
             padding: 5px 12px;
@@ -292,13 +393,11 @@
             font-size: 2.2rem;
             color: var(--primary);
         }
-
         .scope-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
         }
-
         .scope-item {
             background: #252525;
             padding: 25px;
@@ -310,38 +409,40 @@
         .scope-item li { color: #bbb; font-size: 0.9rem; margin-bottom: 8px; position: relative; padding-left: 20px; }
         .scope-item li::before { content: "•"; color: var(--primary); position: absolute; left: 0; }
 
-        /* --- CASES DE SUCESSO --- */
-        .cases-section { background: #000; }
-        .case-study {
+        /* --- FORMULÁRIO DE CAPTAÇÃO (NOVO) --- */
+        .form-wrapper {
             background: var(--gray);
+            padding: 40px;
             border-radius: 12px;
-            padding: 25px;
-            margin-bottom: 30px;
             border: 1px solid #333;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
-        .case-title { text-align: center; font-size: 1.5rem; margin-bottom: 20px; color: var(--white); }
-        .before-after-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
         }
-        .ba-card {
+        .form-group label {
+            display: block;
+            color: var(--white);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
             padding: 15px;
             border-radius: 8px;
-            text-align: center;
+            border: 1px solid #444;
+            background: #111;
+            color: #fff;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
         }
-        .ba-card.before { background: rgba(239, 68, 68, 0.1); border: 1px solid var(--red); }
-        .ba-card.after { background: rgba(34, 197, 94, 0.1); border: 1px solid var(--green); }
-        .ba-label { font-weight: 800; font-size: 0.9rem; margin-bottom: 10px; display: block; }
-        .ba-card.before .ba-label { color: var(--red); }
-        .ba-card.after .ba-label { color: var(--green); }
-        .ba-print {
-            width: 100%;
-            border-radius: 5px;
-            border: 2px solid #444;
-            transition: transform 0.3s;
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
         }
-        .ba-print:hover { transform: scale(1.05); z-index: 10; position: relative; }
 
         /* --- FAQ --- */
         .faq-section { background: var(--gray); }
@@ -402,6 +503,8 @@
             .logos-track { gap: 30px; }
             .client-logo { height: 60px; }
             .ba-card { margin-bottom: 15px; }
+            .platforms-flex { gap: 20px; }
+            .platform-tag { font-size: 1.1rem; }
         }
     </style>
 </head>
@@ -417,7 +520,28 @@
         <div class="container">
             <h1>ROCKET FOR EAT<br><span>ESPECIALISTAS EM GESTÃO DE MARKETPLACES</span></h1>
             <p>Domine o iFood, 99Food, Rappi e Keeta com gestão profissional. Você cozinha, a gente cuida das vendas e da burocracia.</p>
-            <a href="https://wa.me/5511959228663?text=Ol%C3%A1,%20quero%20conhecer%20os%20planos%20da%20Rocket" class="btn">Quero vender mais</a>
+            <!-- O botão agora joga o lead direto para o formulário de qualificação -->
+            <a href="#captacao" class="btn">Quero vender mais</a>
+        </div>
+    </section>
+
+    <!-- FAIXA ROTATIVA -->
+    <div class="scrolling-banner">
+        <div class="scrolling-text">
+            DOMINE O ALGORITMO DO DELIVERY • ENGENHARIA DE CARDÁPIO E CONVERSÃO • GESTÃO PROFISSIONAL IFOOD, KEETA E 99FOOD • AUMENTE SEU TICKET MÉDIO E MARGEM DE LUCRO • DOMINE O ALGORITMO DO DELIVERY • ENGENHARIA DE CARDÁPIO E CONVERSÃO • GESTÃO PROFISSIONAL IFOOD, KEETA E 99FOOD • AUMENTE SEU TICKET MÉDIO E MARGEM DE LUCRO •
+        </div>
+    </div>
+
+    <!-- ESPECIALIDADE NAS PLATAFORMAS -->
+    <section class="platforms-section">
+        <div class="container">
+            <h2 class="platforms-title">SOMOS ESPECIALISTAS NA GESTÃO DOS MAIORES MARKETPLACES</h2>
+            <div class="platforms-flex">
+                <div class="platform-tag">🍔 iFood</div>
+                <div class="platform-tag">🛵 99Food</div>
+                <div class="platform-tag">🐼 Keeta</div>
+                <div class="platform-tag">🚀 Rappi</div>
+            </div>
         </div>
     </section>
 
@@ -434,25 +558,15 @@
         </div>
     </div>
 
-    <div class="logos-slider">
-        <div class="logos-track">
-            <img src="https://i.ibb.co/GQ3HnB3q/download.jpg" alt="Pizzaria Sabor" class="client-logo" loading="lazy">
-            <img src="https://i.ibb.co/PsxPy6dv/Zat-Pizza-Logo.jpg" alt="Zat Pizza" class="client-logo" loading="lazy">
-            <img src="https://i.ibb.co/SDhhRgFz/Pizzaria-destaque-do-instagram-moderno-vermelho-story-5.png" alt="Garagem da Pizza" class="client-logo" loading="lazy">
-            <img src="https://i.ibb.co/W4y8QhS5/Whats-App-Image-2025-12-01-at-09-49-40.jpg" alt="Bar Viola" class="client-logo" loading="lazy">
-            <img src="https://i.ibb.co/4w4JfSGL/Logo.jpg" alt="QBella Pizza" class="client-logo" loading="lazy">
-            <img src="https://i.ibb.co/gM6X6vwt/download.jpg" alt="Pizzaria Arruda" class="client-logo" loading="lazy">
-            <img src="https://i.ibb.co/DDPRVJSH/image.png" alt="Tropical Bar" class="client-logo" loading="lazy">
-            
-            <img src="https://i.ibb.co/GQ3HnB3q/download.jpg" alt="Pizzaria Sabor" class="client-logo" loading="lazy">
-            <img src="https://i.ibb.co/PsxPy6dv/Zat-Pizza-Logo.jpg" alt="Zat Pizza" class="client-logo" loading="lazy">
-            <img src="https://i.ibb.co/SDhhRgFz/Pizzaria-destaque-do-instagram-moderno-vermelho-story-5.png" alt="Garagem da Pizza" class="client-logo" loading="lazy">
-            <img src="https://i.ibb.co/W4y8QhS5/Whats-App-Image-2025-12-01-at-09-49-40.jpg" alt="Bar Viola" class="client-logo" loading="lazy">
-            <img src="https://i.ibb.co/4w4JfSGL/Logo.jpg" alt="QBella Pizza" class="client-logo" loading="lazy">
-            <img src="https://i.ibb.co/gM6X6vwt/download.jpg" alt="Pizzaria Arruda" class="client-logo" loading="lazy">
-            <img src="https://i.ibb.co/DDPRVJSH/image.png" alt="Tropical Bar" class="client-logo" loading="lazy">
+    <!-- O RECHEIO: DOR FINANCEIRA -->
+    <section class="section-padding" style="background-color: var(--dark); border-bottom: 1px solid #222;">
+        <div class="container recheio-box">
+            <h2>VENDER MUITO <span style="color: var(--primary)">NÃO SIGNIFICA LUCRAR MUITO</span></h2>
+            <p style="color: #bbb; font-size: 1.1rem; margin-top: 20px;">
+                O dono do delivery geralmente sangra dinheiro porque não sabe analisar o extrato, usa cupom de desconto do jeito errado e não calcula o impacto dos subsídios de entrega. A Rocket cruza os dados financeiros de vendas versus as taxas dos aplicativos para garantir que a sua operação não trabalhe de graça.
+            </p>
         </div>
-    </div>
+    </section>
 
     <section class="section-padding bg-gray">
         <div class="container">
@@ -463,16 +577,16 @@
                 <div class="behavior-text">
                     <h2>O CLIENTE MUDOU.<br><span style="color: var(--primary)">QUEM NÃO ACOMPANHOU JÁ ESTÁ FICANDO INVISÍVEL.</span></h2>
                     <p>Hoje, o cliente decide em <strong>5 segundos</strong> qual delivery vai comprar.</p>
-                    <p>E a decisão não é pela comida. É pelo cardápio, foto e organização.</p>
+                    <p>E a decisão não é pela comida. É pela vitrine digital e engenharia de cardápio.</p>
                     <p>A nova geração não liga, não pergunta e não insiste. Ela abre o app, compara e escolhe quem parece mais profissional.</p>
                     
                     <div class="impact-box">
                         <p style="margin-bottom: 0; color: #fff; font-weight: 600;">
-                            Se o seu iFood/99Food não passa confiança visual e clareza, <strong>você é ignorado — mesmo tendo comida boa.</strong>
+                            Se a sua loja não passa confiança visual e clareza, <strong>você é ignorado — mesmo tendo comida boa.</strong>
                         </p>
                     </div>
                     <br>
-                    <p>👉 No delivery, quem não vende bem na vitrine digital não vende. <strong>Delivery não é abrir loja e esperar pedido.</strong> É gestão diária de vitrine, preço e decisão do cliente.</p>
+                    <p>👉 No delivery, quem não vende bem na vitrine digital não vende. <strong>Delivery não é abrir loja e esperar pedido.</strong> É gestão diária de plataforma, preço e decisão do cliente.</p>
                 </div>
             </div>
         </div>
@@ -480,7 +594,7 @@
 
     <section class="section-padding cases-section">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 40px;">CASES REAIS DE SUCESSO <br><span style="color: var(--primary)">NO 99FOOD</span></h2>
+            <h2 style="text-align: center; margin-bottom: 40px;">CASES REAIS DE SUCESSO <br><span style="color: var(--primary)">NOS APLICATIVOS</span></h2>
             <p style="text-align: center; margin-bottom: 40px;">Contra fatos não há argumentos. Veja o que acontece quando a Rocket assume a gestão.</p>
 
             <div class="case-study">
@@ -510,9 +624,71 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div style="text-align: center; margin-top: 40px;">
-                <a href="https://wa.me/5511959228663?text=Ol%C3%A1,%20vi%20os%20resultados%20e%20quero%20uma%20an%C3%A1lise%20para%20meu%20delivery." class="btn">QUERO ESSES RESULTADOS</a>
+    <!-- DEPOIMENTOS EM CARROSSEL -->
+    <section class="section-padding bg-gray" style="overflow: hidden;">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 40px;">O QUE NOSSOS PARCEIROS DIZEM</h2>
+        </div>
+        <div class="logos-slider" style="background: transparent; padding: 0; border: none;">
+            <div class="testimonials-track">
+                <!-- AQUI VOCÊ SOBE OS LINKS DOS SEUS PRINTS DO WHATSAPP -->
+                <img src="https://via.placeholder.com/250x350/111/FFC900?text=Print+Cliente+1" alt="Depoimento" class="print-depoimento">
+                <img src="https://via.placeholder.com/250x350/111/FFC900?text=Print+Cliente+2" alt="Depoimento" class="print-depoimento">
+                <img src="https://via.placeholder.com/250x350/111/FFC900?text=Print+Cliente+3" alt="Depoimento" class="print-depoimento">
+                <img src="https://via.placeholder.com/250x350/111/FFC900?text=Print+Cliente+4" alt="Depoimento" class="print-depoimento">
+                <img src="https://via.placeholder.com/250x350/111/FFC900?text=Print+Cliente+5" alt="Depoimento" class="print-depoimento">
+                
+                <!-- REPETIÇÃO PARA O EFEITO INFINITO -->
+                <img src="https://via.placeholder.com/250x350/111/FFC900?text=Print+Cliente+1" alt="Depoimento" class="print-depoimento">
+                <img src="https://via.placeholder.com/250x350/111/FFC900?text=Print+Cliente+2" alt="Depoimento" class="print-depoimento">
+                <img src="https://via.placeholder.com/250x350/111/FFC900?text=Print+Cliente+3" alt="Depoimento" class="print-depoimento">
+                <img src="https://via.placeholder.com/250x350/111/FFC900?text=Print+Cliente+4" alt="Depoimento" class="print-depoimento">
+                <img src="https://via.placeholder.com/250x350/111/FFC900?text=Print+Cliente+5" alt="Depoimento" class="print-depoimento">
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMULÁRIO DE CAPTAÇÃO / QUALIFICAÇÃO -->
+    <section class="section-padding" id="captacao" style="background-color: #000; border-top: 4px solid var(--primary);">
+        <div class="container text-center">
+            <h2 style="text-align: center; font-size: 2.2rem; margin-bottom: 10px;">VAMOS ESCALAR <span style="color: var(--primary);">SEU DELIVERY?</span></h2>
+            <p style="text-align: center; color: #ccc; margin-bottom: 40px;">Preencha os dados abaixo. Nossa equipe vai analisar o seu cenário e entrar em contato.</p>
+            
+            <div class="form-wrapper">
+                <form id="leadForm">
+                    <div class="form-group">
+                        <label>Qual o seu Nicho?</label>
+                        <select name="nicho" required>
+                            <option value="" disabled selected>Selecione uma opção...</option>
+                            <option value="Pizzaria">Pizzaria</option>
+                            <option value="Hamburgueria">Hamburgueria</option>
+                            <option value="Marmita">Marmitaria / Culinária Brasileira</option>
+                            <option value="Japones">Comida Oriental</option>
+                            <option value="Acai_Doces">Açaí / Doceria</option>
+                            <option value="Outro">Outro Nicho</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Seu Nome</label>
+                        <input type="text" name="nome" placeholder="Como podemos te chamar?" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Nome da Loja</label>
+                        <input type="text" name="loja" placeholder="Ex: Pizzaria do Jhow" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Seu WhatsApp (com DDD)</label>
+                        <input type="tel" name="whatsapp" placeholder="(11) 99999-9999" required>
+                    </div>
+
+                    <button type="submit" class="btn" style="width: 100%; margin-top: 10px; font-size: 1.1rem; padding: 20px;">QUERO UMA ANÁLISE DA MINHA LOJA</button>
+                </form>
             </div>
         </div>
     </section>
@@ -525,7 +701,7 @@
             <div class="pain-grid">
                 <div class="pain-card">
                     <h3>01. Abertura de Contas</h3>
-                    <p>Travado no CNPJ ou dados bancários? Nós configuramos todas as plataformas do zero (iFood, 99, Keeta).</p>
+                    <p>Travado no CNPJ ou dados bancários? Nós configuramos todas as plataformas do zero (iFood, 99Food, Keeta).</p>
                 </div>
                 <div class="pain-card">
                     <h3>02. Taxas e Margem</h3>
@@ -605,7 +781,7 @@
             </div>
             
             <div style="text-align: center; margin-top: 50px;">
-                <a href="https://wa.me/5511959228663?text=Ol%C3%A1,%20quero%20contratar%20a%20Rocket." class="btn">QUERO CONTRATAR A GESTÃO</a>
+                <a href="#captacao" class="btn">QUERO CONTRATAR A GESTÃO</a>
             </div>
         </div>
     </section>
@@ -623,7 +799,7 @@
             <div class="faq-item">
                 <details>
                     <summary>Quanto custa o serviço?</summary>
-                    <p>Temos planos adaptados ao tamanho do seu delivery. Nosso objetivo é que o aumento do seu lucro pague o investimento. Clique no botão do WhatsApp para uma cotação rápida.</p>
+                    <p>Temos planos adaptados ao tamanho do seu delivery. Nosso objetivo é que o aumento do seu lucro pague o investimento. Preencha o formulário para uma cotação rápida.</p>
                 </details>
             </div>
             <div class="faq-item">
@@ -643,13 +819,34 @@
 
     <footer>
         <div class="container">
-            <p>Rocket for Eat © 2025. Todos os direitos reservados.</p>
+            <p>Rocket for Eat © 2026. Todos os direitos reservados.</p>
         </div>
     </footer>
 
-    <a href="https://wa.me/5511959228663?text=Ol%C3%A1,%20vim%20pelo%20site." class="wpp-float">
+    <!-- Apenas o botão flutuante básico para quem ainda quiser o atalho -->
+    <a href="https://wa.me/5511959228663?text=Ol%C3%A1,%20vim%20pelo%20site%20e%20tenho%20uma%20d%C3%BAvida." class="wpp-float">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zM223.9 439.6c-33.8 0-66.3-8.8-94.3-25.1l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
     </a>
+
+    <!-- SCRIPT PARA ENVIAR O FORMULÁRIO DIRETO PRO SEU WHATSAPP -->
+    <script>
+        document.getElementById('leadForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Impede a página de recarregar
+            
+            // Pega os valores preenchidos
+            var nicho = this.nicho.value;
+            var nome = this.nome.value;
+            var loja = this.loja.value;
+            var whatsapp = this.whatsapp.value;
+            
+            // Monta a mensagem estruturada
+            var texto = `🚀 *NOVO LEAD QUALIFICADO DO SITE!* 🚀%0A%0A*Nome:* ${nome}%0A*Loja:* ${loja}%0A*Nicho:* ${nicho}%0A*WhatsApp:* ${whatsapp}%0A%0AGostaria de uma análise da minha loja!`;
+            
+            // Redireciona para a API do WhatsApp
+            var urlWhatsapp = `https://wa.me/5511959228663?text=${texto}`;
+            window.open(urlWhatsapp, '_blank');
+        });
+    </script>
 
 </body>
 </html>
